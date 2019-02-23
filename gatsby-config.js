@@ -1,19 +1,20 @@
+const title = 'XVI. Simonyi Konferencia';
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Strict Starter',
+    title,
     description:
-      'Demo for a Gatsby starter with strict linting and auto-formatting rules.',
-    language: 'en',
+      'Magyarország legnagyobb egyetemi hallgatók által szervezett éves technológiai konferenciája.',
+    language: 'hu',
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Strict Starter',
-        short_name: 'starter',
+        name: title,
+        short_name: 'SimonyiKonf',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fff',
         display: 'minimal-ui',
         icon: 'src/assets/favicon.png',
         legacy: true,

@@ -9,7 +9,9 @@ export default function IndexPage() {
       <Hero>
         <Logo />
         <h1>Simonyi Konferencia</h1>
-        <p>Április 16. – BME I épület</p>
+        <p>
+          <time dateTime="2019-04-16">Április 16.</time> – BME I épület
+        </p>
       </Hero>
     </Layout>
   );

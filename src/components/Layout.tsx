@@ -1,8 +1,24 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from '../utils/theme';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    box-sizing: border-box;
+    margin: 0;
+
+    /* Prevent adjustments of font size after orientation changes in iOS */
+    text-size-adjust: 100%;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+`;
 
 type Props = {
   children: React.ReactNode;
@@ -24,6 +40,8 @@ export default function Layout({ children }: Props) {
   return (
     <ThemeProvider theme={theme}>
       <div>
+        <GlobalStyle />
+
         <Helmet
           titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           defaultTitle={data.site.siteMetadata.title}

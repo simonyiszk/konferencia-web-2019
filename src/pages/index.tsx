@@ -7,7 +7,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <Hero>
-        <Logo />
+        <Logo height="4em" />
         <h1>Simonyi Konferencia</h1>
         <p>
           <time dateTime="2019-04-16">Április 16.</time> – BME I épület

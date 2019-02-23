@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
 
+    font-family: Raleway, system-ui;
+    font-weight: 500;
+
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;
   }
@@ -50,6 +53,11 @@ export default function Layout({ children }: Props) {
           <meta
             name="description"
             content={data.site.siteMetadata.description}
+          />
+
+          <link
+            href="https://fonts.googleapis.com/css?family=Raleway:500,600"
+            rel="stylesheet"
           />
         </Helmet>
 

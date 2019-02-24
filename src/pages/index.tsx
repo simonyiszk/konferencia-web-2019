@@ -7,10 +7,12 @@ import Logo from '../assets/logo.svg';
 export default function IndexPage() {
   return (
     <Layout>
-      <Hero>
+      <Hero pt={5}>
         <Logo height="4em" />
-        <Heading level={1}>Simonyi Konferencia</Heading>
-        <Heading as="p" level={2}>
+        <Heading level={1} mb={3}>
+          Simonyi Konferencia
+        </Heading>
+        <Heading as="p" level={2} color="moonGray" my={0}>
           <time dateTime="2019-04-16">Április 16.</time> – BME I épület
         </Heading>
       </Hero>

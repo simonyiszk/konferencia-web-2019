@@ -11,7 +11,7 @@ type Props = {
 const Heading = styled.h2.attrs(({ level, as }: any) => ({
   as: as || `h${level}`,
 }))<Props>`
-  font-size: ${({ level }) => modularScale(5 - level)};
+  font-size: ${({ level }) => modularScale(3 - level)};
   ${color};
   ${space};
 `;

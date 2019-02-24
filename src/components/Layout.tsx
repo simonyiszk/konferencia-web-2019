@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { fluidRange } from 'polished';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
@@ -11,6 +12,17 @@ const GlobalStyle = createGlobalStyle`
 
     font-family: Raleway, system-ui;
     font-weight: 500;
+
+    ${fluidRange(
+      // Responsive font sizing
+      {
+        prop: 'fontSize',
+        fromSize: '1em',
+        toSize: '1.5em',
+      },
+      '37.5em',
+      '120em',
+    )};
 
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;

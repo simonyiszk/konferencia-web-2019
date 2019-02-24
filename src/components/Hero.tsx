@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
+import BackgroundURL from '../assets/hero/background.svg';
+
 const Hero = styled.div`
   min-height: 100vh;
-  background: linear-gradient(45deg, transparent 61.8%, #3ad4a7),
-    linear-gradient(45deg, #e838bf, #00bce3 61.8%);
+  background: url(${BackgroundURL}) center / cover;
   color: white;
   text-align: center;
 `;

@@ -22,7 +22,14 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-svg',
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          exclude: /hero/,
+        },
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
   ],

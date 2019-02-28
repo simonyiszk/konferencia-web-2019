@@ -17,11 +17,11 @@ const GlobalStyle = createGlobalStyle`
       // Responsive font sizing
       {
         prop: 'fontSize',
-        fromSize: '1rem',
-        toSize: '1.5rem',
+        fromSize: '1em',
+        toSize: '1.5em',
       },
-      '37.5rem',
-      '120rem',
+      '37.5em',
+      '120em',
     )};
 
     /* Prevent adjustments of font size after orientation changes in iOS */

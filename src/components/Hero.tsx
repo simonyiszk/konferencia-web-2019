@@ -25,6 +25,7 @@ const HeroBase = styled.div<Props & { minHeight: string }>`
   color: white;
   ${space};
   text-align: center;
+  text-shadow: 0 0 0.25em #00000055;
 `;
 
 export default function Hero(props: Props) {

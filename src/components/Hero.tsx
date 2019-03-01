@@ -37,6 +37,8 @@ export default function Hero(props: Props) {
   // Reference: https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    handleResize();
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };

@@ -19,9 +19,9 @@ const HeroBase = styled.div<Props & { minHeight: string }>`
   background: url(${BGLayer09URL}) 20% 100% / 30vmin no-repeat,
     url(${BGLayer08URL}) 100% 100% / 70vmin no-repeat,
     url(${BGLayer07URL}) center / cover, url(${BGLayer06URL}) center / cover,
-    url(${BGLayer05URL}) center / cover, url(${BGLayer04URL}) center / cover,
-    url(${BGLayer03URL}) center / cover, url(${BGLayer02URL}) center / cover,
-    url(${BGLayer01URL}) center / cover;
+    url(${BGLayer05URL}) center / 20vmin no-repeat,
+    url(${BGLayer04URL}) center / cover, url(${BGLayer03URL}) center / cover,
+    url(${BGLayer02URL}) center / cover, url(${BGLayer01URL}) center / cover;
   color: white;
   ${space};
   text-align: center;

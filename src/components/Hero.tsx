@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
 
@@ -13,8 +14,8 @@ import BGLayer09URL from '../assets/hero/09-thinking-monster.svg';
 
 type Props = SpaceProps;
 
-const Hero = styled.div<Props>`
-  min-height: 100vh;
+const HeroBase = styled.div<Props & { minHeight: string }>`
+  min-height: ${({ minHeight }) => minHeight};
   background: url(${BGLayer09URL}) 20% 100% / 30vh no-repeat,
     url(${BGLayer08URL}) center / cover, url(${BGLayer07URL}) center / cover,
     url(${BGLayer06URL}) center / cover, url(${BGLayer05URL}) center / cover,
@@ -25,4 +26,21 @@ const Hero = styled.div<Props>`
   text-align: center;
 `;
 
-export default Hero;
+export default function Hero(props: Props) {
+  const [windowInnerHeight, setWindowInnerHeight] = useState('100vh');
+
+  function handleResize() {
+    setWindowInnerHeight(`${window.innerHeight}px`);
+  }
+
+  // Address iOS Safari viewport height bug
+  // Reference: https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
+
+  return <HeroBase minHeight={windowInnerHeight} {...props} />;
+}

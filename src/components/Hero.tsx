@@ -1,3 +1,4 @@
+import useDeviceOrientation from '@rehooks/device-orientation';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
@@ -14,13 +15,20 @@ import BGLayer09URL from '../assets/hero/09-thinking-monster.svg';
 
 type Props = SpaceProps;
 
-const HeroBase = styled.div<Props & { minHeight: string }>`
+type BaseProps = Props & {
+  minHeight: string;
+  gammaNormalized: number;
+};
+
+const HeroBase = styled.div<BaseProps>`
   min-height: ${({ minHeight }) => minHeight};
   background: url(${BGLayer09URL}) 20% 100% / 30vmin no-repeat,
     url(${BGLayer08URL}) 100% 100% / 70vmin no-repeat,
     url(${BGLayer07URL}) center / cover, url(${BGLayer06URL}) center / cover,
     url(${BGLayer05URL}) 50% 60% / 15vmin no-repeat,
-    url(${BGLayer04URL}) center / cover, url(${BGLayer03URL}) center / cover,
+    url(${BGLayer04URL}) center / cover,
+    url(${BGLayer03URL}) ${({ gammaNormalized }) => 50 + 10 * gammaNormalized}%
+      50% / cover,
     url(${BGLayer02URL}) center / cover, url(${BGLayer01URL}) center / cover;
   color: white;
   ${space};
@@ -30,6 +38,9 @@ const HeroBase = styled.div<Props & { minHeight: string }>`
 
 export default function Hero(props: Props) {
   const [windowInnerHeight, setWindowInnerHeight] = useState('100vh');
+
+  const { gamma } = useDeviceOrientation();
+  const gammaNormalized = gamma != null ? gamma / 90 : 0;
 
   function handleResize() {
     setWindowInnerHeight(`${window.innerHeight}px`);
@@ -46,5 +57,11 @@ export default function Hero(props: Props) {
     };
   }, [handleResize]);
 
-  return <HeroBase minHeight={windowInnerHeight} {...props} />;
+  return (
+    <HeroBase
+      minHeight={windowInnerHeight}
+      gammaNormalized={gammaNormalized}
+      {...props}
+    />
+  );
 }

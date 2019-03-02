@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@rehooks/device-orientation": "^1.0.0",
     "@types/styled-system": "^3.2.2",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.1.19",

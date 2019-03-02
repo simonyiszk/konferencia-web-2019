@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@rehooks/device-orientation": "^1.0.0",
+    "@rehooks/window-size": "^1.0.2",
     "@types/styled-system": "^3.2.2",
     "babel-plugin-styled-components": "^1.10.0",
     "csstype": "^2.6.2",

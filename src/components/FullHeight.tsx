@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import useWindowSize from '@rehooks/window-size';
+import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -6,31 +7,23 @@ type Props = {
 };
 
 type BaseProps = {
-  minHeight: string;
+  minHeight?: string;
 };
 
 const FullHeightBase = styled.div<BaseProps>`
-  min-height: ${({ minHeight }) => minHeight};
+  min-height: ${({ minHeight = '100vh' }) => minHeight};
 `;
 
 export default function FullHeight(props: Props) {
-  const [windowInnerHeight, setWindowInnerHeight] = useState(
-    typeof window !== 'undefined' ? `${window.innerHeight}px` : '100vh',
-  );
-
-  function handleResize() {
-    setWindowInnerHeight(`${window.innerHeight}px`);
-  }
-
   // Address iOS Safari viewport height bug
-  // Reference: https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
+  // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const windowSize = typeof window !== 'undefined' && useWindowSize();
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [handleResize]);
-
-  return <FullHeightBase minHeight={windowInnerHeight} {...props} />;
+  return (
+    <FullHeightBase
+      minHeight={windowSize ? `${windowSize.innerHeight}px` : undefined}
+      {...props}
+    />
+  );
 }

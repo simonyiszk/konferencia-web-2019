@@ -8,18 +8,20 @@ type Props = {
   size?: CSS.BackgroundSizeProperty<number>;
   translateX?: number;
   translateY?: number;
+  offsetRange?: number;
 };
 
 const ParallaxLayer = styled.div.attrs<Props>(
-  ({ translateX = 0, translateY = 0 }) => ({
+  ({ translateX = 0, translateY = 0, offsetRange = 0 }) => ({
     style: {
-      transform: `translate(${`${translateX * 100}%, ${translateY * 100}%`})`,
+      transform: `translate(${`${(translateX - offsetRange / 2) *
+        100}%, ${(translateY - offsetRange / 2) * 100}%`})`,
     },
   }),
 )<Props>`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: ${({ offsetRange = 0 }) => (1 + offsetRange) * 100}%;
+  height: ${({ offsetRange = 0 }) => (1 + offsetRange) * 100}%;
   background-image: ${({ src }) => `url(${src})`};
   background-position: ${({ position = 'center' }) => position};
   background-repeat: ${({ repeat = 'no-repeat' }) => repeat};

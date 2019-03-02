@@ -68,11 +68,13 @@ export default function Hero({ children }: Props) {
         src={BGLayer03URL}
         translateX={0.05 * offsetX}
         translateY={0.05 * offsetY}
+        offsetRange={0.1}
       />
       <ParallaxLayer
         src={BGLayer04URL}
         translateX={0.02 * offsetX}
         translateY={0.02 * offsetY}
+        offsetRange={0.04}
       />
       <ParallaxLayer src={BGLayer05URL} position="50% 60%" size="15vmin" />
       <ParallaxLayer src={BGLayer06URL} />

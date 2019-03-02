@@ -21,14 +21,14 @@ type BaseProps = {
 };
 
 const HeroBase = styled.div<BaseProps>`
-  background: url(${BGLayer09URL}) 20% 100% / 30vmin no-repeat,
-    url(${BGLayer08URL}) 100% 100% / 70vmin no-repeat,
-    url(${BGLayer07URL}) center / cover, url(${BGLayer06URL}) center / cover,
-    url(${BGLayer05URL}) 50% 60% / 15vmin no-repeat,
+  background: url(${BGLayer09URL}) 20% 100% / 30vmin,
+    url(${BGLayer08URL}) 100% 100% / 70vmin, url(${BGLayer07URL}) center / cover,
+    url(${BGLayer06URL}) center / cover, url(${BGLayer05URL}) 50% 60% / 15vmin,
     url(${BGLayer04URL}) center / cover,
     url(${BGLayer03URL}) ${({ gammaNormalized }) => 50 + 10 * gammaNormalized}%
       50% / cover,
     url(${BGLayer02URL}) center / cover, url(${BGLayer01URL}) center / cover;
+  background-repeat: no-repeat;
   color: white;
   ${space};
   text-align: center;

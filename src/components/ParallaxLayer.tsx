@@ -25,6 +25,10 @@ const ParallaxLayer = styled.div.attrs<Props>(
   background-repeat: ${({ repeat = 'no-repeat' }) => repeat};
   background-size: ${({ size = 'cover' }) => size};
   will-change: transform;
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none !important;
+  }
 `;
 
 export default ParallaxLayer;

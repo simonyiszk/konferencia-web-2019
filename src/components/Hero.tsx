@@ -19,27 +19,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-/*
-type BaseProps = {
-  gammaNormalized: number;
-};
-
-const HeroBase = styled.div<BaseProps>`
-  background: url(${BGLayer09URL}) 20% 100% / 30vmin,
-    url(${BGLayer08URL}) 100% 100% / 70vmin, url(${BGLayer07URL}) center / cover,
-    url(${BGLayer06URL}) center / cover, url(${BGLayer05URL}) 50% 60% / 15vmin,
-    url(${BGLayer04URL}) center / cover,
-    url(${BGLayer03URL}) ${({ gammaNormalized }) => 50 + 10 * gammaNormalized}%
-      50% / cover,
-    url(${BGLayer02URL}) center / cover, url(${BGLayer01URL}) center / cover;
-  background-repeat: no-repeat;
-  color: white;
-  ${space};
-  text-align: center;
-  text-shadow: 0 0 0.25em #00000055;
-`;
-*/
-
 const HeroChildrenWrapper = styled.div`
   position: relative;
   padding-top: 3em;
@@ -54,7 +33,6 @@ export default function Hero({ children }: Props) {
   const gammaNormalized = (gamma || 0) / 90;
 
   return (
-    // <HeroBase as={FullHeight} gammaNormalized={gammaNormalized} {...props} />
     <ParallaxWrapper as={FullHeight}>
       <ParallaxLayer src={BGLayer01URL} />
       <ParallaxLayer src={BGLayer02URL} />
@@ -74,7 +52,6 @@ export default function Hero({ children }: Props) {
       <ParallaxLayer src={BGLayer08URL} position="100% 100%" size="70vmin" />
       <ParallaxLayer src={BGLayer09URL} position="20% 100%" size="30vmin" />
 
-      {/* TODO */}
       <HeroChildrenWrapper>{children}</HeroChildrenWrapper>
     </ParallaxWrapper>
   );

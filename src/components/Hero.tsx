@@ -56,9 +56,9 @@ export default function Hero({ children }: Props) {
     }
   }
 
-  // Invert controls
-  offsetX = 1 - offsetX;
-  offsetY = 1 - offsetY;
+  // Invert controls and normalize range to [-0.5, 0.5]
+  offsetX = 0.5 - offsetX;
+  offsetY = 0.5 - offsetY;
 
   return (
     <ParallaxWrapper as={FullHeight}>

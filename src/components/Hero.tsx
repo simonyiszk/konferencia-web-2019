@@ -1,7 +1,8 @@
 import useDeviceOrientation from '@rehooks/device-orientation';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
+import FullHeight from './FullHeight';
 
 import BGLayer01URL from '../assets/hero/01-background.svg';
 import BGLayer02URL from '../assets/hero/02-stripes.svg';
@@ -15,13 +16,11 @@ import BGLayer09URL from '../assets/hero/09-thinking-monster.svg';
 
 type Props = SpaceProps;
 
-type BaseProps = Props & {
-  minHeight: string;
+type BaseProps = {
   gammaNormalized: number;
 };
 
 const HeroBase = styled.div<BaseProps>`
-  min-height: ${({ minHeight }) => minHeight};
   background: url(${BGLayer09URL}) 20% 100% / 30vmin no-repeat,
     url(${BGLayer08URL}) 100% 100% / 70vmin no-repeat,
     url(${BGLayer07URL}) center / cover, url(${BGLayer06URL}) center / cover,
@@ -37,31 +36,10 @@ const HeroBase = styled.div<BaseProps>`
 `;
 
 export default function Hero(props: Props) {
-  const [windowInnerHeight, setWindowInnerHeight] = useState('100vh');
-
   const { gamma } = useDeviceOrientation();
   const gammaNormalized = gamma != null ? gamma / 90 : 0;
 
-  function handleResize() {
-    setWindowInnerHeight(`${window.innerHeight}px`);
-  }
-
-  // Address iOS Safari viewport height bug
-  // Reference: https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [handleResize]);
-
   return (
-    <HeroBase
-      minHeight={windowInnerHeight}
-      gammaNormalized={gammaNormalized}
-      {...props}
-    />
+    <HeroBase as={FullHeight} gammaNormalized={gammaNormalized} {...props} />
   );
 }

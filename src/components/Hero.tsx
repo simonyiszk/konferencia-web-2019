@@ -1,4 +1,5 @@
 import useDeviceOrientation from '@rehooks/device-orientation';
+import useWindowSize from '@rehooks/window-size';
 import React from 'react';
 import styled from 'styled-components';
 import FullHeight from './FullHeight';
@@ -28,9 +29,23 @@ const HeroChildrenWrapper = styled.div`
 `;
 
 export default function Hero({ children }: Props) {
+  // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const windowSize = typeof window !== 'undefined' && useWindowSize();
+
   const { beta, gamma } = useDeviceOrientation();
   const betaNormalized = (beta || 0) / 180;
   const gammaNormalized = (gamma || 0) / 90;
+
+  // The standard orientation of devices is typically portrait
+  let offsetX = betaNormalized;
+  let offsetY = gammaNormalized;
+
+  // Take landscape orientation into account if necessary
+  if (windowSize && windowSize.innerWidth < windowSize.innerHeight) {
+    offsetX = gammaNormalized;
+    offsetY = betaNormalized;
+  }
 
   return (
     <ParallaxWrapper as={FullHeight}>
@@ -38,13 +53,13 @@ export default function Hero({ children }: Props) {
       <ParallaxLayer src={BGLayer02URL} />
       <ParallaxLayer
         src={BGLayer03URL}
-        translateX={0.05 * gammaNormalized}
-        translateY={0.05 * betaNormalized}
+        translateX={0.05 * offsetX}
+        translateY={0.05 * offsetY}
       />
       <ParallaxLayer
         src={BGLayer04URL}
-        translateX={0.02 * gammaNormalized}
-        translateY={0.02 * betaNormalized}
+        translateX={0.02 * offsetX}
+        translateY={0.02 * offsetY}
       />
       <ParallaxLayer src={BGLayer05URL} position="50% 60%" size="15vmin" />
       <ParallaxLayer src={BGLayer06URL} />

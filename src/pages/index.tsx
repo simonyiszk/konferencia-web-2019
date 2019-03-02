@@ -7,7 +7,7 @@ import Logo from '../assets/logo.svg';
 export default function IndexPage() {
   return (
     <Layout>
-      <Hero pt="3em">
+      <Hero>
         <Logo height="4em" />
         <Heading level={1} mb={3}>
           Simonyi Konferencia

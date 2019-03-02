@@ -1,5 +1,6 @@
 import useDeviceOrientation from '@rehooks/device-orientation';
 import React from 'react';
+import styled from 'styled-components';
 import FullHeight from './FullHeight';
 import ParallaxLayer from './ParallaxLayer';
 import ParallaxWrapper from './ParallaxWrapper';
@@ -39,6 +40,14 @@ const HeroBase = styled.div<BaseProps>`
 `;
 */
 
+const HeroChildrenWrapper = styled.div`
+  position: relative;
+  padding-top: 3em;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 0.25em #00000055;
+`;
+
 export default function Hero({ children }: Props) {
   const { beta, gamma } = useDeviceOrientation();
   const betaNormalized = (beta || 0) / 180;
@@ -66,7 +75,7 @@ export default function Hero({ children }: Props) {
       <ParallaxLayer src={BGLayer09URL} position="20% 100%" size="30vmin" />
 
       {/* TODO */}
-      <div style={{ position: 'relative' }}>{children}</div>
+      <HeroChildrenWrapper>{children}</HeroChildrenWrapper>
     </ParallaxWrapper>
   );
 }

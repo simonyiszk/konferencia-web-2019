@@ -1,8 +1,8 @@
 import useDeviceOrientation from '@rehooks/device-orientation';
 import React from 'react';
-import styled from 'styled-components';
-import { space, SpaceProps } from 'styled-system';
 import FullHeight from './FullHeight';
+import ParallaxLayer from './ParallaxLayer';
+import ParallaxWrapper from './ParallaxWrapper';
 
 import BGLayer01URL from '../assets/hero/01-background.svg';
 import BGLayer02URL from '../assets/hero/02-stripes.svg';
@@ -14,8 +14,11 @@ import BGLayer07URL from '../assets/hero/07-rocks.svg';
 import BGLayer08URL from '../assets/hero/08-rocket.svg';
 import BGLayer09URL from '../assets/hero/09-thinking-monster.svg';
 
-type Props = SpaceProps;
+type Props = {
+  children: React.ReactNode;
+};
 
+/*
 type BaseProps = {
   gammaNormalized: number;
 };
@@ -34,12 +37,27 @@ const HeroBase = styled.div<BaseProps>`
   text-align: center;
   text-shadow: 0 0 0.25em #00000055;
 `;
+*/
 
-export default function Hero(props: Props) {
+export default function Hero({ children }: Props) {
   const { gamma } = useDeviceOrientation();
   const gammaNormalized = gamma != null ? gamma / 90 : 0;
 
   return (
-    <HeroBase as={FullHeight} gammaNormalized={gammaNormalized} {...props} />
+    // <HeroBase as={FullHeight} gammaNormalized={gammaNormalized} {...props} />
+    <ParallaxWrapper as={FullHeight}>
+      <ParallaxLayer src={BGLayer01URL} />
+      <ParallaxLayer src={BGLayer02URL} />
+      <ParallaxLayer src={BGLayer03URL} translateX={0.1 * gammaNormalized} />
+      <ParallaxLayer src={BGLayer04URL} />
+      <ParallaxLayer src={BGLayer05URL} position="50% 60%" size="15vmin" />
+      <ParallaxLayer src={BGLayer06URL} />
+      <ParallaxLayer src={BGLayer07URL} />
+      <ParallaxLayer src={BGLayer08URL} position="100% 100%" size="70vmin" />
+      <ParallaxLayer src={BGLayer09URL} position="20% 100%" size="30vmin" />
+
+      {/* TODO */}
+      <div style={{ position: 'relative' }}>{children}</div>
+    </ParallaxWrapper>
   );
 }

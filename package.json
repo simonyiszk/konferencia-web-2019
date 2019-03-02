@@ -13,6 +13,7 @@
     "@rehooks/device-orientation": "^1.0.0",
     "@types/styled-system": "^3.2.2",
     "babel-plugin-styled-components": "^1.10.0",
+    "csstype": "^2.6.2",
     "gatsby": "^2.1.19",
     "gatsby-plugin-manifest": "^2.0.20",
     "gatsby-plugin-offline": "^2.0.24",

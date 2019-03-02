@@ -10,10 +10,7 @@ type BaseProps = {
 };
 
 const FullHeightBase = styled.div<BaseProps>`
-  &,
-  > * {
-    min-height: ${({ minHeight }) => minHeight};
-  }
+  min-height: ${({ minHeight }) => minHeight};
 `;
 
 export default function FullHeight(props: Props) {

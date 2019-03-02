@@ -40,16 +40,25 @@ const HeroBase = styled.div<BaseProps>`
 */
 
 export default function Hero({ children }: Props) {
-  const { gamma } = useDeviceOrientation();
-  const gammaNormalized = gamma != null ? gamma / 90 : 0;
+  const { beta, gamma } = useDeviceOrientation();
+  const betaNormalized = (beta || 0) / 180;
+  const gammaNormalized = (gamma || 0) / 90;
 
   return (
     // <HeroBase as={FullHeight} gammaNormalized={gammaNormalized} {...props} />
     <ParallaxWrapper as={FullHeight}>
       <ParallaxLayer src={BGLayer01URL} />
       <ParallaxLayer src={BGLayer02URL} />
-      <ParallaxLayer src={BGLayer03URL} translateX={0.1 * gammaNormalized} />
-      <ParallaxLayer src={BGLayer04URL} />
+      <ParallaxLayer
+        src={BGLayer03URL}
+        translateX={0.05 * gammaNormalized}
+        translateY={0.05 * betaNormalized}
+      />
+      <ParallaxLayer
+        src={BGLayer04URL}
+        translateX={0.01 * gammaNormalized}
+        translateY={0.01 * betaNormalized}
+      />
       <ParallaxLayer src={BGLayer05URL} position="50% 60%" size="15vmin" />
       <ParallaxLayer src={BGLayer06URL} />
       <ParallaxLayer src={BGLayer07URL} />

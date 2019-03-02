@@ -2,6 +2,7 @@ import useDeviceOrientation from '@rehooks/device-orientation';
 import useWindowSize from '@rehooks/window-size';
 import React from 'react';
 import styled from 'styled-components';
+import { useWindowMousePosition } from '../utils/hooks';
 import FullHeight from './FullHeight';
 import ParallaxLayer from './ParallaxLayer';
 import ParallaxWrapper from './ParallaxWrapper';
@@ -37,15 +38,27 @@ export default function Hero({ children }: Props) {
   const betaNormalized = (beta || 0) / 180;
   const gammaNormalized = (gamma || 0) / 90;
 
+  const windowMousePosition = useWindowMousePosition();
+
   // The standard orientation of devices is typically portrait
   let offsetX = betaNormalized;
   let offsetY = gammaNormalized;
 
-  // Take landscape orientation into account if necessary
-  if (windowSize && windowSize.innerWidth < windowSize.innerHeight) {
-    offsetX = gammaNormalized;
-    offsetY = betaNormalized;
+  if (windowSize) {
+    if (windowMousePosition.x != null && windowMousePosition.y != null) {
+      // Prefer mouse-based offset control
+      offsetX = windowMousePosition.x / windowSize.innerWidth;
+      offsetY = windowMousePosition.y / windowSize.innerHeight;
+    } else if (windowSize.innerWidth < windowSize.innerHeight) {
+      // Take landscape orientation into account
+      offsetX = gammaNormalized;
+      offsetY = betaNormalized;
+    }
   }
+
+  // Invert controls
+  offsetX = 1 - offsetX;
+  offsetY = 1 - offsetY;
 
   return (
     <ParallaxWrapper as={FullHeight}>

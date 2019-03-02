@@ -6,6 +6,7 @@ type Props = {
 
 const ParallaxWrapper = styled.div<Props>`
   position: relative;
+  overflow: hidden;
 `;
 
 export default ParallaxWrapper;

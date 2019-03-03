@@ -48,7 +48,7 @@ export default function Hero({ children }: Props) {
 
   // Normalize ranges to [-0.5, 0.5]
   betaNormalized /= 180;
-  gammaNormalized /= 90;
+  gammaNormalized /= 180;
 
   const windowMousePosition = useWindowMousePosition();
   const isMouseAvailable =

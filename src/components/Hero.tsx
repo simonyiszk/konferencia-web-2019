@@ -93,6 +93,8 @@ export default function Hero({ children }: Props) {
         translateY={-0.01 * offsetY}
         offsetRange={0.02}
       />
+      <ParallaxLayer src={GroundURL} />
+      <ParallaxLayer src={RocksURL} />
       <ParallaxLayer
         src={FlyingSaucerURL}
         position="50% 60%"
@@ -102,8 +104,6 @@ export default function Hero({ children }: Props) {
           translateY: 0.15 * offsetY,
         }}
       />
-      <ParallaxLayer src={GroundURL} />
-      <ParallaxLayer src={RocksURL} />
       <ParallaxLayer src={RocketURL} position="100% 100%" size="70vmin" />
       <ParallaxLayer
         src={ThinkingMonsterURL}

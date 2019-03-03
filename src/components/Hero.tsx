@@ -36,18 +36,16 @@ export default function Hero({ children }: Props) {
 
   const { beta, gamma } = useDeviceOrientation();
 
-  // [-180, 180) -> [  -1,   1)
+  // [-180, 180) -> [-1, 1)
   let betaNormalized = (beta || 0) / 180;
 
-  // [ -90,  90) -> [-0.5, 0.5)
-  let gammaNormalized = (gamma || 0) / 180;
+  // [ -90,  90) -> [-1, 1)
+  let gammaNormalized = (gamma || 0) / 90;
 
   // Fix clipping issues
-  if (Math.abs(betaNormalized) >= 0.5) {
+  if (Math.abs(betaNormalized) > 0.5) {
+    betaNormalized = 2 * (Math.sign(betaNormalized) - betaNormalized);
     gammaNormalized *= -1;
-
-    // [ -1,  1) -> [-0.5, 0.5]
-    betaNormalized = Math.sign(betaNormalized) - betaNormalized;
   }
 
   const windowMousePosition = useWindowMousePosition();
@@ -59,12 +57,15 @@ export default function Hero({ children }: Props) {
   let offsetY = gammaNormalized;
 
   if (windowSize) {
+    // Prefer mouse-based offset control with reduced vertical sensitivity
     if (isMouseAvailable) {
-      // Prefer mouse-based offset control with reduced vertical sensitivity
-      // [0, width or height] -> [-0.5, 0.5]
-      offsetX = (windowMousePosition.x as number) / windowSize.innerWidth - 0.5;
+      // [0,  width] -> [  -1,   1]
+      offsetX =
+        ((windowMousePosition.x as number) / windowSize.innerWidth - 0.5) * 2;
+
+      // [0, height] -> [-0.5, 0.5]
       offsetY =
-        ((windowMousePosition.y as number) / windowSize.innerHeight - 0.5) / 2;
+        (windowMousePosition.y as number) / windowSize.innerHeight - 0.5;
     } else if (windowSize.innerWidth < windowSize.innerHeight) {
       // Take landscape orientation into account
       offsetX = gammaNormalized;

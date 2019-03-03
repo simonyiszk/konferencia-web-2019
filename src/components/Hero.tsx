@@ -56,9 +56,9 @@ export default function Hero({ children }: Props) {
     }
   }
 
-  // Invert controls and normalize range to [-0.5, 0.5]
-  offsetX = 0.5 - offsetX;
-  offsetY = 0.5 - offsetY;
+  // Normalize range to [-0.5, 0.5]
+  offsetX -= 0.5;
+  offsetY -= 0.5;
 
   return (
     <ParallaxWrapper as={FullHeight}>
@@ -66,15 +66,15 @@ export default function Hero({ children }: Props) {
       <ParallaxLayer src={BGLayer02URL} />
       <ParallaxLayer
         src={BGLayer03URL}
-        translateX={0.05 * offsetX}
-        translateY={0.05 * offsetY}
+        translateX={-0.05 * offsetX}
+        translateY={-0.025 * offsetY}
         offsetRange={0.1}
       />
       <ParallaxLayer
         src={BGLayer04URL}
-        translateX={0.02 * offsetX}
-        translateY={0.02 * offsetY}
-        offsetRange={0.04}
+        translateX={0.01 * offsetX}
+        translateY={-0.005 * offsetY}
+        offsetRange={0.02}
       />
       <ParallaxLayer src={BGLayer05URL} position="50% 60%" size="15vmin" />
       <ParallaxLayer src={BGLayer06URL} />

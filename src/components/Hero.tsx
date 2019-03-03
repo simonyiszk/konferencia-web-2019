@@ -79,23 +79,23 @@ export default function Hero({ children }: Props) {
       <ParallaxLayer src={StripesURL} />
       <ParallaxLayer
         src={StarsURL}
-        translateX={-0.05 * offsetX}
-        translateY={-0.05 * offsetY}
-        offsetRange={0.1}
+        translateX={-0.025 * offsetX}
+        translateY={-0.025 * offsetY}
+        offsetRange={0.05}
       />
       <ParallaxLayer
         src={PlanetsURL}
-        translateX={0.01 * offsetX}
-        translateY={-0.01 * offsetY}
-        offsetRange={0.02}
+        translateX={0.005 * offsetX}
+        translateY={-0.005 * offsetY}
+        offsetRange={0.01}
       />
       <ParallaxLayer
         src={FlyingSaucerURL}
         position="50% 60%"
         size="15vmin"
         {...isMouseAvailable && {
-          translateX: 0.15 * offsetX,
-          translateY: 0.15 * offsetY,
+          translateX: 0.075 * offsetX,
+          translateY: 0.075 * offsetY,
         }}
       />
       <ParallaxLayer src={GroundURL} />

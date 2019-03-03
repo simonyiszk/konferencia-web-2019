@@ -39,16 +39,18 @@ export default function Hero({ children }: Props) {
   const gammaNormalized = (gamma || 0) / 90;
 
   const windowMousePosition = useWindowMousePosition();
+  const isMouseAvailable =
+    windowMousePosition.x != null && windowMousePosition.y != null;
 
   // The standard orientation of devices is typically portrait
   let offsetX = betaNormalized;
   let offsetY = gammaNormalized;
 
   if (windowSize) {
-    if (windowMousePosition.x != null && windowMousePosition.y != null) {
+    if (isMouseAvailable) {
       // Prefer mouse-based offset control with reduced vertical sensitivity
-      offsetX = windowMousePosition.x / windowSize.innerWidth;
-      offsetY = windowMousePosition.y / windowSize.innerHeight / 2;
+      offsetX = (windowMousePosition.x as number) / windowSize.innerWidth;
+      offsetY = (windowMousePosition.y as number) / windowSize.innerHeight / 2;
     } else if (windowSize.innerWidth < windowSize.innerHeight) {
       // Take landscape orientation into account
       offsetX = gammaNormalized;
@@ -76,7 +78,15 @@ export default function Hero({ children }: Props) {
         translateY={-0.01 * offsetY}
         offsetRange={0.02}
       />
-      <ParallaxLayer src={FlyingSaucerURL} position="50% 60%" size="15vmin" />
+      <ParallaxLayer
+        src={FlyingSaucerURL}
+        position="50% 60%"
+        size="15vmin"
+        {...isMouseAvailable && {
+          translateX: 0.15 * offsetX,
+          translateY: 0.15 * offsetY,
+        }}
+      />
       <ParallaxLayer src={GroundURL} />
       <ParallaxLayer src={RocksURL} />
       <ParallaxLayer src={RocketURL} position="100% 100%" size="70vmin" />

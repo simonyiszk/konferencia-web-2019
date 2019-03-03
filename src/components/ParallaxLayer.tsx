@@ -29,7 +29,9 @@ const ParallaxLayer = styled.div.attrs<Props>(
   will-change: transform;
 
   @media (prefers-reduced-motion: reduce) {
-    transform: none !important;
+    transform: ${({ offsetRange = 0 }) =>
+      `translate(${`${(offsetRange / 2) * 100}%, ${(offsetRange / 2) *
+        100}%`})`} !important;
   }
 `;
 

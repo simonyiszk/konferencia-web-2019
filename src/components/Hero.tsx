@@ -35,8 +35,20 @@ export default function Hero({ children }: Props) {
   const windowSize = typeof window !== 'undefined' && useWindowSize();
 
   const { beta, gamma } = useDeviceOrientation();
-  const betaNormalized = (beta || 0) / 180;
-  const gammaNormalized = (gamma || 0) / 90;
+
+  let betaNormalized = beta || 0;
+  let gammaNormalized = gamma || 0;
+
+  //  Beta: [-180, 180) -> [-90, 90] without clipping
+  // Gamma: [ -90,  90] -> [-90, 90] without clipping
+  if (Math.abs(betaNormalized) > 90) {
+    betaNormalized = Math.sign(betaNormalized) * 180 - betaNormalized;
+    gammaNormalized *= -1;
+  }
+
+  // Normalize ranges to [-0.5, 0.5]
+  betaNormalized /= 180;
+  gammaNormalized /= 90;
 
   const windowMousePosition = useWindowMousePosition();
   const isMouseAvailable =
@@ -49,18 +61,16 @@ export default function Hero({ children }: Props) {
   if (windowSize) {
     if (isMouseAvailable) {
       // Prefer mouse-based offset control with reduced vertical sensitivity
-      offsetX = (windowMousePosition.x as number) / windowSize.innerWidth;
-      offsetY = (windowMousePosition.y as number) / windowSize.innerHeight / 2;
+      // [0, width or height] -> [-0.5, 0.5]
+      offsetX = (windowMousePosition.x as number) / windowSize.innerWidth - 0.5;
+      offsetY =
+        (windowMousePosition.y as number) / windowSize.innerHeight / 2 - 0.5;
     } else if (windowSize.innerWidth < windowSize.innerHeight) {
       // Take landscape orientation into account
       offsetX = gammaNormalized;
       offsetY = betaNormalized;
     }
   }
-
-  // Normalize range to [-0.5, 0.5]
-  offsetX -= 0.5;
-  offsetY -= 0.5;
 
   return (
     <ParallaxWrapper as={FullHeight}>

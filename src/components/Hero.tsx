@@ -36,19 +36,19 @@ export default function Hero({ children }: Props) {
 
   const { beta, gamma } = useDeviceOrientation();
 
-  let betaNormalized = beta || 0;
-  let gammaNormalized = gamma || 0;
+  // [-180, 180) -> [  -1,   1)
+  let betaNormalized = (beta || 0) / 180;
 
-  //  Beta: [-180, 180) -> [-90, 90] without clipping
-  // Gamma: [ -90,  90] -> [-90, 90] without clipping
-  if (Math.abs(betaNormalized) > 90) {
-    betaNormalized = Math.sign(betaNormalized) * 180 - betaNormalized;
+  // [ -90,  90) -> [-0.5, 0.5)
+  let gammaNormalized = (gamma || 0) / 180;
+
+  // Fix clipping issues
+  if (Math.abs(betaNormalized) >= 0.5) {
     gammaNormalized *= -1;
-  }
 
-  // Normalize ranges to [-0.5, 0.5]
-  betaNormalized /= 180;
-  gammaNormalized /= 180;
+    // [ -1,  1) -> [-0.5, 0.5]
+    betaNormalized = Math.sign(betaNormalized) - betaNormalized;
+  }
 
   const windowMousePosition = useWindowMousePosition();
   const isMouseAvailable =
@@ -64,7 +64,7 @@ export default function Hero({ children }: Props) {
       // [0, width or height] -> [-0.5, 0.5]
       offsetX = (windowMousePosition.x as number) / windowSize.innerWidth - 0.5;
       offsetY =
-        (windowMousePosition.y as number) / windowSize.innerHeight / 2 - 0.5;
+        ((windowMousePosition.y as number) / windowSize.innerHeight - 0.5) / 2;
     } else if (windowSize.innerWidth < windowSize.innerHeight) {
       // Take landscape orientation into account
       offsetX = gammaNormalized;

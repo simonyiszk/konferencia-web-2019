@@ -26,6 +26,7 @@ const ParallaxLayer = styled.div.attrs<Props>(
   background-position: ${({ position = 'center' }) => position};
   background-repeat: ${({ repeat = 'no-repeat' }) => repeat};
   background-size: ${({ size = 'cover' }) => size};
+  transition: transform 1s cubic-bezier(0, 0, 0.2, 1);
   will-change: transform;
 
   @media (prefers-reduced-motion: reduce) {

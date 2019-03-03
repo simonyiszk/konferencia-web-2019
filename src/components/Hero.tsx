@@ -46,9 +46,9 @@ export default function Hero({ children }: Props) {
 
   if (windowSize) {
     if (windowMousePosition.x != null && windowMousePosition.y != null) {
-      // Prefer mouse-based offset control
+      // Prefer mouse-based offset control with reduced vertical sensitivity
       offsetX = windowMousePosition.x / windowSize.innerWidth;
-      offsetY = windowMousePosition.y / windowSize.innerHeight;
+      offsetY = windowMousePosition.y / windowSize.innerHeight / 2;
     } else if (windowSize.innerWidth < windowSize.innerHeight) {
       // Take landscape orientation into account
       offsetX = gammaNormalized;
@@ -67,13 +67,13 @@ export default function Hero({ children }: Props) {
       <ParallaxLayer
         src={BGLayer03URL}
         translateX={-0.05 * offsetX}
-        translateY={-0.025 * offsetY}
+        translateY={-0.05 * offsetY}
         offsetRange={0.1}
       />
       <ParallaxLayer
         src={BGLayer04URL}
         translateX={0.01 * offsetX}
-        translateY={-0.005 * offsetY}
+        translateY={-0.01 * offsetY}
         offsetRange={0.02}
       />
       <ParallaxLayer src={BGLayer05URL} position="50% 60%" size="15vmin" />

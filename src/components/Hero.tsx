@@ -30,34 +30,21 @@ const HeroChildrenWrapper = styled.div`
 `;
 
 export default function Hero({ children }: Props) {
-  // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const windowSize = typeof window !== 'undefined' && useWindowSize();
+  let offsetX = 0;
+  let offsetY = 0;
 
   const { beta, gamma } = useDeviceOrientation();
-
-  // [-180, 180) -> [-1, 1)
-  let betaNormalized = (beta || 0) / 180;
-
-  // [ -90,  90) -> [-1, 1)
-  let gammaNormalized = (gamma || 0) / 90;
-
-  // Fix clipping issues
-  if (Math.abs(betaNormalized) > 0.5) {
-    betaNormalized = 2 * (Math.sign(betaNormalized) - betaNormalized);
-    gammaNormalized *= -1;
-  }
 
   const windowMousePosition = useWindowMousePosition();
   const isMouseAvailable =
     windowMousePosition.x != null && windowMousePosition.y != null;
 
-  // The standard orientation of devices is typically portrait
-  let offsetX = betaNormalized;
-  let offsetY = gammaNormalized;
+  // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const windowSize = typeof window !== 'undefined' && useWindowSize();
 
   if (windowSize) {
-    // Prefer mouse-based offset control with reduced vertical sensitivity
+    // Prefer mouse-based offset control (with reduced vertical sensitivity)
     if (isMouseAvailable) {
       // [0,  width] -> [  -1,   1]
       offsetX =
@@ -66,10 +53,28 @@ export default function Hero({ children }: Props) {
       // [0, height] -> [-0.5, 0.5]
       offsetY =
         (windowMousePosition.y as number) / windowSize.innerHeight - 0.5;
-    } else if (windowSize.innerWidth < windowSize.innerHeight) {
-      // Take landscape orientation into account
-      offsetX = gammaNormalized;
-      offsetY = betaNormalized;
+    } else {
+      // [-180, 180) -> [-1, 1)
+      let betaNormalized = (beta || 0) / 180;
+
+      // [ -90,  90) -> [-1, 1)
+      let gammaNormalized = (gamma || 0) / 90;
+
+      // Fix clipping issues
+      if (Math.abs(betaNormalized) > 0.5) {
+        betaNormalized = 2 * (Math.sign(betaNormalized) - betaNormalized);
+        gammaNormalized *= -1;
+      }
+
+      if (windowSize.innerWidth < windowSize.innerHeight) {
+        // The standard orientation of devices is typically portrait
+        offsetX = gammaNormalized;
+        offsetY = betaNormalized;
+      } else {
+        // Take landscape orientation into account
+        offsetX = betaNormalized;
+        offsetY = gammaNormalized;
+      }
     }
   }
 

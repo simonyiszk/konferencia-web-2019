@@ -4,6 +4,7 @@ import CapitalizedTime from '../components/CapitalizedTime';
 import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import Text from '../components/Text';
 import Logo from '../assets/logo.svg';
 
 export default function IndexPage() {
@@ -26,16 +27,16 @@ export default function IndexPage() {
     <Layout>
       <Hero>
         <Logo height="4em" />
-        <Heading level={1} mb={3}>
+        <Heading level={1} fontSize={2} mb={3}>
           Simonyi Konferencia
         </Heading>
 
-        <Heading as="p" level={2} color="moonGray" mt={0} mb={3}>
+        <Text fontSize={1} color="moonGray" mt={0} mb={3}>
           <CapitalizedTime dateTime={data.site.siteMetadata.event.dateRaw}>
             {data.site.siteMetadata.event.dateFormatted}
-          </CapitalizedTime>{' '}
-          – {data.site.siteMetadata.event.venue}
-        </Heading>
+          </CapitalizedTime>
+          {` – ${data.site.siteMetadata.event.venue}`}
+        </Text>
       </Hero>
     </Layout>
   );

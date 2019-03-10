@@ -4,7 +4,7 @@ const theme: Theme = {
   colors: {
     moonGray: '#ceced2',
   },
-  fontSizes: ['1rem', '1.333rem', '1.777rem'] as any,
+  fontSizes: ['1rem', '1.333rem', '1.778rem', '2.37rem'] as any,
 };
 
 export default theme;

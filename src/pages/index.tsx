@@ -3,6 +3,7 @@ import React from 'react';
 import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import LinkButton from '../components/LinkButton';
 import Text from '../components/Text';
 import { ReactComponent as Logo } from '../assets/logo.svg';
 
@@ -39,6 +40,12 @@ export default function IndexPage() {
             {toSentenceCase(data.site.siteMetadata.event.dateFormatted)}
           </time>
           {` – ${data.site.siteMetadata.event.venue}`}
+        </Text>
+
+        <Text color="moonGray">
+          <LinkButton href={data.site.siteMetadata.event.registrationURL}>
+            Regisztráció
+          </LinkButton>
         </Text>
       </Hero>
     </Layout>

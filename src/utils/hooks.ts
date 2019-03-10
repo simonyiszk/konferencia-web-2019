@@ -11,20 +11,20 @@ export function useWindowMousePosition() {
     y: null,
   });
 
-  function handleMouseMove(e: MouseEvent) {
-    setWindowMousePosition({
-      x: e.pageX,
-      y: e.pageY,
-    });
-  }
-
   useEffect(() => {
+    function handleMouseMove(e: MouseEvent) {
+      setWindowMousePosition({
+        x: e.pageX,
+        y: e.pageY,
+      });
+    }
+
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [handleMouseMove]);
+  }, []);
 
   return WindowMousePosition;
 }

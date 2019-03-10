@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // TODO: Use @rehooks/window-mouse-position instead
 // eslint-disable-next-line import/prefer-default-export
 export function useWindowMousePosition() {
-  const [WindowMousePosition, setWindowMousePosition] = useState<{
+  const [windowMousePosition, setWindowMousePosition] = useState<{
     x: number | null;
     y: number | null;
   }>({
@@ -26,5 +26,5 @@ export function useWindowMousePosition() {
     };
   }, []);
 
-  return WindowMousePosition;
+  return windowMousePosition;
 }

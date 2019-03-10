@@ -4,7 +4,7 @@ import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Text from '../components/Text';
-import Logo from '../assets/logo.svg';
+import { ReactComponent as Logo } from '../assets/logo.svg';
 
 function toSentenceCase(string: string) {
   return `${string[0].toUpperCase()}${string.substring(1)}`;

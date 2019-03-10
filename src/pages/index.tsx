@@ -1,11 +1,14 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import CapitalizedTime from '../components/CapitalizedTime';
 import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Text from '../components/Text';
 import Logo from '../assets/logo.svg';
+
+function toSentenceCase(string: string) {
+  return `${string[0].toUpperCase()}${string.substring(1)}`;
+}
 
 export default function IndexPage() {
   const data = useStaticQuery(graphql`
@@ -32,9 +35,9 @@ export default function IndexPage() {
         </Heading>
 
         <Text fontSize={1} color="moonGray" mt={0} mb={3}>
-          <CapitalizedTime dateTime={data.site.siteMetadata.event.dateRaw}>
-            {data.site.siteMetadata.event.dateFormatted}
-          </CapitalizedTime>
+          <time dateTime={data.site.siteMetadata.event.dateRaw}>
+            {toSentenceCase(data.site.siteMetadata.event.dateFormatted)}
+          </time>
           {` – ${data.site.siteMetadata.event.venue}`}
         </Text>
       </Hero>

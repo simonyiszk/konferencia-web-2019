@@ -30,7 +30,7 @@ module.exports = {
         short_name: 'SimonyiKonf',
         start_url: '/',
         background_color: '#fff',
-        display: 'minimal-ui',
+        display: 'standalone',
         icon: 'src/assets/favicon.png',
         legacy: true,
       },

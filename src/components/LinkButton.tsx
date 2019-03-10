@@ -6,6 +6,8 @@ const LinkButton = styled.a`
   border: 0.125em solid;
   color: ${({ theme }) => theme.colors.moonGray};
   text-decoration: none;
+  transition: all 0.2s
+    ${({ theme }) => theme.transitionTimingFunctions.decelerate};
 
   :hover {
     /* TODO: Make colors customizable */
@@ -15,6 +17,10 @@ const LinkButton = styled.a`
 
     /* TODO: Remove this rule */
     text-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none !important;
   }
 `;
 

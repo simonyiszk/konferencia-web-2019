@@ -6,9 +6,8 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  html {
     box-sizing: border-box;
-    margin: 0;
 
     font-family: Raleway, system-ui;
     font-weight: 500;
@@ -26,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
 
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
   }
 
   *,

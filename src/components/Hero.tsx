@@ -37,7 +37,7 @@ export default function Hero({ children }: Props) {
   const hasAccelerometer = beta != null;
 
   const windowMousePosition = useWindowMousePosition();
-  const hasMouse = windowMousePosition != null;
+  const hasMouse = windowMousePosition.x != null;
 
   // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
   // eslint-disable-next-line react-hooks/rules-of-hooks

@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { fluidRange } from 'polished';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
@@ -9,19 +8,11 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
 
+    /* Fluid typography: 100% @ 600w -> 150% @ 1920w */
+    /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
     font-family: Raleway, system-ui;
+    font-size: calc(1em + (100vw - 37.5em) / 165);
     font-weight: 500;
-
-    ${fluidRange(
-      // Responsive font sizing
-      {
-        prop: 'fontSize',
-        fromSize: '1em',
-        toSize: '1.5em',
-      },
-      '37.5em',
-      '120em',
-    )};
 
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;

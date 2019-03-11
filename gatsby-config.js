@@ -12,8 +12,7 @@ module.exports = {
       address: '1117 Budapest, Magyar tudósok körútja 2.',
       embeddedMapURL:
         'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.888331773722!2d19.057752915809882!3d47.4726054791759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ddabb29bd997%3A0x4b453205e2d0f96b!2zQk1FIEkgw6lww7xsZXQ!5e0!3m2!1shu!2shu!4v1552059603071',
-      registrationURL:
-        'https://www.eventbrite.com/e/xvi-simonyi-konferencia-tickets-58009396667',
+      registrationURL: 'https://simonyikonf.eventbrite.com/?aff=web',
     },
     contactEmail: 'konferencia@simonyi.bme.hu',
     social: {

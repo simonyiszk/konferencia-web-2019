@@ -34,10 +34,10 @@ export default function Hero({ children }: Props) {
   let offsetY = 0;
 
   const { beta, gamma } = useDeviceOrientation();
+  const hasAccelerometer = beta != null;
 
   const windowMousePosition = useWindowMousePosition();
-  const isMouseAvailable =
-    windowMousePosition.x != null && windowMousePosition.y != null;
+  const hasMouse = windowMousePosition != null;
 
   // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -45,7 +45,7 @@ export default function Hero({ children }: Props) {
 
   if (windowSize) {
     // Prefer mouse-based offset control (with reduced sensitivity)
-    if (isMouseAvailable) {
+    if (hasMouse) {
       // [0,  width] -> [ -0.5,  0.5]
       offsetX = (windowMousePosition.x as number) / windowSize.innerWidth - 0.5;
 
@@ -99,7 +99,7 @@ export default function Hero({ children }: Props) {
         src={FlyingSaucerURL}
         position="50% 60%"
         size="15vmin"
-        {...isMouseAvailable && {
+        {...!hasAccelerometer && {
           translateX: 0.15 * offsetX,
           translateY: 0.15 * offsetY,
         }}

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import ExternalLink from './ExternalLink';
 
-const LinkButton = styled.a`
+const LinkButton = styled(ExternalLink)`
   display: inline-block;
   padding: 0.5em 1em;
   border: 0.125em solid;

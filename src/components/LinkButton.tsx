@@ -14,9 +14,6 @@ const LinkButton = styled.a`
     border-color: white;
     background: white;
     color: ${({ theme }) => theme.colors.navy};
-
-    /* TODO: Remove this rule */
-    text-shadow: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

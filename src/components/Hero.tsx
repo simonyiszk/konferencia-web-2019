@@ -26,7 +26,6 @@ const HeroChildrenWrapper = styled.div`
   padding-top: 3em;
   color: white;
   text-align: center;
-  text-shadow: 0 0 0.25em #00000055;
 `;
 
 export default function Hero({ children }: Props) {

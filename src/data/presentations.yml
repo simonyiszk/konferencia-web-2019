@@ -5,7 +5,5 @@
   presenter:
     fullName: Pásztor Dávid
     picture: null # TODO
-    organization:
-      name: UX studio
-      website: https://uxstudioteam.com/
+    organization: UX studio
     role: CEO, Founder

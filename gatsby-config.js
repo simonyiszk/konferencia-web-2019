@@ -48,4 +48,7 @@ module.exports = {
     'gatsby-plugin-svgr',
     'gatsby-plugin-typescript',
   ],
+  mapping: {
+    'PresentationsYaml.presenter.organization': 'OrganizationsYaml',
+  },
 };

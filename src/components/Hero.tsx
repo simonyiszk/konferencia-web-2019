@@ -17,7 +17,7 @@ import RocksURL from '../assets/hero/07-rocks.svg';
 import RocketURL from '../assets/hero/08-rocket.svg';
 import ThinkingMonsterURL from '../assets/hero/09-thinking-monster.svg';
 
-type Props = {
+type HeroProps = {
   children: React.ReactNode;
 };
 
@@ -28,7 +28,7 @@ const HeroChildrenWrapper = styled.div`
   text-align: center;
 `;
 
-export default function Hero({ children }: Props) {
+export default function Hero({ children }: HeroProps) {
   let offsetX = 0;
   let offsetY = 0;
 

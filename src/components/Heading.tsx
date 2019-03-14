@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Text, { TextProps } from './Text';
 
-type Props = TextProps & {
+type HeadingProps = TextProps & {
   level: number;
   [key: string]: any; // TODO: Remove this line
 };
@@ -9,6 +9,6 @@ type Props = TextProps & {
 const Heading = styled(Text).attrs(({ as, fontSize, level }: any) => ({
   as: as || `h${level}`,
   fontSize: fontSize || 4 - level,
-}))<Props>({});
+}))<HeadingProps>({});
 
 export default Heading;

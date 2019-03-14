@@ -48,6 +48,8 @@ export default function IndexPage() {
           </LinkButton>
         </Text>
       </Hero>
+
+      <Heading level={2}>Előadások</Heading>
     </Layout>
   );
 }

@@ -1,7 +1,7 @@
 import * as CSS from 'csstype';
 import styled from 'styled-components';
 
-type Props = {
+type ParallaxLayerProps = {
   src: string;
   position?: CSS.BackgroundPositionProperty<number>;
   repeat?: CSS.BackgroundRepeatProperty;
@@ -11,14 +11,14 @@ type Props = {
   offsetRange?: number;
 };
 
-const ParallaxLayer = styled.div.attrs<Props>(
+const ParallaxLayer = styled.div.attrs<ParallaxLayerProps>(
   ({ translateX = 0, translateY = 0, offsetRange = 0 }) => ({
     style: {
       transform: `translate(${`${(translateX - offsetRange / 2) *
         100}%, ${(translateY - offsetRange / 2) * 100}%`})`,
     },
   }),
-)<Props>`
+)<ParallaxLayerProps>`
   position: absolute;
   width: ${({ offsetRange = 0 }) => (1 + offsetRange) * 100}%;
   height: ${({ offsetRange = 0 }) => (1 + offsetRange) * 100}%;

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Props = {
+type FullHeightProps = {
   children: React.ReactNode;
 };
 
-const FullHeight = styled.div<Props>`
+const FullHeight = styled.div<FullHeightProps>`
   min-height: 100vh;
 `;
 

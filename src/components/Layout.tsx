@@ -29,11 +29,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-type Props = {
+type LayoutProps = {
   children: React.ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children }: LayoutProps) {
   const data = useStaticQuery(graphql`
     {
       site {

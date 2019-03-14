@@ -8,7 +8,7 @@ type Props = TextProps & {
 
 const Heading = styled(Text).attrs(({ as, fontSize, level }: any) => ({
   as: as || `h${level}`,
-  fontSize: fontSize || 5 - level,
+  fontSize: fontSize || 4 - level,
 }))<Props>({});
 
 export default Heading;

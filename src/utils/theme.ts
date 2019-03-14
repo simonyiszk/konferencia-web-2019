@@ -3,7 +3,7 @@ const theme = {
     moonGray: '#ceced2',
     navy: '#001b44',
   },
-  fontSizes: ['1rem', '1.333rem', '1.778rem', '2.37rem'],
+  fontSizes: ['1rem', '1.333rem', '1.778rem'],
   transitionTimingFunctions: {
     decelerate: 'cubic-bezier(0, 0, 0.2, 1)',
   },

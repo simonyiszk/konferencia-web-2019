@@ -1,7 +1,7 @@
 import useDeviceOrientation from '@rehooks/device-orientation';
-import React, { useRef } from 'react';
+import React from 'react';
+import { useWindowSize } from 'react-use';
 import styled from 'styled-components';
-import { useResizeObserver } from 'use-events';
 import { useWindowMousePosition } from '../utils/hooks';
 import FullHeight from './FullHeight';
 import ParallaxLayer from './ParallaxLayer';
@@ -32,8 +32,7 @@ export default function Hero({ children }: Props) {
   let offsetX = 0;
   let offsetY = 0;
 
-  const ref = useRef(null);
-  const [componentWidth, componentHeight] = useResizeObserver(ref);
+  const { width, height } = useWindowSize();
 
   const [mouseX, mouseY] = useWindowMousePosition();
 
@@ -54,7 +53,7 @@ export default function Hero({ children }: Props) {
       gammaNormalized *= -1;
     }
 
-    if (componentWidth < componentHeight) {
+    if (width < height) {
       // The standard orientation of devices is typically portrait
       offsetX = gammaNormalized;
       offsetY = betaNormalized;
@@ -64,15 +63,15 @@ export default function Hero({ children }: Props) {
       offsetY = gammaNormalized;
     }
   } else if (mouseY != null) {
-    // [0,  componentWidth] -> [ -0.5,  0.5]
-    offsetX = (mouseX as number) / componentWidth - 0.5;
+    // [0,  width] -> [ -0.5,  0.5]
+    offsetX = (mouseX as number) / width - 0.5;
 
-    // [0, componentHeight] -> [-0.25, 0.25] with reduced sensitivity
-    offsetY = ((mouseY + window.scrollY) / componentHeight - 0.5) / 2;
+    // [0, height] -> [-0.25, 0.25] with reduced sensitivity
+    offsetY = ((mouseY + window.scrollY) / height - 0.5) / 2;
   }
 
   return (
-    <ParallaxWrapper as={FullHeight} ref={ref}>
+    <ParallaxWrapper as={FullHeight}>
       <ParallaxLayer src={BackgroundURL} />
       <ParallaxLayer src={StripesURL} />
       <ParallaxLayer

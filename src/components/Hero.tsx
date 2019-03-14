@@ -67,7 +67,7 @@ export default function Hero({ children }: Props) {
     offsetX = (mouseX as number) / width - 0.5;
 
     // [0, height] -> [-0.25, 0.25] with reduced sensitivity
-    offsetY = ((mouseY + window.scrollY) / height - 0.5) / 2;
+    offsetY = (mouseY / height - 0.5) / 2;
   }
 
   return (

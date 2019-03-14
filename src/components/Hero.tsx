@@ -1,7 +1,7 @@
 import useDeviceOrientation from '@rehooks/device-orientation';
-import useWindowSize from '@rehooks/window-size';
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { useResizeObserver } from 'use-events';
 import { useWindowMousePosition } from '../utils/hooks';
 import FullHeight from './FullHeight';
 import ParallaxLayer from './ParallaxLayer';
@@ -32,52 +32,47 @@ export default function Hero({ children }: Props) {
   let offsetX = 0;
   let offsetY = 0;
 
+  const ref = useRef(null);
+  const [componentWidth, componentHeight] = useResizeObserver(ref);
+
+  const [mouseX, mouseY] = useWindowMousePosition();
+
   const { beta, gamma } = useDeviceOrientation();
   const hasAccelerometer = beta != null;
 
-  const windowMousePosition = useWindowMousePosition();
-  const hasMouse = windowMousePosition.x != null;
+  // Prefer accelerometer-based offset control
+  if (hasAccelerometer) {
+    // [-180, 180) -> [-1, 1)
+    let betaNormalized = (beta || 0) / 180;
 
-  // TODO: Remove typeof check when https://github.com/rehooks/window-size/pull/7 gets merged
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const windowSize = typeof window !== 'undefined' && useWindowSize();
+    // [ -90,  90) -> [-1, 1)
+    let gammaNormalized = (gamma || 0) / 90;
 
-  if (windowSize) {
-    // Prefer mouse-based offset control (with reduced sensitivity)
-    if (hasMouse) {
-      // [0,  width] -> [ -0.5,  0.5]
-      offsetX = (windowMousePosition.x as number) / windowSize.innerWidth - 0.5;
-
-      // [0, height] -> [-0.25, 0.25]
-      offsetY =
-        ((windowMousePosition.y as number) / windowSize.innerHeight - 0.5) / 2;
-    } else {
-      // [-180, 180) -> [-1, 1)
-      let betaNormalized = (beta || 0) / 180;
-
-      // [ -90,  90) -> [-1, 1)
-      let gammaNormalized = (gamma || 0) / 90;
-
-      // Fix clipping issues
-      if (Math.abs(betaNormalized) > 0.5) {
-        betaNormalized = 2 * (Math.sign(betaNormalized) - betaNormalized);
-        gammaNormalized *= -1;
-      }
-
-      if (windowSize.innerWidth < windowSize.innerHeight) {
-        // The standard orientation of devices is typically portrait
-        offsetX = gammaNormalized;
-        offsetY = betaNormalized;
-      } else {
-        // Take landscape orientation into account
-        offsetX = betaNormalized;
-        offsetY = gammaNormalized;
-      }
+    // Fix clipping issues
+    if (Math.abs(betaNormalized) > 0.5) {
+      betaNormalized = 2 * (Math.sign(betaNormalized) - betaNormalized);
+      gammaNormalized *= -1;
     }
+
+    if (componentWidth < componentHeight) {
+      // The standard orientation of devices is typically portrait
+      offsetX = gammaNormalized;
+      offsetY = betaNormalized;
+    } else {
+      // Take landscape orientation into account
+      offsetX = betaNormalized;
+      offsetY = gammaNormalized;
+    }
+  } else if (mouseY != null) {
+    // [0,  componentWidth] -> [ -0.5,  0.5]
+    offsetX = (mouseX as number) / componentWidth - 0.5;
+
+    // [0, componentHeight] -> [-0.25, 0.25] with reduced sensitivity
+    offsetY = ((mouseY + window.scrollY) / componentHeight - 0.5) / 2;
   }
 
   return (
-    <ParallaxWrapper as={FullHeight}>
+    <ParallaxWrapper as={FullHeight} ref={ref}>
       <ParallaxLayer src={BackgroundURL} />
       <ParallaxLayer src={StripesURL} />
       <ParallaxLayer

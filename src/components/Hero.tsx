@@ -8,14 +8,12 @@ import ParallaxLayer from './ParallaxLayer';
 import ParallaxWrapper from './ParallaxWrapper';
 
 import BackgroundURL from '../assets/hero/01-background.svg';
-import StripesURL from '../assets/hero/02-stripes.svg';
-import StarsURL from '../assets/hero/03-stars.svg';
-import PlanetsURL from '../assets/hero/04-planets.svg';
+import StarsURL from '../assets/hero/02-stars.svg';
+import PlanetsURL from '../assets/hero/03-planets.svg';
+import SurfaceURL from '../assets/hero/04-surface.svg';
 import FlyingSaucerURL from '../assets/hero/05-flying-saucer.svg';
-import GroundURL from '../assets/hero/06-ground.svg';
-import RocksURL from '../assets/hero/07-rocks.svg';
-import RocketURL from '../assets/hero/08-rocket.svg';
-import ThinkingMonsterURL from '../assets/hero/09-thinking-monster.svg';
+import RocketURL from '../assets/hero/06-rocket.svg';
+import ThinkingMonsterURL from '../assets/hero/07-thinking-monster.svg';
 
 type HeroProps = {
   children: React.ReactNode;
@@ -73,7 +71,6 @@ export default function Hero({ children }: HeroProps) {
   return (
     <ParallaxWrapper as={FullHeight}>
       <ParallaxLayer src={BackgroundURL} />
-      <ParallaxLayer src={StripesURL} />
       <ParallaxLayer
         src={StarsURL}
         translateX={-0.05 * offsetX}
@@ -86,8 +83,7 @@ export default function Hero({ children }: HeroProps) {
         translateY={-0.01 * offsetY}
         sizeOverhead={0.02}
       />
-      <ParallaxLayer src={GroundURL} />
-      <ParallaxLayer src={RocksURL} />
+      <ParallaxLayer src={SurfaceURL} />
       <ParallaxLayer
         src={FlyingSaucerURL}
         position="50% 60%"

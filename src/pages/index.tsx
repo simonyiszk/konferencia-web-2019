@@ -49,7 +49,9 @@ export default function IndexPage() {
         </Text>
       </Hero>
 
-      <Heading level={2}>Előadások</Heading>
+      <Heading level={2} textAlign="center">
+        Előadások
+      </Heading>
     </Layout>
   );
 }

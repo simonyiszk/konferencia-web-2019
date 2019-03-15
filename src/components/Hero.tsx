@@ -78,13 +78,13 @@ export default function Hero({ children }: HeroProps) {
         src={StarsURL}
         translateX={-0.05 * offsetX}
         translateY={-0.05 * offsetY}
-        offsetRange={0.1}
+        sizeOverhead={0.1}
       />
       <ParallaxLayer
         src={PlanetsURL}
         translateX={0.01 * offsetX}
         translateY={-0.01 * offsetY}
-        offsetRange={0.02}
+        sizeOverhead={0.02}
       />
       <ParallaxLayer src={GroundURL} />
       <ParallaxLayer src={RocksURL} />

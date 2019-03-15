@@ -8,33 +8,38 @@ type ParallaxLayerProps = {
   size?: CSS.BackgroundSizeProperty<number>;
   translateX?: number;
   translateY?: number;
-  offsetRange?: number;
+  sizeOverhead?: number;
 };
 
 const ParallaxLayer = styled.div.attrs<ParallaxLayerProps>(
-  ({ translateX = 0, translateY = 0, offsetRange = 0 }) => ({
+  ({ translateX = 0, translateY = 0 }) => ({
     style: {
-      transform: `translate(${`${(translateX - offsetRange / 2) *
-        100}%, ${(translateY - offsetRange / 2) * 100}%`})`,
+      transform: `translate(${`${translateX * 100}%, ${translateY * 100}%`})`,
     },
   }),
 )<ParallaxLayerProps>`
   position: absolute;
-  width: ${({ offsetRange = 0 }) => (1 + offsetRange) * 100}%;
-  height: ${({ offsetRange = 0 }) => (1 + offsetRange) * 100}%;
+  top: -${({ sizeOverhead = 0 }) => (sizeOverhead / 2) * 100}%;
+  left: -${({ sizeOverhead = 0 }) => (sizeOverhead / 2) * 100}%;
+  width: ${({ sizeOverhead = 0 }) => (1 + sizeOverhead) * 100}%;
+  height: ${({ sizeOverhead = 0 }) => (1 + sizeOverhead) * 100}%;
   background-image: ${({ src }) => `url(${src})`};
-  background-position: ${({ position = 'center' }) => position};
-  background-repeat: ${({ repeat = 'no-repeat' }) => repeat};
-  background-size: ${({ size = 'cover' }) => size};
+  background-position: ${({ position }) => position};
+  background-repeat: ${({ repeat }) => repeat};
+  background-size: ${({ size }) => size};
   transition: transform 1s
     ${({ theme }) => theme.transitionTimingFunctions.decelerate};
   will-change: transform;
 
   @media (prefers-reduced-motion: reduce) {
-    transform: ${({ offsetRange = 0 }) =>
-      `translate(${`${(-offsetRange / 2) * 100}%, ${(-offsetRange / 2) *
-        100}%`})`} !important;
+    transform: translate(0, 0) !important;
   }
 `;
+
+ParallaxLayer.defaultProps = {
+  position: 'center',
+  repeat: 'no-repeat',
+  size: 'cover',
+};
 
 export default ParallaxLayer;

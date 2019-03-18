@@ -5,6 +5,7 @@ import React from 'react';
 import ExternalLink from './ExternalLink';
 import Heading from './Heading';
 import Measure from './Measure';
+import Paragraph from './Paragraph';
 
 export default function Presentations() {
   const data = useStaticQuery(graphql`
@@ -51,13 +52,13 @@ export default function Presentations() {
             <Heading level={3} my={0}>
               {node.title}
             </Heading>
-            <p>
+            <Paragraph>
               {node.presenter.fullName}, {node.presenter.role},{' '}
               <ExternalLink href={node.presenter.organization.website}>
                 {node.presenter.organization.id}
               </ExternalLink>
-            </p>
-            <p>{node.abstract}</p>
+            </Paragraph>
+            <Paragraph>{node.abstract}</Paragraph>
           </Measure>
         </Flex>
       ))}

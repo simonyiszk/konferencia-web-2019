@@ -1,24 +1,20 @@
+import { Box, BoxProps } from '@rebass/grid';
 import styled from 'styled-components';
 import {
-  color,
-  ColorProps,
-  fontSize,
-  FontSizeProps,
-  space,
-  SpaceProps,
+  lineHeight,
+  LineHeightProps,
   textAlign,
   TextAlignProps,
 } from 'styled-system';
 
-export type TextProps = ColorProps &
-  FontSizeProps &
-  SpaceProps &
-  TextAlignProps;
+export type TextProps = BoxProps &
+  LineHeightProps &
+  TextAlignProps & {
+    as: React.ElementType; // TODO: Remove this line
+  };
 
-const Text = styled.div<TextProps>`
-  ${color};
-  ${fontSize};
-  ${space};
+const Text = styled(Box)<TextProps>`
+  ${lineHeight}
   ${textAlign}
 `;
 

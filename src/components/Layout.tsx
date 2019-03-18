@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
   *:after {
     box-sizing: inherit;
   }
+
+  p {
+    line-height: 1.5;
+  }
 `;
 
 type LayoutProps = {

@@ -22,7 +22,6 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -30,6 +29,8 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -44,6 +45,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-svgr',
     'gatsby-plugin-typescript',

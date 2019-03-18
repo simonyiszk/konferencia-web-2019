@@ -4,6 +4,7 @@ import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import LinkButton from '../components/LinkButton';
+import Presentations from '../components/Presentations';
 import Text from '../components/Text';
 import { ReactComponent as Logo } from '../assets/logo.svg';
 
@@ -52,6 +53,7 @@ export default function IndexPage() {
       <Heading level={2} textAlign="center">
         Előadások
       </Heading>
+      <Presentations />
     </Layout>
   );
 }

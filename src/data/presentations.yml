@@ -1,7 +1,7 @@
 - title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
   startTime: null # TODO
   venue: IB028
-  abstract: Ma már nem elég, ha le tudsz programozni egy mobil appot vagy egy weboldalt. Szükség van arra is, hogy ezek a szoftver termékek könnyen kezelhető és könnyen érthető felületekkel rendelkezzenek, különben a kutya sem fogja használni őket. Az előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, hogyan építettem fel egy 35 fős céget és hogyan tudunk ezzel a csapattal olyan alkalmazásokat tervezni, amiket New York-tól Shanghai-ig milliók használnak. Egy igazi VIK-es sikertörténet mellett megismerheted a design tervezés alapjait és bemutatom azokat a konkrét módszereket, amik segítenek, hogy megismerd az embereket, akik használni fogják az alkalmazásod és aztán olyan terméket rakj össze nekik, amit imádni fognak.
+  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel rendelkezzenek. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
   presenter:
     fullName: Pásztor Dávid
     picture: null # TODO

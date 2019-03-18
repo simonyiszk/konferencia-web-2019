@@ -38,6 +38,7 @@
   "devDependencies": {
     "@types/react": "^16.8.7",
     "@types/react-helmet": "^5.0.8",
+    "@types/rebass__grid": "^6.0.2",
     "@types/styled-components": "^4.1.12",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "eslint": "^5.15.1",

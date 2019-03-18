@@ -10,7 +10,7 @@ import {
 export type TextProps = BoxProps &
   LineHeightProps &
   TextAlignProps & {
-    as: React.ElementType; // TODO: Remove this line
+    as?: React.ElementType; // TODO: Remove this line
   };
 
 const Text = styled(Box)<TextProps>`

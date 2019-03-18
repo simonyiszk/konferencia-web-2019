@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
+import Heading from '../components/Heading';
+import Paragraph from '../components/Paragraph';
 
 export default function NotFoundPage() {
   return (
@@ -9,8 +11,8 @@ export default function NotFoundPage() {
         <title>Page not found</title>
       </Helmet>
 
-      <h1>Page not found</h1>
-      <p>The requested page is unavailable.</p>
+      <Heading level={1}>Page not found</Heading>
+      <Paragraph>The requested page is unavailable.</Paragraph>
     </Layout>
   );
 }

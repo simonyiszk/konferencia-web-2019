@@ -10,7 +10,7 @@ const GradientBackgroundTextOuter = styled(Text)`
   background: white;
 
   @supports (mix-blend-mode: lighten) {
-    &::after {
+    ::after {
       position: absolute;
       top: 0;
       right: 0;
@@ -42,7 +42,7 @@ const GradientBackgroundText = ({
   children,
   ...props
 }: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextOuter pb={py} {...props}>
+  <GradientBackgroundTextOuter py={py} {...props}>
     <GradientBackgroundTextInner px={px} pb={py}>
       {children}
     </GradientBackgroundTextInner>
@@ -51,7 +51,7 @@ const GradientBackgroundText = ({
 
 GradientBackgroundText.defaultProps = {
   px: '0.5em',
-  py: '0.125em',
+  py: '0.25em',
 };
 
 export default GradientBackgroundText;

@@ -4,7 +4,7 @@ import ExternalLink from './ExternalLink';
 const LinkButton = styled(ExternalLink)`
   display: inline-block;
   padding: 0.5em 1em;
-  border: 0.1em solid;
+  border: 0.125em solid;
   color: ${({ theme }) => theme.colors.moonGray};
   text-decoration: none;
   transition: all 0.2s

@@ -1,6 +1,7 @@
 const theme = {
   colors: {
     blue: '#357edd',
+    darkPink: '#d5008f',
     moonGray: '#ceced2',
     navy: '#001b44',
     nearBlack: '#111111',

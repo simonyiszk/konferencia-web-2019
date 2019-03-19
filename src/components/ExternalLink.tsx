@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import Link from './Link';
 
-const ExternalLink = styled.a.attrs({
+const ExternalLink = styled(Link).attrs({
   target: '_blank',
   rel: 'noopener noreferrer',
 })({});

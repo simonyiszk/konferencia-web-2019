@@ -60,7 +60,7 @@ export default function Presentations() {
               fontWeight={600}
               color="blue"
             >
-              {node.presenter.fullName} | {node.presenter.role},{' '}
+              {node.presenter.fullName} – {node.presenter.role},{' '}
               <ExternalLink href={node.presenter.organization.website}>
                 {node.presenter.organization.id}
               </ExternalLink>

@@ -49,7 +49,7 @@ export default function Presentations() {
           justifyContent="center"
           mb={4}
         >
-          <Box mb={2}>
+          <Box mb={3}>
             <Img
               Tag={CircularWrapper}
               fixed={node.presenter.picture.childImageSharp.fixed}

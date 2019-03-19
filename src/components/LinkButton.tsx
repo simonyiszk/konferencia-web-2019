@@ -8,7 +8,6 @@ const LinkButton = styled(ExternalLink)`
   color: ${({ theme }) => theme.colors.moonGray};
   font-size: 0.75em;
   text-decoration: none;
-  text-transform: uppercase;
   transition: all 0.2s
     ${({ theme }) => theme.transitionTimingFunctions.decelerate};
 
@@ -23,5 +22,10 @@ const LinkButton = styled(ExternalLink)`
     transition: none !important;
   }
 `;
+
+LinkButton.defaultProps = {
+  as: 'a',
+  textStyle: 'caps',
+};
 
 export default LinkButton;

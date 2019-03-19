@@ -38,44 +38,35 @@ export default function Presentations() {
     }
   `);
 
-  return (
-    <div>
-      {data.allPresentationsYaml.edges.map(({ node }: any) => (
-        <Flex
-          key={node.id}
-          flexDirection={['column', 'column', 'row']}
-          alignItems={['center', 'center', 'flex-start']}
-          justifyContent="center"
-          mb={4}
-        >
-          <Box mb={3}>
-            <Img
-              fixed={node.presenter.picture.childImageSharp.fixed}
-              imgStyle={{ borderRadius: '50%' }}
-            />
-          </Box>
+  return data.allPresentationsYaml.edges.map(({ node }: any) => (
+    <Flex
+      key={node.id}
+      flexDirection={['column', 'column', 'row']}
+      alignItems={['center', 'center', 'flex-start']}
+      justifyContent="center"
+      mb={4}
+    >
+      <Box mb={3}>
+        <Img
+          fixed={node.presenter.picture.childImageSharp.fixed}
+          imgStyle={{ borderRadius: '50%' }}
+        />
+      </Box>
 
-          <Measure ml={[0, 0, 4, 5]}>
-            <Heading as={GradientBackgroundText} level={3} my={0}>
-              {node.title}
-            </Heading>
+      <Measure ml={[0, 0, 4, 5]}>
+        <Heading as={GradientBackgroundText} level={3} my={0}>
+          {node.title}
+        </Heading>
 
-            <Paragraph
-              textStyle="caps"
-              fontSize={0}
-              fontWeight={600}
-              color="blue"
-            >
-              {node.presenter.fullName} – {node.presenter.role},{' '}
-              <ExternalLink href={node.presenter.organization.website}>
-                {node.presenter.organization.id}
-              </ExternalLink>
-            </Paragraph>
+        <Paragraph textStyle="caps" fontSize={0} fontWeight={600} color="blue">
+          {node.presenter.fullName} – {node.presenter.role},{' '}
+          <ExternalLink href={node.presenter.organization.website}>
+            {node.presenter.organization.id}
+          </ExternalLink>
+        </Paragraph>
 
-            <Paragraph>{node.abstract}</Paragraph>
-          </Measure>
-        </Flex>
-      ))}
-    </div>
-  );
+        <Paragraph>{node.abstract}</Paragraph>
+      </Measure>
+    </Flex>
+  ));
 }

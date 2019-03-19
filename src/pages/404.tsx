@@ -11,7 +11,7 @@ export default function NotFoundPage() {
         <title>Page not found</title>
       </Helmet>
 
-      <Heading level={1} fontSize={2}>
+      <Heading level={1} fontSize={3}>
         Page not found
       </Heading>
       <Paragraph>The requested page is unavailable.</Paragraph>

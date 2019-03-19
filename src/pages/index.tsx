@@ -32,11 +32,11 @@ export default function IndexPage() {
     <Layout>
       <Hero>
         <Logo height="4em" />
-        <Heading level={1} fontSize={2} mb={3}>
+        <Heading level={1} fontSize={3} mb={3}>
           Simonyi Konferencia
         </Heading>
 
-        <Text fontSize={1} color="moonGray" mt={0} mb={3}>
+        <Text fontSize={2} color="moonGray" mt={0} mb={3}>
           <time dateTime={data.site.siteMetadata.event.dateRaw}>
             {toSentenceCase(data.site.siteMetadata.event.dateFormatted)}
           </time>

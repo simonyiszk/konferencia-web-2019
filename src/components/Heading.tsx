@@ -7,10 +7,11 @@ type HeadingProps = TextProps & {
 
 const Heading = styled(Text).attrs<HeadingProps>(({ as, fontSize, level }) => ({
   as: as || `h${level}`,
-  fontSize: fontSize || 4 - level,
+  fontSize: fontSize || 5 - level,
 }))<HeadingProps>({});
 
 Heading.defaultProps = {
+  fontWeight: 500,
   lineHeight: 1.25,
 };
 

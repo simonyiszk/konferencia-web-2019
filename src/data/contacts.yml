@@ -1,0 +1,17 @@
+- name: Fekete Krisztián
+  role: Sajtófelelős
+  email: fekete.krisztian@simonyi.bme.hu
+  telephone: null # TODO
+  image: ./pictures/fekete-krisztian.jpg
+
+- name: Maruzsi Csenge
+  role: Főrendező
+  email: maruzsi.csenge@simonyi.bme.hu
+  telephone: null # TODO
+  image: ./pictures/maruzsi-csenge.jpg
+
+- name: Móricz Tamás
+  role: Simonyi Károly Szakkollégium, Elnök
+  email: moricz.tamas@simonyi.bme.hu
+  telephone: null # TODO
+  image: ./pictures/moricz-tamas.jpg

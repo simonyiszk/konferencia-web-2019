@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import theme from '../utils/theme';
+import defaultTheme from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -12,14 +12,14 @@ const GlobalStyle = createGlobalStyle`
     /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
     font-family: Raleway, system-ui;
     font-size: calc(1em + (100vw - 37.5em) / 165);
-    font-weight: 500;
-
-    /* Prevent adjustments of font size after orientation changes in iOS */
-    text-size-adjust: 100%;
   }
 
   body {
     margin: 0;
+    color: ${({ theme }) => theme.colors.nearBlack};
+
+    /* Prevent adjustments of font size after orientation changes in iOS */
+    text-size-adjust: 100%;
   }
 
   *,
@@ -47,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
   `);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <div>
         <GlobalStyle />
 
@@ -62,7 +62,7 @@ export default function Layout({ children }: LayoutProps) {
           />
 
           <link
-            href="https://fonts.googleapis.com/css?family=Raleway:500,600"
+            href="https://fonts.googleapis.com/css?family=Raleway:400,500"
             rel="stylesheet"
           />
         </Helmet>

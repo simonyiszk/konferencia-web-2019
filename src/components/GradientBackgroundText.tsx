@@ -6,6 +6,7 @@ import Text, { TextProps } from './Text';
 
 const GradientBackgroundTextOuter = styled(Text)`
   position: relative;
+  display: inline-block;
   background: white;
 
   @supports (mix-blend-mode: lighten) {

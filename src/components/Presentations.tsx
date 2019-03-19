@@ -1,8 +1,7 @@
-import { Flex } from '@rebass/grid';
+import { Box, Flex } from '@rebass/grid';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import CircularImageWrapper from './CircularImageWrapper';
 import ExternalLink from './ExternalLink';
 import GradientBackgroundText from './GradientBackgroundText';
 import Heading from './Heading';
@@ -49,9 +48,12 @@ export default function Presentations() {
           justifyContent="center"
           mb={4}
         >
-          <CircularImageWrapper mb={3}>
-            <Img fixed={node.presenter.picture.childImageSharp.fixed} />
-          </CircularImageWrapper>
+          <Box mb={3}>
+            <Img
+              fixed={node.presenter.picture.childImageSharp.fixed}
+              imgStyle={{ borderRadius: '50%' }}
+            />
+          </Box>
 
           <Measure ml={[0, 0, 4, 5]}>
             <Heading as={GradientBackgroundText} level={3} my={0}>

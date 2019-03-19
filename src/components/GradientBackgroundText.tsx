@@ -6,7 +6,7 @@ import Text, { TextProps } from './Text';
 
 const GradientBackgroundTextOuter = styled(Text)`
   position: relative;
-  display: inline-block;
+  overflow: none;
   background: white;
 
   @supports (mix-blend-mode: lighten) {
@@ -42,7 +42,7 @@ const GradientBackgroundText = ({
   children,
   ...props
 }: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextOuter py={py} {...props}>
+  <GradientBackgroundTextOuter px={px} py={py} mx={`-${px}`} {...props}>
     <GradientBackgroundTextInner px={px} pb={py}>
       {children}
     </GradientBackgroundTextInner>

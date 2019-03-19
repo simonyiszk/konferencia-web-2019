@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    color: ${({ theme }) => theme.colors.nearBlack};
+    color: ${({ theme }: any) => theme.colors.nearBlack};
 
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;

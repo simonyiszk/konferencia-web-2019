@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import Text from './Text';
 
-const Link = styled(Text)`
+type LinkProps = {
+  href?: string;
+};
+
+const Link = styled(Text)<LinkProps>`
   text-underline-position: under;
 
   :hover {

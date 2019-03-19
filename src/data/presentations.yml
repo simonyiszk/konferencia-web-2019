@@ -1,7 +1,27 @@
 - title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
   startTime: null # TODO
   venue: IB028
-  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel rendelkezzenek. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
+  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel bírjanak. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
+  presenter:
+    fullName: Pásztor Dávid
+    picture: ./pictures/pasztor-david.jpg
+    organization: UX studio
+    role: CEO and Founder
+
+- title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
+  startTime: null # TODO
+  venue: IB028
+  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel bírjanak. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
+  presenter:
+    fullName: Pásztor Dávid
+    picture: ./pictures/pasztor-david.jpg
+    organization: UX studio
+    role: CEO and Founder
+
+- title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
+  startTime: null # TODO
+  venue: IB028
+  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel bírjanak. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
   presenter:
     fullName: Pásztor Dávid
     picture: ./pictures/pasztor-david.jpg

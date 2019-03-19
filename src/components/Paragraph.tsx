@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import Text, { TextProps } from './Text';
+import Text from './Text';
 
-type ParagraphProps = TextProps;
-
-const Paragraph = styled(Text)<ParagraphProps>({});
+const Paragraph = styled(Text)({});
 
 Paragraph.defaultProps = {
   as: 'p',

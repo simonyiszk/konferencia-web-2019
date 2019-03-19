@@ -1,7 +1,8 @@
-import { Flex } from '@rebass/grid';
+import { Box, Flex } from '@rebass/grid';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import CircularWrapper from './CircularWrapper';
 import ExternalLink from './ExternalLink';
 import GradientBackgroundText from './GradientBackgroundText';
 import Heading from './Heading';
@@ -41,15 +42,21 @@ export default function Presentations() {
   return (
     <div>
       {data.allPresentationsYaml.edges.map(({ node }: any) => (
-        <Flex key={node.id} justifyContent="center">
-          <div>
+        <Flex
+          key={node.id}
+          flexDirection={['column', 'column', 'row']}
+          alignItems={['center', 'center', 'flex-start']}
+          justifyContent="center"
+          mb={4}
+        >
+          <Box mb={2}>
             <Img
+              Tag={CircularWrapper}
               fixed={node.presenter.picture.childImageSharp.fixed}
-              imgStyle={{ borderRadius: '50%' }}
             />
-          </div>
+          </Box>
 
-          <Measure ml={5}>
+          <Measure ml={[0, 0, 4, 5]}>
             <Heading as={GradientBackgroundText} level={3} my={0}>
               {node.title}
             </Heading>

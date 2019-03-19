@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -50,10 +51,16 @@ export default function IndexPage() {
         </Text>
       </Hero>
 
-      <Heading level={2} textAlign="center">
-        Előadások
-      </Heading>
-      <Presentations />
+      <Container>
+        <Heading level={2} textAlign="center">
+          Előadások
+        </Heading>
+        <Presentations />
+
+        <Heading level={2} textAlign="center">
+          Kapcsolat
+        </Heading>
+      </Container>
     </Layout>
   );
 }

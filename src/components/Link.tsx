@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import Text from './Text';
+import Text, { TextProps } from './Text';
 
-const Link = styled(Text)<JSX.IntrinsicElements['a']>`
+type LinkProps = TextProps & JSX.IntrinsicElements['a'];
+
+const Link = styled(Text)<LinkProps>`
   text-underline-position: under;
 
   :hover {

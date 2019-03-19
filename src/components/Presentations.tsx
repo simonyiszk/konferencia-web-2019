@@ -58,7 +58,7 @@ export default function Presentations() {
               textStyle="caps"
               fontSize={0}
               fontWeight={600}
-              color="#357EDD"
+              color="blue"
             >
               {node.presenter.fullName}, {node.presenter.role},{' '}
               <ExternalLink href={node.presenter.organization.website}>

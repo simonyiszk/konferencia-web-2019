@@ -6,7 +6,7 @@ import Text, { TextProps } from './Text';
 
 const GradientBackgroundTextOuter = styled(Text)`
   position: relative;
-  overflow: none;
+  overflow: hidden;
   background: white;
 
   @supports (mix-blend-mode: lighten) {

@@ -4,10 +4,11 @@ import Text, { TextProps } from './Text';
 type LinkProps = TextProps & JSX.IntrinsicElements['a'];
 
 const Link = styled(Text)<LinkProps>`
+  text-decoration: none;
   text-underline-position: under;
 
   :hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 `;
 

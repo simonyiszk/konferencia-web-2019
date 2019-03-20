@@ -49,7 +49,7 @@ export default function Contacts() {
             {node.role}
           </Paragraph>
 
-          <Paragraph fontSize={0} fontWeight={500}>
+          <Paragraph fontSize={[1, 1, 0]} fontWeight={500}>
             <Link href={`mailto:${node.email}`}>{node.email}</Link>
           </Paragraph>
         </Text>

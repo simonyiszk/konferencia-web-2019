@@ -36,8 +36,8 @@ const GradientBackgroundTextInner = styled(Text)`
     margin: ${({ px, py }) => `${py} ${px}`};
     color: white;
     content: '${({ children }) => `${children}`}';
-    cursor: text;
     pointer-events: none;
+    user-select: text;
   }
 `;
 

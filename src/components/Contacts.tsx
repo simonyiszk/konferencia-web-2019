@@ -24,6 +24,7 @@ export default function Contacts() {
                 }
               }
             }
+            frameColor
           }
         }
       }
@@ -33,8 +34,17 @@ export default function Contacts() {
   return (
     <Flex justifyContent="space-evenly" flexWrap="wrap">
       {data.allContactsYaml.edges.map(({ node }: any) => (
-        <Text key={node.id} textAlign="center">
-          <Img fixed={node.picture.childImageSharp.fixed} />
+        <Text key={node.id} textAlign="center" px={4}>
+          <Img
+            fixed={node.picture.childImageSharp.fixed}
+            style={{
+              borderWidth: '16px',
+              borderStyle: 'solid',
+              borderImage: `linear-gradient(45deg, ${
+                node.frameColor
+              }, white 400%) 1`,
+            }}
+          />
 
           <Heading level={3} mt={3} mb={2}>
             {node.fullName}

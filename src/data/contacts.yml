@@ -3,15 +3,18 @@
   email: fekete.krisztian@simonyi.bme.hu
   telephone: null # TODO
   picture: ./pictures/fekete-krisztian.jpg
+  frameColor: '#00bce3'
 
 - fullName: Maruzsi Csenge
   role: Főrendező
   email: maruzsi.csenge@simonyi.bme.hu
   telephone: null # TODO
   picture: ./pictures/maruzsi-csenge.jpg
+  frameColor: '#e93cac'
 
 - fullName: Móricz Tamás
   role: Szakkollégium elnök
   email: moricz.tamas@simonyi.bme.hu
   telephone: null # TODO
   picture: ./pictures/moricz-tamas.jpg
+  frameColor: '#3ad4a7'

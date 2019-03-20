@@ -8,7 +8,7 @@ const Link = styled(Text)<LinkProps>`
   text-underline-position: under;
 
   :hover {
-    text-decoration: underline;
+    text-decoration: dashed underline;
   }
 `;
 

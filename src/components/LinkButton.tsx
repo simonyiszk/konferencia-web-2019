@@ -7,7 +7,6 @@ const LinkButton = styled(ExternalLink)`
   border: 0.1em solid;
   color: ${({ theme }) => theme.colors.moonGray};
   font-size: 0.75em;
-  text-decoration: none;
   transition: all 0.2s
     ${({ theme }) => theme.transitionTimingFunctions.decelerate};
 
@@ -16,6 +15,7 @@ const LinkButton = styled(ExternalLink)`
     border-color: white;
     background: white;
     color: ${({ theme }) => theme.colors.navy};
+    text-decoration: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

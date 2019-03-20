@@ -19,6 +19,7 @@ const GradientBackgroundTextOuter = styled(Text)`
       background: linear-gradient(45deg, #e93cac, #00bce3);
       content: '';
       mix-blend-mode: lighten;
+      pointer-events: none;
     }
   }
 `;
@@ -35,6 +36,8 @@ const GradientBackgroundTextInner = styled(Text)`
     margin: ${({ px, py }) => `${py} ${px}`};
     color: white;
     content: '${({ children }) => `${children}`}';
+    cursor: text;
+    pointer-events: none;
   }
 `;
 

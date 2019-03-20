@@ -19,7 +19,6 @@ const GradientBackgroundTextOuter = styled(Text)`
       background: linear-gradient(45deg, #e93cac, #00bce3);
       content: '';
       mix-blend-mode: lighten;
-      pointer-events: none;
     }
   }
 `;
@@ -27,7 +26,16 @@ const GradientBackgroundTextOuter = styled(Text)`
 const GradientBackgroundTextInner = styled(Text)`
   background: black;
   box-decoration-break: clone;
-  color: white;
+
+  /* Fix overlap between backgrounds and texts */
+  ::after {
+    position: absolute;
+    top: 0;
+    left: ${({ px }) => px};
+    margin: ${({ px, py }) => `${py} ${px}`};
+    color: white;
+    content: '${({ children }) => `${children}`}';
+  }
 `;
 
 GradientBackgroundTextInner.defaultProps = {
@@ -43,7 +51,7 @@ const GradientBackgroundText = ({
   ...props
 }: GradientBackgroundTextProps) => (
   <GradientBackgroundTextOuter px={px} py={py} mx={`-${px}`} {...props}>
-    <GradientBackgroundTextInner px={px} pb={py}>
+    <GradientBackgroundTextInner px={px} py={py}>
       {children}
     </GradientBackgroundTextInner>
   </GradientBackgroundTextOuter>

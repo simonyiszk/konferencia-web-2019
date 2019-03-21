@@ -11,7 +11,8 @@ const Heading = styled(Text).attrs<HeadingProps>(({ as, fontSize, level }) => ({
 }))<HeadingProps>({});
 
 Heading.defaultProps = {
-  fontWeight: 600,
+  fontFamily: 'heading',
+  fontWeight: 'bold',
   lineHeight: 1.25,
 };
 

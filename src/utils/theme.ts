@@ -8,7 +8,14 @@ const theme: DefaultTheme = {
     navy: '#001b44',
     nearBlack: '#111111',
   },
+  fonts: {
+    body: "'Open Sans', system-ui",
+    heading: 'Raleway, system-ui',
+  },
   fontSizes: ['0.75rem', '1rem', '1.333rem', '1.778rem'],
+  fontWeights: {
+    bold: 600,
+  },
   transitionTimingFunctions: {
     decelerate: 'cubic-bezier(0, 0, 0.2, 1)',
   },

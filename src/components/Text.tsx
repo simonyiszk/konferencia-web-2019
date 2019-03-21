@@ -1,6 +1,8 @@
 import { Box, BoxProps } from '@rebass/grid';
 import styled from 'styled-components';
 import {
+  fontFamily,
+  FontFamilyProps,
   fontWeight,
   FontWeightProps,
   lineHeight,
@@ -12,6 +14,7 @@ import {
 } from 'styled-system';
 
 export type TextProps = BoxProps &
+  FontFamilyProps &
   FontWeightProps &
   LineHeightProps &
   TextAlignProps &
@@ -20,6 +23,7 @@ export type TextProps = BoxProps &
   };
 
 const Text = styled(Box)<TextProps>`
+  ${fontFamily}
   ${fontWeight}
   ${lineHeight}
   ${textAlign}

@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* Fluid typography: 100% @ 600w -> 150% @ 1920w */
     /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
-    font-family: Raleway, system-ui;
+    font-family: ${({ theme }: any) => theme.fonts.body};
     font-size: calc(1em + (100vw - 37.5em) / 165);
   }
 
@@ -62,7 +62,7 @@ export default function Layout({ children }: LayoutProps) {
           />
 
           <link
-            href="https://fonts.googleapis.com/css?family=Raleway:400,500"
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,600"
             rel="stylesheet"
           />
         </Helmet>

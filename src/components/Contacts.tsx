@@ -52,14 +52,14 @@ export default function Contacts() {
           <Paragraph
             textStyle="caps"
             fontSize={0}
-            fontWeight={600}
+            fontWeight="bold"
             color="blue"
             mt={0}
           >
             {node.role}
           </Paragraph>
 
-          <Paragraph fontSize={[1, 1, 0]} fontWeight={500}>
+          <Paragraph fontSize={[1, 1, 0]} fontWeight="bold">
             <Link href={`mailto:${node.email}`}>{node.email}</Link>
           </Paragraph>
         </Text>

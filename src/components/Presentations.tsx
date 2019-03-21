@@ -58,7 +58,7 @@ export default function Presentations() {
           {node.title}
         </Heading>
 
-        <Paragraph textStyle="caps" fontSize={0} fontWeight={600} color="blue">
+        <Paragraph textStyle="caps" fontSize={0} fontWeight="bold" color="blue">
           {node.presenter.fullName} – {node.presenter.role},{' '}
           <ExternalLink href={node.presenter.organization.website}>
             {node.presenter.organization.id}

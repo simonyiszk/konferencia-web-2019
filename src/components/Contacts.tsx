@@ -49,13 +49,7 @@ export default function Contacts() {
           <Heading level={3} mt={3} mb={2}>
             {node.fullName}
           </Heading>
-          <Paragraph
-            textStyle="caps"
-            fontSize={0}
-            fontWeight="bold"
-            color="blue"
-            mt={0}
-          >
+          <Paragraph textStyle="caps" color="blue" mt={0}>
             {node.role}
           </Paragraph>
 

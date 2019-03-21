@@ -38,15 +38,18 @@ export default function IndexPage() {
           Simonyi Konferencia
         </Heading>
 
-        <Text fontSize={2} fontWeight="bold" color="moonGray" mt={0} mb={3}>
+        <Text fontSize={2} fontFamily="heading" color="moonGray" mt={0} mb={3}>
           <time dateTime={data.site.siteMetadata.event.dateRaw}>
             {toSentenceCase(data.site.siteMetadata.event.dateFormatted)}
           </time>
           {` – ${data.site.siteMetadata.event.venue}`}
         </Text>
 
-        <Text fontWeight="bold" color="moonGray">
-          <LinkButton href={data.site.siteMetadata.event.registrationURL}>
+        <Text color="moonGray">
+          <LinkButton
+            href={data.site.siteMetadata.event.registrationURL}
+            mt={1}
+          >
             Regisztráció
           </LinkButton>
         </Text>

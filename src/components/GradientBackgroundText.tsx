@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Text, { TextProps } from './Text';
 
-// Source: https://css-tricks.com/multi-line-inline-gradient/
+// Sources:
+// - https://css-tricks.com/multi-line-inline-gradient/
+// - https://css-tricks.com/multi-line-padded-text/#article-header-id-1
 
 const GradientBackgroundTextOuter = styled(Text)`
   position: relative;
@@ -24,20 +26,26 @@ const GradientBackgroundTextOuter = styled(Text)`
   }
 `;
 
-const GradientBackgroundTextInner = styled(Text)`
+type GradientBackgroundTextInnerProps = TextProps & {
+  offsetX: number | string;
+};
+
+const GradientBackgroundTextInner = styled(Text)<
+  GradientBackgroundTextInnerProps
+>`
   background: black;
-  box-decoration-break: clone;
+  box-shadow: ${({ offsetX }) => `${offsetX} 0 black, -${offsetX} 0 black`};
 
   /* Fix overlap between backgrounds and texts */
   ::after {
     position: absolute;
     top: 0;
-    left: ${({ px }) => px};
-    padding: ${({ px, py }) => `${py} ${px}`};
+    left: 0;
+    padding: inherit;
+    margin: ${({ offsetX }) => `0 ${offsetX}`};
     color: white;
     content: '${({ children }) => `${children}`}';
     pointer-events: none;
-    user-select: text;
   }
 `;
 
@@ -45,23 +53,23 @@ GradientBackgroundTextInner.defaultProps = {
   as: 'span',
 };
 
-type GradientBackgroundTextProps = TextProps;
+type GradientBackgroundTextProps = GradientBackgroundTextInnerProps;
 
 const GradientBackgroundText = ({
-  px,
+  offsetX,
   py,
   children,
   ...props
 }: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextOuter px={px} py={py} mx={`-${px}`} {...props}>
-    <GradientBackgroundTextInner px={px} py={py}>
+  <GradientBackgroundTextOuter px={offsetX} py={py} {...props}>
+    <GradientBackgroundTextInner offsetX={offsetX} py={py}>
       {children}
     </GradientBackgroundTextInner>
   </GradientBackgroundTextOuter>
 );
 
 GradientBackgroundText.defaultProps = {
-  px: '0.5em',
+  offsetX: '0.5em',
   py: '0.25em',
 };
 

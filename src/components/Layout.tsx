@@ -60,6 +60,10 @@ export default function Layout({ children }: LayoutProps) {
             name="description"
             content={data.site.siteMetadata.description}
           />
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
+          />
 
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,600"

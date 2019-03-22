@@ -48,7 +48,7 @@ export default function Presentations() {
       </Box>
 
       <Measure flex="1 30em" pl={5}>
-        <Heading as={GradientBackgroundText} level={3} my={0}>
+        <Heading as={GradientBackgroundText} level={3}>
           {node.title}
         </Heading>
 
@@ -59,7 +59,7 @@ export default function Presentations() {
           </ExternalLink>
         </Paragraph>
 
-        <Paragraph>{node.abstract}</Paragraph>
+        <Paragraph mt={0}>{node.abstract}</Paragraph>
       </Measure>
     </Flex>
   ));

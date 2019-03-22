@@ -31,8 +31,9 @@ const GradientBackgroundTextInner = styled(Text)`
   /* Fix overlap between backgrounds and texts */
   ::after {
     position: absolute;
-    top: ${({ py }) => py};
+    top: 0;
     left: ${({ px }) => px};
+    padding: ${({ px, py }) => `${py} ${px}`};
     color: white;
     content: '${({ children }) => `${children}`}';
     pointer-events: none;
@@ -52,7 +53,7 @@ const GradientBackgroundText = ({
   children,
   ...props
 }: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextOuter py={py} {...props}>
+  <GradientBackgroundTextOuter px={px} py={py} mx={`-${px}`} {...props}>
     <GradientBackgroundTextInner px={px} py={py}>
       {children}
     </GradientBackgroundTextInner>

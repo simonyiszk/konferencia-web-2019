@@ -30,7 +30,6 @@ const theme: DefaultTheme = {
       textTransform: 'uppercase',
       letterSpacing: '0.1em',
       fontSize: fontSizes[0],
-      fontFamily: fonts.heading,
       fontWeight: fontWeights.bold,
     },
   },

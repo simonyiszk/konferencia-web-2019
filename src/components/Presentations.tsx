@@ -39,15 +39,15 @@ export default function Presentations() {
   `);
 
   return data.allPresentationsYaml.edges.map(({ node }: any) => (
-    <Flex key={node.id} flexWrap="wrap" justifyContent="center" mb={4}>
-      <Box mb={3}>
+    <Flex key={node.id} flexWrap="wrap" justifyContent="center" mb={4} ml={-5}>
+      <Box mb={3} pl={5}>
         <Img
           fixed={node.presenter.picture.childImageSharp.fixed}
           imgStyle={{ borderRadius: '50%' }}
         />
       </Box>
 
-      <Measure flex="1 30em">
+      <Measure flex="1 30em" pl={5}>
         <Heading as={GradientBackgroundText} level={3} my={0}>
           {node.title}
         </Heading>

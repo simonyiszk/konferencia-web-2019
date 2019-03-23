@@ -44,7 +44,7 @@ module.exports = {
         icon: 'src/assets/favicon.png',
         icons: defaultIcons.map(icon => ({
           ...icon,
-          purpose: 'maskable', // Make generated icons maskable
+          purpose: 'any maskable', // Make generated icons maskable
         })),
         legacy: true,
       },

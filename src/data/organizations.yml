@@ -1,27 +1,17 @@
+- id: Vodafone
+  website: https://www.vodafone.hu/vodafonerol/
+  sponsorshipLevel: 3
+  logo: ./logos/vodafone.svg
+
 - id: Accenture
   website: https://www.accenture.com/hu-en/careers/industryx-hungary
   sponsorshipLevel: 2
   logo: ./logos/accenture.svg
 
-- id: BME-VIK
-  website: https://www.vik.bme.hu/
-  sponsorshipLevel: 1
-  logo: ./logos/bme-vik.svg
-
 - id: Bosch
   website: https://www.bosch.hu/karrier/
   sponsorshipLevel: 2
   logo: ./logos/bosch.svg
-
-- id: HunPress
-  website: https://www.hunpress.com/
-  sponsorshipLevel: 1
-  logo: ./logos/hunpress.svg
-
-- id: innobie
-  website: http://www.innobie.hu/
-  sponsorshipLevel: 0
-  logo: null
 
 - id: Knorr-Bremse
   website: https://www.knorr-bremse.hu/hu/careers/standard_page_2.jsp
@@ -38,6 +28,16 @@
   sponsorshipLevel: 2
   logo: ./logos/otp-bank.svg
 
+- id: BME-VIK
+  website: https://www.vik.bme.hu/
+  sponsorshipLevel: 1
+  logo: ./logos/bme-vik.svg
+
+- id: HunPress
+  website: https://www.hunpress.com/
+  sponsorshipLevel: 1
+  logo: ./logos/hunpress.svg
+
 - id: Sicontact
   website: https://www.eset.com/hu/
   sponsorshipLevel: 1
@@ -48,12 +48,12 @@
   sponsorshipLevel: 1
   logo: ./logos/szomel.svg
 
+- id: innobie
+  website: http://www.innobie.hu/
+  sponsorshipLevel: 0
+  logo: null
+
 - id: UX studio
   website: https://uxstudioteam.com/
   sponsorshipLevel: 0
   logo: null
-
-- id: Vodafone
-  website: https://www.vodafone.hu/vodafonerol/
-  sponsorshipLevel: 3
-  logo: ./logos/vodafone.svg

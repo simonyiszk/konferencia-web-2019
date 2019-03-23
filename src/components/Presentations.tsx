@@ -53,10 +53,16 @@ export default function Presentations() {
         </Heading>
 
         <Paragraph textStyle="caps" color="blue">
-          {node.presenter.fullName} – {node.presenter.role},{' '}
-          <ExternalLink href={node.presenter.organization.website}>
-            {node.presenter.organization.id}
-          </ExternalLink>
+          {node.presenter.fullName} –{' '}
+          {node.presenter.role && `${node.presenter.role}`}
+          {node.presenter.organization && (
+            <>
+              {node.presenter.role && ', '}
+              <ExternalLink href={node.presenter.organization.website}>
+                {node.presenter.organization.id}
+              </ExternalLink>
+            </>
+          )}
         </Paragraph>
 
         <Paragraph mt={0}>{node.abstract}</Paragraph>

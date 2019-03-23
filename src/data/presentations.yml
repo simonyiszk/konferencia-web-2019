@@ -8,22 +8,22 @@
     organization: UX studio
     role: CEO and Founder
 
-- title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
+- title: Vezetőnek születni kell, vagy azzá válhatunk?
   startTime: null # TODO
-  venue: IB028
-  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel bírjanak. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
+  venue: null # TODO
+  abstract: Kortárs kutatások szerint csupán minden 10. vezető jó vezető, és 10-ből további 2 fejleszthető. A munkavállalók 70%-a a (rossz) vezetők miatt vált munkahelyet. Előadásomban bemutatom, mi kell ahhoz, hogy valaki sikeres vezetővé váljon. Miben más egy leader és egy manager? Vannak-e megkülönböztethető női és férfi vezetői képességek? Ezen kérdésekre számos modern vezetéselméleti kutatás keresi a választ, melyekbe szintén betekintést nyerhetünk az előadáson.
   presenter:
-    fullName: Pásztor Dávid
-    picture: ./pictures/pasztor-david.jpg
-    organization: UX studio
-    role: CEO and Founder
+    fullName: Czifra Julianna
+    picture: ./pictures/czifra-julianna.jpg
+    organization: null
+    role: PMP, Menedzsment tanácsadó, Business & Karrier Coach, Az év Projektmenedzsere 2013
 
-- title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
+- title: Eddie – XXI. századi technológia az általános iskolai oktatásban
   startTime: null # TODO
-  venue: IB028
-  abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel bírjanak. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
+  venue: null # TODO
+  abstract: A mai fiatal generáció számára a tanórák ingerszegények, mivel a felgyorsult technikai fejlődés következtében már másképp zajlik az információ befogadása és feldolgozása. Az Eddie alkalmazás a gyermekek naponta használt okoseszközeit is bekapcsolja az oktatásba, megfelelve korunk főképp vizuális hatásokra épülő igényeinek. Kiterjesztett valóság segítségével élvezhetőbbé, élményszerűvé válnak az órák, így a tanárok munkája is jóval eredményesebb lesz.
   presenter:
-    fullName: Pásztor Dávid
-    picture: ./pictures/pasztor-david.jpg
-    organization: UX studio
-    role: CEO and Founder
+    fullName: Muhi Kristóf
+    picture: ./pictures/muhi-kristof.jpg
+    organization: innobie
+    role: Alapító és csoportvezető

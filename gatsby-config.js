@@ -1,3 +1,5 @@
+const { defaultIcons } = require('gatsby-plugin-manifest/common');
+
 const title = 'XVI. Simonyi Konferencia';
 
 module.exports = {
@@ -40,6 +42,10 @@ module.exports = {
         background_color: '#fff',
         display: 'standalone',
         icon: 'src/assets/favicon.png',
+        icons: defaultIcons.map(icon => ({
+          ...icon,
+          purpose: 'maskable', // Make generated icons maskable
+        })),
         legacy: true,
       },
     },

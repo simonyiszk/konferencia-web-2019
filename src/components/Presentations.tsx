@@ -48,9 +48,9 @@ export default function Presentations() {
       </Box>
 
       <Measure flex="1 30em" pl={5}>
-        <Heading as={GradientBackgroundText} level={3}>
+        <GradientBackgroundText as={Heading} level={3} my={0}>
           {node.title}
-        </Heading>
+        </GradientBackgroundText>
 
         <Paragraph textStyle="caps" color="blue">
           {node.presenter.fullName} –{' '}

@@ -53,16 +53,19 @@ GradientBackgroundTextInner.defaultProps = {
   as: 'span',
 };
 
-type GradientBackgroundTextProps = GradientBackgroundTextInnerProps;
+type GradientBackgroundTextProps = Partial<GradientBackgroundTextInnerProps> & {
+  [key: string]: any;
+};
 
 const GradientBackgroundText = ({
+  as,
   offsetX,
   py,
   children,
   ...props
 }: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextOuter px={offsetX} py={py} {...props}>
-    <GradientBackgroundTextInner offsetX={offsetX} py={py}>
+  <GradientBackgroundTextOuter as={as} px={offsetX} py={py} {...props}>
+    <GradientBackgroundTextInner offsetX={offsetX!} py={py}>
       {children}
     </GradientBackgroundTextInner>
   </GradientBackgroundTextOuter>

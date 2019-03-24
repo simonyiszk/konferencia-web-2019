@@ -2,7 +2,7 @@
   sponsorshipLevel: 3
   website: https://www.vodafone.hu/vodafonerol/
   logo: ./logos/vodafone.svg
-  logoHeightMultiplier: 5.640
+  logoHeightMultiplier: 3.61
 
 - id: Accenture
   sponsorshipLevel: 2

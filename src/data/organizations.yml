@@ -38,34 +38,30 @@
   sponsorshipLevel: 1
   website: https://www.vik.bme.hu/
   logo: ./logos/bme-vik.svg
-  logoHeightMultiplier: 2.583
+  logoHeightMultiplier: 2.58
 
 - id: HunPress
   sponsorshipLevel: 1
   website: https://www.hunpress.com/
   logo: ./logos/hunpress.svg
-  logoHeightMultiplier: 1.257
+  logoHeightMultiplier: 1.92
 
 - id: Sicontact
   sponsorshipLevel: 1
   website: https://www.eset.com/hu/
   logo: ./logos/sicontact.svg
-  logoHeightMultiplier: 1.754
+  logoHeightMultiplier: 1.41
 
 - id: SZOMEL
   sponsorshipLevel: 1
   website: null
   logo: ./logos/szomel.svg
-  logoHeightMultiplier: 1.396
+  logoHeightMultiplier: 1.18
 
 - id: innobie
   sponsorshipLevel: 0
   website: http://www.innobie.hu/
-  logo: null
-  logoHeightMultiplier: 1
 
 - id: UX studio
   sponsorshipLevel: 0
   website: https://uxstudioteam.com/
-  logo: null
-  logoHeightMultiplier: 1

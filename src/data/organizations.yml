@@ -2,58 +2,70 @@
   sponsorshipLevel: 3
   website: https://www.vodafone.hu/vodafonerol/
   logo: ./logos/vodafone.svg
+  logoHeightMultiplier: 5.640
 
 - id: Accenture
   sponsorshipLevel: 2
   website: https://www.accenture.com/hu-en/careers/industryx-hungary
   logo: ./logos/accenture.svg
+  logoHeightMultiplier: 2.285
 
 - id: Bosch
   sponsorshipLevel: 2
   website: https://www.bosch.hu/karrier/
   logo: ./logos/bosch.svg
+  logoHeightMultiplier: 2.251
 
 - id: Knorr-Bremse
   sponsorshipLevel: 2
   website: https://www.knorr-bremse.hu/hu/careers/standard_page_2.jsp
   logo: ./logos/knorr-bremse.svg
+  logoHeightMultiplier: 1.999
 
 - id: Nokia Bell Labs
   sponsorshipLevel: 2
   website: https://www.facebook.com/nokiahungary/
   logo: ./logos/nokia-bell-labs.svg
+  logoHeightMultiplier: 1.041
 
 - id: OTP Bank
   sponsorshipLevel: 2
   website: https://karrier.otpbank.hu/
   logo: ./logos/otp-bank.svg
+  logoHeightMultiplier: 2.107
 
 - id: BME-VIK
   sponsorshipLevel: 1
   website: https://www.vik.bme.hu/
   logo: ./logos/bme-vik.svg
+  logoHeightMultiplier: 2.583
 
 - id: HunPress
   sponsorshipLevel: 1
   website: https://www.hunpress.com/
   logo: ./logos/hunpress.svg
+  logoHeightMultiplier: 1.257
 
 - id: Sicontact
   sponsorshipLevel: 1
   website: https://www.eset.com/hu/
   logo: ./logos/sicontact.svg
+  logoHeightMultiplier: 1.754
 
 - id: SZOMEL
   sponsorshipLevel: 1
   website: null
   logo: ./logos/szomel.svg
+  logoHeightMultiplier: 1.396
 
 - id: innobie
   sponsorshipLevel: 0
   website: http://www.innobie.hu/
   logo: null
+  logoHeightMultiplier: 1
 
 - id: UX studio
   sponsorshipLevel: 0
   website: https://uxstudioteam.com/
   logo: null
+  logoHeightMultiplier: 1

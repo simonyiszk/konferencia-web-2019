@@ -8,31 +8,31 @@
   sponsorshipLevel: 2
   website: https://www.accenture.com/hu-en/careers/industryx-hungary
   logo: ./logos/accenture.svg
-  logoHeightMultiplier: 2.285
+  logoHeightMultiplier: 2.38
 
 - id: Bosch
   sponsorshipLevel: 2
   website: https://www.bosch.hu/karrier/
   logo: ./logos/bosch.svg
-  logoHeightMultiplier: 2.251
+  logoHeightMultiplier: 2.14
 
 - id: Knorr-Bremse
   sponsorshipLevel: 2
   website: https://www.knorr-bremse.hu/hu/careers/standard_page_2.jsp
   logo: ./logos/knorr-bremse.svg
-  logoHeightMultiplier: 1.999
+  logoHeightMultiplier: 1.48
 
 - id: Nokia Bell Labs
   sponsorshipLevel: 2
   website: https://www.facebook.com/nokiahungary/
   logo: ./logos/nokia-bell-labs.svg
-  logoHeightMultiplier: 1.041
+  logoHeightMultiplier: 0.76
 
 - id: OTP Bank
   sponsorshipLevel: 2
   website: https://karrier.otpbank.hu/
   logo: ./logos/otp-bank.svg
-  logoHeightMultiplier: 2.107
+  logoHeightMultiplier: 1.40
 
 - id: BME-VIK
   sponsorshipLevel: 1

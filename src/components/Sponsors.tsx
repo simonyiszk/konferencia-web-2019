@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import GradientBackgroundText from './GradientBackgroundText';
 import Heading from './Heading';
 import Image from './Image';
 import Text from './Text';
@@ -53,19 +54,21 @@ export default function Sponsors() {
         const levelSponsors = sponsorsByLevel[levelID] as any;
 
         return (
-          <Text
-            key={levelID}
-            fontSize="2em" /* fontSize={`${2 ** levelID}em`} */
-          >
+          <Text key={levelID} textAlign="center">
             <Heading level={3}>{levelName}</Heading>
-            {levelSponsors.map((sponsor: any) => (
-              <Image
-                key={sponsor.id}
-                src={sponsor.logo.publicURL}
-                alt={sponsor.id}
-                height={`${sponsor.logoHeightMultiplier}em`}
-              />
-            ))}
+
+            <Text fontSize={i === 0 ? 3 : 2} ml={-5}>
+              {levelSponsors.map((sponsor: any) => (
+                <Image
+                  key={sponsor.id}
+                  src={sponsor.logo.publicURL}
+                  alt={sponsor.id}
+                  height={`${sponsor.logoHeightMultiplier}em`}
+                  ml={5}
+                  mb={4}
+                />
+              ))}
+            </Text>
           </Text>
         );
       })}

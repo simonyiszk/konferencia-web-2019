@@ -50,13 +50,13 @@
   sponsorshipLevel: 1
   website: https://www.facebook.com/SchonherzVallalatiKapcsolatok/
   logo: ./logos/svk.svg
-  logoHeightMultiplier: 1.68
+  logoHeightMultiplier: 2.02
 
 - id: Schönherz Kollégium
   sponsorshipLevel: 1
   website: https://sch.hu/
   logo: ./logos/schonherz.svg
-  logoHeightMultiplier: 1.63
+  logoHeightMultiplier: 1.98
 
 - id: HunPress
   sponsorshipLevel: 1

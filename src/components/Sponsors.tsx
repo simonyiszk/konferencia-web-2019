@@ -55,7 +55,7 @@ export default function Sponsors() {
 
         return (
           <Text key={levelID} textAlign="center" mb={4}>
-            <Heading level={3} textStyle="caps">
+            <Heading level={3} textStyle="caps" mb={4}>
               {levelName}
             </Heading>
 
@@ -66,7 +66,7 @@ export default function Sponsors() {
                     src={sponsor.logo.publicURL}
                     alt={sponsor.id}
                     height={`${sponsor.logoHeightMultiplier}em`}
-                    mb={3}
+                    mb={4}
                   />
                 </ExternalLink>
               ))}

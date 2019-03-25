@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title,
     description:
-      'Magyarország legnagyobb egyetemi hallgatók által szervezett éves technológiai konferenciája.',
+      'Magyarország legnagyobb egyetemi hallgatók által szervezett éves szakmai rendezvénye',
     language: 'hu',
     event: {
       date: '2019-04-16',

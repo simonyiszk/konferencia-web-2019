@@ -6,7 +6,7 @@ type FullHeightProps = {
 };
 
 const FullHeight = styled.div<FullHeightProps>`
-  min-height: 100vh;
+  height: 100vh;
 `;
 
 export default FullHeight;

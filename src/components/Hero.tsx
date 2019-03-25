@@ -3,6 +3,7 @@ import React from 'react';
 import { useWindowSize } from 'react-use';
 import styled from 'styled-components';
 import { useWindowMousePosition } from '../utils/hooks';
+import Container from './Container';
 import FullHeight from './FullHeight';
 import ParallaxLayer from './ParallaxLayer';
 import ParallaxWrapper from './ParallaxWrapper';
@@ -21,6 +22,7 @@ type HeroProps = {
 
 const HeroChildrenWrapper = styled.div`
   position: relative;
+  height: 100%;
   padding-top: 3em;
   color: white;
   text-align: center;
@@ -69,7 +71,7 @@ export default function Hero({ children }: HeroProps) {
   }
 
   return (
-    <ParallaxWrapper as={FullHeight}>
+    <ParallaxWrapper as={props => <Container as={FullHeight} {...props} />}>
       <ParallaxLayer src={BackgroundURL} />
       <ParallaxLayer
         src={StarsURL}

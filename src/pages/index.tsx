@@ -6,9 +6,9 @@ import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import LinkButton from '../components/LinkButton';
+import Note from '../components/Note';
 import Paragraph from '../components/Paragraph';
 import Presentations from '../components/Presentations';
-import Slogan from '../components/Slogan';
 import Sponsors from '../components/Sponsors';
 import Text from '../components/Text';
 import { ReactComponent as Logo } from '../assets/logo.svg';
@@ -60,14 +60,17 @@ export default function IndexPage() {
       </Hero>
 
       <Container>
-        <Slogan as={Paragraph} textAlign="center" p={3} mx="auto" my="2em">
+        <Note as={Paragraph} textAlign="center" mx="auto" my="2em">
           {data.site.siteMetadata.description}
-        </Slogan>
+        </Note>
 
         <Heading level={2} textAlign="center">
           Előadások
         </Heading>
         <Presentations />
+        <Note as={Paragraph} textAlign="center" mx="auto" mb={5}>
+          További előadások hamarosan…
+        </Note>
 
         <Heading level={2} textAlign="center">
           Kapcsolat

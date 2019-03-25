@@ -7,7 +7,8 @@ module.exports = {
     title,
     description:
       'Magyarország legnagyobb egyetemi hallgatók által szervezett éves technológiai konferenciája',
-    language: 'hu',
+    languageCode: 'hu',
+    countryCode: 'HU',
     event: {
       date: '2019-04-16',
       venue: 'BME I épület',

@@ -40,7 +40,8 @@ export default function Layout({ children }: LayoutProps) {
         siteMetadata {
           title
           description
-          language
+          languageCode
+          countryCode
         }
       }
     }
@@ -55,7 +56,7 @@ export default function Layout({ children }: LayoutProps) {
           titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           defaultTitle={data.site.siteMetadata.title}
         >
-          <html lang={data.site.siteMetadata.language} />
+          <html lang={data.site.siteMetadata.languageCode} />
           <meta
             name="description"
             content={data.site.siteMetadata.description}
@@ -68,6 +69,13 @@ export default function Layout({ children }: LayoutProps) {
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,600"
             rel="stylesheet"
+          />
+
+          <meta
+            property="og:locale"
+            content={`${data.site.siteMetadata.languageCode}_${
+              data.site.siteMetadata.countryCode
+            }`}
           />
         </Helmet>
 

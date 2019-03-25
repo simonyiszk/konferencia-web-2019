@@ -57,13 +57,13 @@ export default function IndexPage() {
             Regisztráció
           </LinkButton>
         </Text>
-
-        <Slogan as={Paragraph} p={3} mx="auto" mb={5}>
-          {data.site.siteMetadata.description}
-        </Slogan>
       </Hero>
 
       <Container>
+        <Slogan as={Paragraph} textAlign="center" p={3} mx="auto" my={4}>
+          {data.site.siteMetadata.description}
+        </Slogan>
+
         <Heading level={2} textAlign="center">
           Előadások
         </Heading>

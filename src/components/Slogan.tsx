@@ -1,18 +1,13 @@
 import styled from 'styled-components';
-import Measure from '../components/Measure';
+import Measure from './Measure';
 
 const Slogan = styled(Measure)`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  background: linear-gradient(45deg, #fffceb, #fbf1a9 200%);
   border-radius: 1em;
 `;
 
 Slogan.defaultProps = {
   textStyle: 'caps',
-  color: 'navy',
-  bg: '#eeea',
 };
 
 export default Slogan;

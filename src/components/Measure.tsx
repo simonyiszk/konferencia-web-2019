@@ -1,7 +1,7 @@
-import { Box } from '@rebass/grid';
 import styled from 'styled-components';
+import Text from './Text';
 
-const Measure = styled(Box)`
+const Measure = styled(Text)`
   max-width: 34em;
 `;
 

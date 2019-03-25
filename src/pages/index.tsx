@@ -6,7 +6,9 @@ import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import LinkButton from '../components/LinkButton';
+import Paragraph from '../components/Paragraph';
 import Presentations from '../components/Presentations';
+import Slogan from '../components/Slogan';
 import Sponsors from '../components/Sponsors';
 import Text from '../components/Text';
 import { ReactComponent as Logo } from '../assets/logo.svg';
@@ -20,6 +22,7 @@ export default function IndexPage() {
     {
       site {
         siteMetadata {
+          description
           event {
             dateRaw: date
             dateFormatted: date(formatString: "MMMM Do", locale: "hu")
@@ -54,6 +57,10 @@ export default function IndexPage() {
             Regisztráció
           </LinkButton>
         </Text>
+
+        <Slogan as={Paragraph} p={3} mx="auto" mb={5}>
+          {data.site.siteMetadata.description}
+        </Slogan>
       </Hero>
 
       <Container>

@@ -4,6 +4,12 @@
   logo: ./logos/vodafone.svg
   logoHeightMultiplier: 3.61
 
+- id: BME Villamosmérnöki és Informatikai Kar
+  sponsorshipLevel: 2
+  website: https://www.vik.bme.hu/
+  logo: ./logos/bme-vik.svg
+  logoHeightMultiplier: 2.58
+
 - id: Accenture
   sponsorshipLevel: 2
   website: https://www.accenture.com/hu-en/careers/industryx-hungary
@@ -33,12 +39,6 @@
   website: https://karrier.otpbank.hu/
   logo: ./logos/otp-bank.svg
   logoHeightMultiplier: 1.40
-
-- id: BME-VIK
-  sponsorshipLevel: 1
-  website: https://www.vik.bme.hu/
-  logo: ./logos/bme-vik.svg
-  logoHeightMultiplier: 2.58
 
 - id: HunPress
   sponsorshipLevel: 1

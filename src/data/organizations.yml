@@ -40,6 +40,24 @@
   logo: ./logos/otp-bank.svg
   logoHeightMultiplier: 1.40
 
+- id: Simonyi Károly Szakkollégium
+  sponsorshipLevel: 1
+  website: https://www.simonyi.bme.hu/
+  logo: ./logos/simonyi.svg
+  logoHeightMultiplier: 1.59
+
+- id: Schönherz Vállalati Kapcsolatok
+  sponsorshipLevel: 1
+  website: https://www.facebook.com/SchonherzVallalatiKapcsolatok/
+  logo: ./logos/svk.svg
+  logoHeightMultiplier: 1.68
+
+- id: Schönherz Kollégium
+  sponsorshipLevel: 1
+  website: https://sch.hu/
+  logo: ./logos/schonherz.svg
+  logoHeightMultiplier: 1.63
+
 - id: HunPress
   sponsorshipLevel: 1
   website: https://www.hunpress.com/

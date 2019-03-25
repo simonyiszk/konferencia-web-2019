@@ -54,8 +54,10 @@ export default function Sponsors() {
         const levelSponsors = sponsorsByLevel[levelID] as any;
 
         return (
-          <Text key={levelID} textAlign="center">
-            <Heading level={3}>{levelName}</Heading>
+          <Text key={levelID} textAlign="center" mb={4}>
+            <Heading level={3} textStyle="caps">
+              {levelName}
+            </Heading>
 
             <Text fontSize={i === 0 ? 3 : 2} ml={-5}>
               {levelSponsors.map((sponsor: any) => (
@@ -64,7 +66,7 @@ export default function Sponsors() {
                     src={sponsor.logo.publicURL}
                     alt={sponsor.id}
                     height={`${sponsor.logoHeightMultiplier}em`}
-                    mb={4}
+                    mb={3}
                   />
                 </ExternalLink>
               ))}

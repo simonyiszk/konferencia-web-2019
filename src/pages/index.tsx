@@ -60,7 +60,7 @@ export default function IndexPage() {
       </Hero>
 
       <Container>
-        <Slogan as={Paragraph} textAlign="center" p={3} mx="auto" my={4}>
+        <Slogan as={Paragraph} textAlign="center" p={3} mx="auto" my="2em">
           {data.site.siteMetadata.description}
         </Slogan>
 

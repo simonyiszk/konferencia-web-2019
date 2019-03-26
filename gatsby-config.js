@@ -42,7 +42,7 @@ module.exports = {
         start_url: '/',
         background_color: '#fff',
         display: 'standalone',
-        icon: 'src/assets/favicon.png',
+        icon: 'src/assets/icon.png',
         icons: defaultIcons.map(icon => ({
           ...icon,
           purpose: 'any maskable', // Make generated icons maskable

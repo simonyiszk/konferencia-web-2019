@@ -9,6 +9,7 @@ module.exports = {
       'Magyarország legnagyobb egyetemi hallgatók által szervezett éves technológiai konferenciája',
     languageCode: 'hu',
     countryCode: 'HU',
+    canonicalURL: 'https://konferencia.simonyi.bme.hu/',
     event: {
       date: '2019-04-16',
       venue: 'BME I épület',
@@ -25,6 +26,13 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: `${__dirname}/src/assets/`,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

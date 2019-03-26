@@ -4,8 +4,6 @@ import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import defaultTheme from '../utils/theme';
 
-import CoverImageSrc from '../assets/cover.png';
-
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -44,7 +42,12 @@ export default function Layout({ children }: LayoutProps) {
           description
           languageCode
           countryCode
+          canonicalURL
         }
+      }
+
+      coverImage: file(name: { eq: "cover" }) {
+        publicURL
       }
     }
   `);
@@ -73,7 +76,12 @@ export default function Layout({ children }: LayoutProps) {
             rel="stylesheet"
           />
 
-          <meta property="og:image" content={CoverImageSrc} />
+          <meta
+            property="og:image"
+            content={`${
+              data.site.siteMetadata.canonicalURL
+            }${data.coverImage.publicURL.substring(1)}`}
+          />
           <meta
             property="og:locale"
             content={`${data.site.siteMetadata.languageCode}_${

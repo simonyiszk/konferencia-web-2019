@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import defaultTheme from '../utils/theme';
 
+import CoverImageSrc from '../assets/cover.png';
+
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -71,6 +73,7 @@ export default function Layout({ children }: LayoutProps) {
             rel="stylesheet"
           />
 
+          <meta property="og:image" content={CoverImageSrc} />
           <meta
             property="og:locale"
             content={`${data.site.siteMetadata.languageCode}_${

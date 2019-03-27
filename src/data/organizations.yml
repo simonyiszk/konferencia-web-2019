@@ -76,6 +76,10 @@
   logo: ./logos/szomel.svg
   logoHeightMultiplier: 1.18
 
+- id: Google
+  sponsorshipLevel: 0
+  website: https://www.google.com/
+
 - id: innobie
   sponsorshipLevel: 0
   website: http://www.innobie.hu/

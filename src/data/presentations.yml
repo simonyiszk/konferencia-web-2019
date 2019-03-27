@@ -1,3 +1,13 @@
+- title: Egy évtized egy szoftverfejlesztő eszköz életében
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: Hogyan jött létre a Bazel nevű szoftverfejlesztő eszköz? Miért volt rá szükség és hogyan fejlődött több, mint egy évtized folyamán? Előadásom során példákon keresztül fogok szemléltetni jónak tűnő döntéseket és azok későbbi megbánásának okait. Ismertetni fogom, mennyiben más a nyílt forráskódú és a zárt ajtók mögötti szoftverfejlesztés, valamint hogy hogyan lehet egy kódbázist hosszú időn át karbantartani.
+  presenter:
+    fullName: Berki Lukács
+    picture: ./pictures/berki-lukacs.jpg
+    organization: Google
+    role: Szoftverfejlesztő-menedzser
+
 - title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
   startTime: null # TODO
   venue: IB028

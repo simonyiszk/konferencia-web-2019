@@ -5,11 +5,25 @@ import Text, { TextProps } from './Text';
 // Sources:
 // - https://css-tricks.com/multi-line-inline-gradient/
 // - https://css-tricks.com/multi-line-padded-text/#article-header-id-1
+// - http://krasimirtsonev.com/blog/article/css-the-background-color-and-overlapping-rows-inline-element/
 
-const GradientBackgroundTextOuter = styled(Text)`
+const GradientBackgroundTextWrapper = styled(Text)`
+  /* Required for masking which is based on absolute positioning */
   position: relative;
+
   overflow: hidden;
   background: white;
+`;
+
+type GradientBackgroundTextMaskProps = Pick<TextProps, 'px'>;
+
+const GradientBackgroundTextMask = styled.span<GradientBackgroundTextMaskProps>`
+  padding-top: inherit;
+  padding-bottom: inherit;
+  background: black;
+
+  box-decoration-break: clone;
+  box-shadow: ${({ px }) => `${px} 0 black, -${px} 0 black`};
 
   @supports (mix-blend-mode: lighten) {
     ::after {
@@ -26,53 +40,29 @@ const GradientBackgroundTextOuter = styled(Text)`
   }
 `;
 
-type GradientBackgroundTextInnerProps = TextProps & {
-  offsetX: number | string;
-};
+const GradientBackgroundTextContent = styled.span`
+  /* Avoid background overlapping between lines */
+  position: relative;
 
-const GradientBackgroundTextInner = styled(Text)<
-  GradientBackgroundTextInnerProps
->`
-  background: black;
-  box-shadow: ${({ offsetX }) => `${offsetX} 0 black, -${offsetX} 0 black`};
-
-  /* Fix overlap between backgrounds and texts */
-  ::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: inherit;
-    margin: ${({ offsetX }) => `0 ${offsetX}`};
-    color: white;
-    content: '${({ children }) => `${children}`}';
-    pointer-events: none;
-  }
+  color: white;
 `;
 
-GradientBackgroundTextInner.defaultProps = {
-  as: 'span',
-};
-
-type GradientBackgroundTextProps = Partial<GradientBackgroundTextInnerProps> & {
-  [key: string]: any;
-};
+type GradientBackgroundTextProps = TextProps;
 
 const GradientBackgroundText = ({
-  as,
-  offsetX,
-  py,
+  px,
   children,
   ...props
 }: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextOuter as={as} px={offsetX} py={py} {...props}>
-    <GradientBackgroundTextInner offsetX={offsetX!} py={py}>
-      {children}
-    </GradientBackgroundTextInner>
-  </GradientBackgroundTextOuter>
+  <GradientBackgroundTextWrapper px={px} {...props}>
+    <GradientBackgroundTextMask px={px}>
+      <GradientBackgroundTextContent>{children} </GradientBackgroundTextContent>
+    </GradientBackgroundTextMask>
+  </GradientBackgroundTextWrapper>
 );
 
 GradientBackgroundText.defaultProps = {
-  offsetX: '0.5em',
+  px: '0.5em',
   py: '0.25em',
 };
 

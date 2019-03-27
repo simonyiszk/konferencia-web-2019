@@ -30,6 +30,7 @@ export default function Presentations() {
                 id
                 website
               }
+              region
               role
             }
           }
@@ -59,7 +60,7 @@ export default function Presentations() {
             <>
               {node.presenter.role && ', '}
               <ExternalLink href={node.presenter.organization.website}>
-                {node.presenter.organization.id}
+                {node.presenter.organization.id} {node.presenter.region}
               </ExternalLink>
             </>
           )}

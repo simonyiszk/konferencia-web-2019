@@ -18,6 +18,16 @@
     organization: UX studio
     role: CEO and Founder
 
+- title: A Simonyitól a brit királyi palotáig
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: Két éve, amikor a konferencia szervezésében tevékenykedtünk, mi is csak álmodtunk róla, hogy egyszer majd felkérnek előadónak, és abba bele sem mertünk gondolni, hogy egyszer a brit királyi család előtt egy palotában prezentálhatjuk vállalkozásunkat. Több lehetőség van körülötted, mint azt elsőre gondolnád, csak élni kell velük. Tudd meg, hogy milyen módon érheted el te is a céljaidat!
+  presenter:
+    fullName: Papp Máté és Kovács-Egri Kristóf
+    picture: ./pictures/cogito.jpg
+    organization: Cogito
+    role: null # TODO
+
 - title: Leadership 4.0 – Vezetőnek születni kell, vagy azzá válhatunk?
   startTime: null # TODO
   venue: null # TODO

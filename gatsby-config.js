@@ -58,7 +58,6 @@ module.exports = {
         legacy: true,
       },
     },
-    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',

@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
     font-family: ${({ theme }: any) => theme.fonts.body};
     font-size: calc(1em + (100vw - 37.5em) / 165);
+    font-variant-numeric: lining-nums;
   }
 
   body {

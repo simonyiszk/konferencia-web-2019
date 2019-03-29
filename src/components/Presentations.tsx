@@ -60,7 +60,9 @@ export default function Presentations() {
             <>
               {node.presenter.role && ', '}
               <ExternalLink href={node.presenter.organization.website}>
-                {`${node.presenter.organization.id} ${node.presenter.region}`}
+                {`${node.presenter.organization.id} ${
+                  node.presenter.region != null ? node.presenter.region : ''
+                }`}
               </ExternalLink>
             </>
           )}

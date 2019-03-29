@@ -80,6 +80,10 @@
   sponsorshipLevel: 0
   website: https://cogito.study/
 
+- id: Dmlab
+  sponsorshipLevel: 0
+  website: http://www.dmlab.hu/
+
 - id: Google
   sponsorshipLevel: 0
   website: https://www.google.com/
@@ -87,6 +91,10 @@
 - id: innobie
   sponsorshipLevel: 0
   website: http://www.innobie.hu/
+
+- id: Starschema
+  sponsorshipLevel: 0
+  website: https://starschema.com/
 
 - id: UX studio
   sponsorshipLevel: 0

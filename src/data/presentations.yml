@@ -49,6 +49,16 @@
     organization: null
     role: PMP, Menedzsment tanácsadó, Business & Karrier Coach, Az év Projektmenedzsere 2013
 
+- title: Mennyire para a budapesti tömegközlekedés?
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: Térképek, szimulációk és adatalapú érvelés, avagy ha szidnánk valamit, tegyük ezt megalapozottan és lehet, hogy rájövünk, hogy igazából minden rendben van. Előadásomban azt mutatom be, hogy miként jutottunk el egy egyszerű menetrendtől az interaktív vizualizációig és mit tudtunk meg a folyamat során.
+  presenter:
+    fullName: Korompai István
+    picture: ./pictures/korompai-istvan.jpg
+    organization: Starschema
+    role: Adatvizualizációs szakértő
+
 - title: Eddie – XXI. századi technológia az általános iskolai oktatásban
   startTime: null # TODO
   venue: null # TODO
@@ -58,3 +68,23 @@
     picture: ./pictures/muhi-kristof.jpg
     organization: innobie
     role: Alapító és csoportvezető
+
+- title: Instant AI megoldások, avagy hogyan építkezzünk kész mesterséges intelligencia elemekből
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: Egyre több szolgáltatás, API, eszköz ígéri, hogy komplex felismerési vagy előrejelzési feladatokat néhány kattintással megold nekünk. Mennyire hatékonyak ezek a megoldások? Előadásomban bemutatom a legfontosabb nyitott AI eszközöket, tippeket adok, hogyan érdemes ezeket felhasználni, valamint rávilágítok a bennük rejlő lehetőségekre és korlátokra.
+  presenter:
+    fullName: Gáspár Csaba
+    picture: ./pictures/gaspar-csaba.jpg
+    organization: Dmlab
+    role: Ügyvezető és vezető partner
+
+- title: Hálózatba kapcsolt járművek kommunikációja és analitikája
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: A modern járművek számos fizikai szenzort tartalmaznak komoly mennyiségű számítási kapacitás mellett, megalapozva a vezetéstámogató szolgáltatások fejlesztését. A járművek hálózatba kapcsolása további, saját szenzorokkal nem elérhető adatokkal gazdagítja az egyes járművek digitális perspektíváját. A hálózatban felhalmozódó adatok feldolgozása a gépi tanulás eszközeivel további értékes analízisre ad lehetőséget.
+  presenter:
+    fullName: Szilágyi Péter
+    picture: ./pictures/szilagyi-peter.jpg
+    organization: Nokia Bell Labs
+    role: Senior kutatómérnök

@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "cross-env GATSBY_JPEG_ENCODER=MOZJPEG gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,js,json,css,md,yml}\"",
     "lint": "npm run lint:es && npm run lint:style",
@@ -41,6 +41,7 @@
     "@types/rebass__grid": "^6.0.2",
     "@types/styled-components": "^4.1.12",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",

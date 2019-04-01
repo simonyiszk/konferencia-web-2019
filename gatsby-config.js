@@ -60,7 +60,12 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-serviceworker',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 92,
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-svgr',
     'gatsby-plugin-typescript',

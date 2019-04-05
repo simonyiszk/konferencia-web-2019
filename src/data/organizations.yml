@@ -92,6 +92,10 @@
   sponsorshipLevel: 0
   website: http://www.innobie.hu/
 
+- id: MOL
+  sponsorshipLevel: 0
+  website: https://mol.hu/
+
 - id: NVIDIA
   sponsorshipLevel: 0
   website: https://www.nvidia.com/

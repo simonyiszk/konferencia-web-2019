@@ -69,6 +69,16 @@
     organization: Starschema
     role: Adatvizualizációs szakértő
 
+- title: Kiberbiztonság az ipari világban
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: Eme előadás betekintést nyújt a kiberbiztonsági kihívásokba, melyet az egyre inkább integrált világ (IoT, cloud, AI, VR és a többi) jelent egy olyan cégcsoportra nézve, melynek fő bevételi forrása az olaj, ám 2030-ban az adat fogja átvenni az uralmat. Bemutatom, miképp védjük a mát, hogy legyen holnapunk.
+  presenter:
+    fullName: Sinka Balázs
+    picture: ./pictures/sinka-balazs.jpg
+    organization: MOL
+    role: Head of Industrial Cyber Security, Risk & Compliance
+
 - title: Eddie – XXI. századi technológia az általános iskolai oktatásban
   startTime: null # TODO
   venue: null # TODO

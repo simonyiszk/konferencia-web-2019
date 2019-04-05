@@ -1,3 +1,13 @@
+- title: Extreme Scaling of AI – Supercharging Machine Learning and Deep Learning
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: In this presentation we will demonstrate the extreme scaling capabilities within a single DGX-2 node with 2 Petaflop/s (mixed-precision Tensor Core operations). Following that we highlight the DL and ML ecosystem supporting DGX. We conclude with architectural blueprints for massive multi-node scaling to further expand overall performance.
+  presenter:
+    fullName: Ralph Hinsche
+    picture: ./pictures/ralph-hinsche.jpg
+    organization: NVIDIA
+    role: Business Development Manager, Higher Education & Research
+
 - title: NB-IoT és okos parkolás a gyakorlatban
   startTime: null # TODO
   venue: null # TODO

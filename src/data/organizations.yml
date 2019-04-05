@@ -92,6 +92,10 @@
   sponsorshipLevel: 0
   website: http://www.innobie.hu/
 
+- id: NVIDIA
+  sponsorshipLevel: 0
+  website: https://www.nvidia.com/
+
 - id: Starschema
   sponsorshipLevel: 0
   website: https://starschema.com/

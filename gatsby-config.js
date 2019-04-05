@@ -1,5 +1,3 @@
-const { defaultIcons } = require('gatsby-plugin-manifest/common');
-
 const title = 'XVI. Simonyi Konferencia';
 
 module.exports = {
@@ -51,11 +49,9 @@ module.exports = {
         background_color: '#fff',
         display: 'standalone',
         icon: 'src/assets/icon.png',
-        icons: defaultIcons.map(icon => ({
-          ...icon,
-          purpose: 'any maskable', // Make generated icons maskable
-        })),
-        legacy: true,
+        icon_options: {
+          purpose: 'any maskable',
+        },
       },
     },
     'gatsby-plugin-react-helmet',

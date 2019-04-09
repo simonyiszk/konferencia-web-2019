@@ -109,6 +109,16 @@
     organization: Nokia Bell Labs
     role: Senior kutatómérnök
 
+- title: Épületbiztonság vs. IT
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: Napjainkban az IT világában tapasztalt támadási típusok között újabb fenyegetés jelent meg, amely már az épületek fizikai működését is veszélybe sodorhatja. Előadásomból megtudhatják, milyen veszélyekkel kell felvennie a harcot annak, aki IT-val támogatott épületüzemeltetésre adja a fejét.
+  presenter:
+    fullName: Szincsák Tamás
+    picture: ./pictures/szincsak-tamas.jpg
+    organization: Sicontact
+    role: IT tanácsadó
+
 #- title: Big Data az OTP Banknál
 #  startTime: null # TODO
 #  venue: null # TODO

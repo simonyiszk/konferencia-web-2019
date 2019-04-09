@@ -9,3 +9,5 @@
 
 declare module '*.png';
 declare module '*.svg';
+
+declare module '@rebass/space';

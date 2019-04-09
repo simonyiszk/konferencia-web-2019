@@ -3,6 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import defaultTheme from '../utils/theme';
+import Footer from './Footer';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -91,11 +92,9 @@ export default function Layout({ children }: LayoutProps) {
           />
         </Helmet>
 
-        <header>{/* TODO */}</header>
-
         <main>{children}</main>
 
-        <footer>{/* TODO */}</footer>
+        <Footer />
       </div>
     </ThemeProvider>
   );

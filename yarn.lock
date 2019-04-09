@@ -866,6 +866,13 @@
   dependencies:
     styled-system "^4.0.6"
 
+"@rebass/space@^2.0.0-0":
+  version "2.0.0-0"
+  resolved "https://registry.yarnpkg.com/@rebass/space/-/space-2.0.0-0.tgz#e7b66f30e4e268e2bb05d836c6226a3038c9e56e"
+  integrity sha512-vs29YfyKaVA44WWC2UP/29WgWE8nw6DOrHtcndoThDqG1YOPlIypAED7Rcl85JIaOY0Yyg8itcPfx8GBvnvNzw==
+  dependencies:
+    styled-system ">=1.0.0 || >=2.0.0"
+
 "@rehooks/device-orientation@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@rehooks/device-orientation/-/device-orientation-1.0.0.tgz#6265657a02cbdc7bbe2c349fd1ad4702d5f38038"
@@ -11032,7 +11039,15 @@ styled-components@^4.2.0:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
-styled-system@^4.0.6, styled-system@^4.1.0:
+styled-icons@^7.9.0:
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-7.9.0.tgz#7c442efbce96ccf73f67732f3c2c3d6b82181b0e"
+  integrity sha512-r4gHDrnaTPl2E/n7HnghUx8WqBAUGPgIOgKC2q3RSg4QaBL/rAwcKI+V+BIIEpo5GgzPIxVgsRk4giCA5k6tgw==
+  dependencies:
+    "@emotion/is-prop-valid" "^0.7.3"
+    tslib "^1.9.3"
+
+"styled-system@>=1.0.0 || >=2.0.0", styled-system@^4.0.6, styled-system@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-4.1.0.tgz#e5a58be23b89cf8fb7b181c8e425ab107b166693"
   integrity sha512-ioIAJ029tRr6eJhiUrE3VZeahN+GBuJHv/jmckkfikY4ej8BaxvIKAaavmjFoqzNsIzr+x5HCpry1ybQYpchtQ==

@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Contacts from '../components/Contacts';
 import Container from '../components/Container';
+import Giveaway from '../components/Giveaway';
 import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -60,17 +61,18 @@ export default function IndexPage() {
       </Hero>
 
       <Container>
-        <Note as={Paragraph} textAlign="center" mx="auto" my="2em">
-          {data.site.siteMetadata.description}
-        </Note>
+        <Note my="2em">{data.site.siteMetadata.description}</Note>
 
         <Heading level={2} textAlign="center">
           Előadások
         </Heading>
         <Presentations />
-        <Note as={Paragraph} textAlign="center" mx="auto" mb={5}>
-          További előadások hamarosan…
-        </Note>
+        <Note mb={5}>További előadások hamarosan…</Note>
+
+        <Heading level={2} textAlign="center">
+          Nyereményjáték
+        </Heading>
+        <Giveaway />
 
         <Heading level={2} textAlign="center">
           Kapcsolat

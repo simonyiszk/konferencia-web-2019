@@ -34,7 +34,14 @@ export default function Contacts() {
   return (
     <Flex justifyContent="space-evenly" flexWrap="wrap">
       {data.allContactsYaml.edges.map(({ node }: any) => (
-        <Text key={node.id} textAlign="center" px={4} mb={3}>
+        <Text
+          as="address"
+          key={node.id}
+          textAlign="center"
+          fontStyle="normal"
+          px={4}
+          mb={3}
+        >
           <Img
             fixed={node.picture.childImageSharp.fixed}
             style={{

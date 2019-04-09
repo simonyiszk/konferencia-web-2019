@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {
   fontFamily,
   FontFamilyProps,
+  fontStyle,
+  FontStyleProps,
   fontWeight,
   FontWeightProps,
   lineHeight,
@@ -15,6 +17,7 @@ import {
 
 export type TextProps = BoxProps &
   FontFamilyProps &
+  FontStyleProps &
   FontWeightProps &
   LineHeightProps &
   TextAlignProps &
@@ -24,6 +27,7 @@ export type TextProps = BoxProps &
 
 const Text = styled(Box)<TextProps>`
   ${fontFamily}
+  ${fontStyle}
   ${fontWeight}
   ${lineHeight}
   ${textAlign}

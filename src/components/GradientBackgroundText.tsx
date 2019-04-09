@@ -51,21 +51,23 @@ type GradientBackgroundTextProps = TextProps & {
   [key: string]: any; // TODO: Remove this line
 };
 
-const GradientBackgroundText = ({
+export default function GradientBackgroundText({
   px,
   children,
   ...props
-}: GradientBackgroundTextProps) => (
-  <GradientBackgroundTextWrapper px={px} {...props}>
-    <GradientBackgroundTextMask px={px}>
-      <GradientBackgroundTextContent>{children} </GradientBackgroundTextContent>
-    </GradientBackgroundTextMask>
-  </GradientBackgroundTextWrapper>
-);
+}: GradientBackgroundTextProps) {
+  return (
+    <GradientBackgroundTextWrapper px={px} {...props}>
+      <GradientBackgroundTextMask px={px}>
+        <GradientBackgroundTextContent>
+          {children}
+        </GradientBackgroundTextContent>
+      </GradientBackgroundTextMask>
+    </GradientBackgroundTextWrapper>
+  );
+}
 
 GradientBackgroundText.defaultProps = {
   px: '0.5em',
   py: '0.25em',
 };
-
-export default GradientBackgroundText;

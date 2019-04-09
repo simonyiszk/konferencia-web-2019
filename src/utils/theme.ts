@@ -15,10 +15,10 @@ const theme: DefaultTheme = {
   colors: {
     blue: '#357edd',
     darkPink: '#d5008f',
-    darkGray: '#333333',
+    darkGray: '#333',
     moonGray: '#ceced2',
     navy: '#001b44',
-    nearBlack: '#111111',
+    nearBlack: '#111',
   },
   fonts,
   fontSizes,

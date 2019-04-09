@@ -16,7 +16,7 @@ export default function Giveaway() {
         <DisplayGiveawayPromo />
       </Measure>
 
-      <Note>
+      <Note mb="3em">
         Egyes előadásokon további értékes nyereményekkel gazdagodhatsz!
       </Note>
     </>

@@ -18,8 +18,8 @@ module.exports = {
     },
     contactEmail: 'konferencia@simonyi.bme.hu',
     social: {
-      facebookURL: 'https://www.facebook.com/simonyiszk/',
-      instagramURL: 'https://www.instagram.com/simonyikonferencia/',
+      facebookURL: 'https://www.facebook.com/events/248329199450849/',
+      instagramURL: 'https://www.instagram.com/simonyikonf/',
       youTubeURL: 'https://www.youtube.com/user/SimonyiSzakkoli/',
     },
   },

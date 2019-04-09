@@ -129,15 +129,15 @@
     organization: Bosch
     role: Software Engineer
 
-#- title: Big Data az OTP Banknál
-#  startTime: null # TODO
-#  venue: null # TODO
-#  abstract: További részletek hamarosan… # TODO
-#  presenter:
-#    fullName: Schin Lotár Csaba
-#    picture: ./pictures/schin-lotar-csaba.jpg
-#    organization: OTP Bank
-#    role: IT fejlesztési senior manager
+- title: Big Data az OTP Banknál
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: További részletek hamarosan… # TODO
+  presenter:
+    fullName: Schin Lotár Csaba
+    picture: ./pictures/schin-lotar-csaba.jpg
+    organization: OTP Bank
+    role: IT fejlesztési senior manager
 
 - title: Modern térhangzás
   startTime: null # TODO

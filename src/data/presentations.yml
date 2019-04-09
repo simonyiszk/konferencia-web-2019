@@ -119,6 +119,16 @@
     organization: Sicontact
     role: IT tanácsadó
 
+- title: Első lépések az önvezető funkciók világában
+  startTime: null # TODO
+  venue: null # TODO
+  abstract: A médiában sokszor találkozunk az önvezető autókkal, nagy a verseny az automotive iparban. Az asszisztens funkciók már elérhetőek a piacon a felhasználók számára, a jövő technológiáit pedig folyamatosan reklámozzák a cégek. A teljesen önvezető autók elérkezéséig még sok próbálkozás és funkció kerülhet majd az emberekhez, előadásomban elsősorban ezeknek a közeljövőben elérhető újításoknak a kihívásairól, használhatóságáról lesz szó.
+  presenter:
+    fullName: Csordás András
+    picture: ./pictures/csordas-andras.jpg
+    organization: Bosch
+    role: Software Engineer
+
 #- title: Big Data az OTP Banknál
 #  startTime: null # TODO
 #  venue: null # TODO

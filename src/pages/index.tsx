@@ -67,7 +67,6 @@ export default function IndexPage() {
           Előadások
         </Heading>
         <Presentations />
-        <Note mb={5}>További előadások hamarosan…</Note>
 
         <Heading level={2} textAlign="center">
           Nyereményjáték

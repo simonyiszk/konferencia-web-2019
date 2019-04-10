@@ -11,11 +11,16 @@ import Paragraph from './Paragraph';
 export default function Presentations() {
   const data = useStaticQuery(graphql`
     {
-      allPresentationsYaml {
+      allPresentationsYaml(
+        sort: { fields: [startTime, venue], order: [ASC, DESC] }
+      ) {
         edges {
           node {
             id
             title
+            startTimeRaw: startTime
+            startTimeFormatted: startTime(formatString: "LT", locale: "hu")
+            venue
             abstract
             presenter {
               fullName
@@ -41,11 +46,22 @@ export default function Presentations() {
 
   return data.allPresentationsYaml.edges.map(({ node }: any) => (
     <Flex key={node.id} flexWrap="wrap" justifyContent="center" mb={4} ml={-5}>
-      <Box mb={3} pl={5}>
+      <Box pl={5}>
         <Img
           fixed={node.presenter.picture.childImageSharp.fixed}
           imgStyle={{ borderRadius: '50%' }}
         />
+
+        <Paragraph
+          textStyle="space"
+          fontWeight="bold"
+          textAlign="center"
+          color="darkGray"
+          mt={2}
+        >
+          <time dateTime={node.startTimeRaw}>{node.startTimeFormatted}</time> @{' '}
+          {node.venue}
+        </Paragraph>
       </Box>
 
       <Measure flex="1 30em" pl={5}>

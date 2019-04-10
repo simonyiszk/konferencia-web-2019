@@ -11,6 +11,8 @@ const fontWeights = {
   bold: 600,
 };
 
+const letterSpacings = [0, '0.1em'];
+
 const theme: DefaultTheme = {
   colors: {
     blue: '#357edd',
@@ -27,9 +29,12 @@ const theme: DefaultTheme = {
     decelerate: 'cubic-bezier(0, 0, 0.2, 1)',
   },
   textStyles: {
+    space: {
+      letterSpacing: letterSpacings[1],
+    },
     caps: {
       textTransform: 'uppercase',
-      letterSpacing: '0.1em',
+      letterSpacing: letterSpacings[1],
       fontSize: fontSizes[0],
       fontWeight: fontWeights.bold,
     },

@@ -6,6 +6,7 @@ import Giveaway from '../components/Giveaway';
 import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import Link from '../components/Link';
 import LinkButton from '../components/LinkButton';
 import Note from '../components/Note';
 import Paragraph from '../components/Paragraph';
@@ -13,6 +14,7 @@ import Presentations from '../components/Presentations';
 import Sponsors from '../components/Sponsors';
 import Text from '../components/Text';
 import { ReactComponent as Logo } from '../assets/logo.svg';
+import ScheduleURL from '../data/schedule.pdf';
 
 function toSentenceCase(string: string) {
   return `${string[0].toUpperCase()}${string.substring(1)}`;
@@ -66,6 +68,10 @@ export default function IndexPage() {
         <Heading level={2} textAlign="center">
           Előadások
         </Heading>
+        <Paragraph textAlign="center" pb="0.5em">
+          A programterv egy oldalas, nyomtatható változata{' '}
+          <Link href={ScheduleURL}>innen</Link> érhető el.
+        </Paragraph>
         <Presentations />
 
         <Heading level={2} textAlign="center">

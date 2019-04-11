@@ -45,7 +45,7 @@ export default function Presentations() {
   `);
 
   return data.allPresentationsYaml.edges.map(({ node }: any) => (
-    <Flex key={node.id} flexWrap="wrap" justifyContent="center" mb={4} ml={-5}>
+    <Flex key={node.id} flexWrap="wrap" justifyContent="center" my={4} ml={-5}>
       <Box pl={5}>
         <Img
           fixed={node.presenter.picture.childImageSharp.fixed}

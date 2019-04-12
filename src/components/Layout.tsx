@@ -74,7 +74,7 @@ export default function Layout({ children }: LayoutProps) {
           />
 
           <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,700"
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:500,700"
             rel="stylesheet"
           />
 

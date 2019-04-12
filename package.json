@@ -37,7 +37,9 @@
     "rebound": "^0.1.0",
     "styled-components": "^4.2.0",
     "styled-icons": "^7.9.0",
-    "styled-system": "^4.1.0"
+    "styled-system": "^4.1.0",
+    "typeface-open-sans": "^0.0.54",
+    "typeface-raleway": "^0.0.54"
   },
   "devDependencies": {
     "@types/react": "^16.8.12",

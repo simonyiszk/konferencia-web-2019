@@ -5,6 +5,9 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import defaultTheme from '../utils/theme';
 import Footer from './Footer';
 
+import 'typeface-open-sans';
+import 'typeface-raleway';
+
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -13,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
     font-family: ${({ theme }: any) => theme.fonts.body};
     font-size: calc(1em + (100vw - 37.5em) / 165);
-    font-variant-numeric: lining-nums;
   }
 
   body {
@@ -71,11 +73,6 @@ export default function Layout({ children }: LayoutProps) {
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
-          />
-
-          <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:500,700"
-            rel="stylesheet"
           />
 
           <meta

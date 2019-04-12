@@ -45,7 +45,14 @@ export default function IndexPage() {
           Simonyi Konferencia
         </Heading>
 
-        <Text fontSize={2} fontFamily="heading" color="moonGray" mt={0} mb={3}>
+        <Text
+          fontSize={2}
+          fontFamily="heading"
+          fontWeight={500}
+          color="moonGray"
+          mt={0}
+          mb={3}
+        >
           <time dateTime={data.site.siteMetadata.event.dateRaw}>
             {toSentenceCase(data.site.siteMetadata.event.dateFormatted)}
           </time>

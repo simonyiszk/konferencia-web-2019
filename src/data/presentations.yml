@@ -132,7 +132,7 @@
 - title: Big Data az OTP Banknál
   startTime: '2019-04-16 13:30'
   venue: IB025
-  abstract: További részletek hamarosan… # TODO
+  abstract: Mi mindenre jó a Machine Learning egy bank életében? Milyen egy adattárház Big Data alapokon? Előadásom során két implementációt mutatok be részletesen. Az egyik egy ML felhasználási példa, a másik pedig egy adattárház implementáció Big Data alapokon.
   presenter:
     fullName: Schin Lotár Csaba
     picture: ./pictures/schin-lotar-csaba.jpg
@@ -142,12 +142,12 @@
 - title: Mesterséges intelligencia az autóiparban
   startTime: '2019-04-16 13:00'
   venue: IB028
-  abstract: További részletek hamarosan… # TODO
+  abstract: Korunk egyik legnagyobb ipari kihívása a digitalizáció. Gyártási és vállalatirányítási szoftvereink egymással történő integrációja során a mesterséges intelligencia kulcsfontosságú szerepet tölt be. Kamerák, Machine Learning és AI algoritmusok segítségével gép ellenőrzi a félkész vagy kész termékek minőségét, majd integrálva a gyártósorral automatikusan eldönti, hogy raktározható-e egy eszköz vagy a re-work állomáson még javítani kell rajta.
   presenter:
     fullName: Pálinkás István
     picture: ./pictures/palinkas-istvan.jpg
     organization: Accenture
-    role: Industrial Software Solution Architect
+    role: Digital Solution Architect Principal
 
 - title: Modern térhangzás
   startTime: '2019-04-16 13:30'

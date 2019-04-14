@@ -1,8 +1,8 @@
-import useDeviceOrientation from '@rehooks/device-orientation';
+// import useDeviceOrientation from '@rehooks/device-orientation';
 import React from 'react';
-import { useWindowSize } from 'react-use';
+// import { useWindowSize } from 'react-use';
 import styled from 'styled-components';
-import { useWindowMousePosition } from '../utils/hooks';
+// import { useWindowMousePosition } from '../utils/hooks';
 import FullHeight from './FullHeight';
 import ParallaxLayer from './ParallaxLayer';
 import ParallaxWrapper from './ParallaxWrapper';
@@ -28,9 +28,10 @@ const HeroChildrenWrapper = styled.div`
 `;
 
 export default function Hero({ children }: HeroProps) {
-  let offsetX = 0;
-  let offsetY = 0;
+  const offsetX = 0;
+  const offsetY = 0;
 
+  /*
   const { width, height } = useWindowSize();
 
   const [mouseX, mouseY] = useWindowMousePosition();
@@ -68,6 +69,7 @@ export default function Hero({ children }: HeroProps) {
     // [0, height] -> [-0.25, 0.25] with reduced sensitivity
     offsetY = (mouseY / height - 0.5) / 2;
   }
+  */
 
   return (
     <ParallaxWrapper as={FullHeight}>
@@ -89,10 +91,10 @@ export default function Hero({ children }: HeroProps) {
         src={FlyingSaucerURL}
         position="50% 60%"
         size="15vmin"
-        {...!hasAccelerometer && {
+        /* {...!hasAccelerometer && {
           translateX: 0.15 * offsetX,
           translateY: 0.15 * offsetY,
-        }}
+        }} */
       />
       <ParallaxLayer src={RocketURL} position="100% 100%" size="70vmin" />
       <ParallaxLayer

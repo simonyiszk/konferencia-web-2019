@@ -37,6 +37,7 @@ const theme: DefaultTheme = {
       letterSpacing: letterSpacings[1],
       fontSize: fontSizes[0],
       fontWeight: fontWeights.bold,
+      fontFamily: fonts.body,
     },
   },
 };

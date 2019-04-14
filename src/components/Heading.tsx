@@ -8,9 +8,7 @@ type HeadingProps = TextProps & {
 const Heading = styled(Text).attrs<HeadingProps>(({ as, fontSize, level }) => ({
   as: as || `h${level}`,
   fontSize: fontSize || 5 - level,
-}))<HeadingProps>`
-  letter-spacing: 0.01em;
-`;
+}))<HeadingProps>({});
 
 Heading.defaultProps = {
   fontFamily: 'heading',

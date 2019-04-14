@@ -7,18 +7,13 @@ import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
-import LinkButton from '../components/LinkButton';
 import Note from '../components/Note';
 import Paragraph from '../components/Paragraph';
 import Presentations from '../components/Presentations';
 import Sponsors from '../components/Sponsors';
-import Text from '../components/Text';
+import Streams from '../components/Streams';
 import { ReactComponent as Logo } from '../assets/logo.svg';
 import ScheduleURL from '../data/schedule.pdf';
-
-function toSentenceCase(string: string) {
-  return `${string[0].toUpperCase()}${string.substring(1)}`;
-}
 
 export default function IndexPage() {
   const data = useStaticQuery(graphql`
@@ -26,12 +21,6 @@ export default function IndexPage() {
       site {
         siteMetadata {
           description
-          event {
-            dateRaw: date
-            dateFormatted: date(formatString: "MMMM Do", locale: "hu")
-            venue
-            registrationURL
-          }
         }
       }
     }
@@ -44,29 +33,7 @@ export default function IndexPage() {
         <Heading level={1} fontSize={3} mb={3}>
           Simonyi Konferencia
         </Heading>
-
-        <Text
-          fontSize={2}
-          fontFamily="heading"
-          fontWeight={500}
-          color="moonGray"
-          mt={0}
-          mb={3}
-        >
-          <time dateTime={data.site.siteMetadata.event.dateRaw}>
-            {toSentenceCase(data.site.siteMetadata.event.dateFormatted)}
-          </time>
-          {` – ${data.site.siteMetadata.event.venue}`}
-        </Text>
-
-        <Text color="moonGray">
-          <LinkButton
-            href={data.site.siteMetadata.event.registrationURL}
-            mt={1}
-          >
-            Regisztráció
-          </LinkButton>
-        </Text>
+        <Streams />
       </Hero>
 
       <Container>

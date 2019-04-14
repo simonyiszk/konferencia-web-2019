@@ -1,5 +1,5 @@
 - title: Extreme Scaling of AI – Supercharging Machine Learning and Deep Learning
-  startTime: '2019-04-16 16:45'
+  startTime: 2019-04-16 16:45
   venue: IB028
   abstract: In this presentation we will demonstrate the extreme scaling capabilities within a single DGX-2 node with 2 Petaflop/s (mixed-precision Tensor Core operations). Following that we highlight the DL and ML ecosystem supporting DGX. We conclude with architectural blueprints for massive multi-node scaling to further expand overall performance.
   presenter:
@@ -9,7 +9,7 @@
     role: Business Development Manager, Higher Education & Research
 
 - title: NB-IoT és okos parkolás a gyakorlatban
-  startTime: '2019-04-16 14:45'
+  startTime: 2019-04-16 14:45
   venue: IB028
   abstract: Az IoT számos felhasználási területe olyan vezeték nélküli csatlakozást igényel, amely akár a föld alatt lévő készülékekkel is képes kapcsolatot létesíteni, vagy több éven keresztül tartó, hosszú üzemidőt tud nyújtani. Előadásomban gyakorlati példákon keresztül fogom bemutatni, milyen felhasználási lehetőségeket teremt az új Narrowband-IoT hálózati technológia. Szó lesz arról, hogy az okos parkolási projektek során milyen kihívásokkal találkoztunk.
   presenter:
@@ -20,7 +20,7 @@
     role: Head of IoT & Business Development
 
 - title: Egy évtized egy szoftverfejlesztő eszköz életében
-  startTime: '2019-04-16 14:15'
+  startTime: 2019-04-16 14:15
   venue: IB028
   abstract: Hogyan jött létre a Bazel nevű szoftverfejlesztő eszköz? Miért volt rá szükség és hogyan fejlődött több, mint egy évtized folyamán? Előadásom során példákon keresztül fogok szemléltetni jónak tűnő döntéseket és azok későbbi megbánásának okait. Ismertetni fogom, mennyiben más a nyílt forráskódú és a zárt ajtók mögötti szoftverfejlesztés, valamint hogy hogyan lehet egy kódbázist hosszú időn át karbantartani.
   presenter:
@@ -30,7 +30,7 @@
     role: Szoftverfejlesztő-menedzser
 
 - title: Hogyan tervezz felhasználóbarát alkalmazásokat, amik meghódítják a világot?
-  startTime: '2019-04-16 14:45'
+  startTime: 2019-04-16 14:45
   venue: IB025
   abstract: Ma már nem elég, ha le tudunk programozni egy mobil appot vagy egy weboldalt. Fontos, hogy szoftvereink könnyen kezelhető, felhasználóink számára is érthető felületekkel bírjanak. Előadásomban elmesélem, hogyan lettem BME-s informatikusból UX designer, miként építettem fel egy 35 fős céget és mely módszerekkel tudunk olyan alkalmazásokat tervezni, melyeket New York-tól Shanghai-ig milliók használnak.
   presenter:
@@ -40,7 +40,7 @@
     role: CEO and Founder
 
 - title: A Simonyitól a brit királyi palotáig
-  startTime: '2019-04-16 12:30'
+  startTime: 2019-04-16 12:30
   venue: IB025
   abstract: Két éve, amikor a konferencia szervezésében tevékenykedtünk, mi is csak álmodtunk róla, hogy egyszer majd felkérnek előadónak, és abba bele sem mertünk gondolni, hogy egyszer a brit királyi család előtt egy palotában prezentálhatjuk vállalkozásunkat. Több lehetőség van körülötted, mint azt elsőre gondolnád, csak élni kell velük. Tudd meg, hogy milyen módon érheted el te is a céljaidat!
   presenter:
@@ -50,7 +50,7 @@
     role: Co-Founders
 
 - title: Leadership 4.0 – Vezetőnek születni kell, vagy azzá válhatunk?
-  startTime: '2019-04-16 16:15'
+  startTime: 2019-04-16 16:15
   venue: IB028
   abstract: Kortárs kutatások szerint csupán minden 10. vezető jó vezető, és 10-ből további 2 fejleszthető. A munkavállalók 70%-a a (rossz) vezetők miatt vált munkahelyet. Előadásomban bemutatom, mi kell ahhoz, hogy valaki sikeres vezetővé váljon. Miben más egy leader és egy manager? Vannak-e megkülönböztethető női és férfi vezetői képességek? Ezen kérdésekre számos modern vezetéselméleti kutatás keresi a választ, melyekbe szintén betekintést nyerhetünk az előadáson.
   presenter:
@@ -60,7 +60,7 @@
     role: PMP, Menedzsment tanácsadó, Business & Karrier Coach, Az év Projektmenedzsere 2013
 
 - title: Mennyire para a budapesti tömegközlekedés?
-  startTime: '2019-04-16 14:15'
+  startTime: 2019-04-16 14:15
   venue: IB025
   abstract: Térképek, szimulációk és adatalapú érvelés, avagy ha szidnánk valamit, tegyük ezt megalapozottan és lehet, hogy rájövünk, hogy igazából minden rendben van. Előadásomban azt mutatom be, hogy miként jutottunk el egy egyszerű menetrendtől az interaktív vizualizációig és mit tudtunk meg a folyamat során.
   presenter:
@@ -70,7 +70,7 @@
     role: Adatvizualizációs szakértő
 
 - title: Kiberbiztonság az ipari világban
-  startTime: '2019-04-16 12:30'
+  startTime: 2019-04-16 12:30
   venue: IB028
   abstract: Eme előadás betekintést nyújt a kiberbiztonsági kihívásokba, melyet az egyre inkább integrált világ (IoT, cloud, AI, VR és a többi) jelent egy olyan cégcsoportra nézve, melynek fő bevételi forrása az olaj, ám 2030-ban az adat fogja átvenni az uralmat. Bemutatom, miképp védjük a mát, hogy legyen holnapunk.
   presenter:
@@ -80,7 +80,7 @@
     role: Head of Industrial Cyber Security, Risk & Compliance
 
 - title: Eddie – XXI. századi technológia az általános iskolai oktatásban
-  startTime: '2019-04-16 16:45'
+  startTime: 2019-04-16 16:45
   venue: IB025
   abstract: A mai fiatal generáció számára a tanórák ingerszegények, mivel a felgyorsult technikai fejlődés következtében már másképp zajlik az információ befogadása és feldolgozása. Az Eddie alkalmazás a gyermekek naponta használt okoseszközeit is bekapcsolja az oktatásba, megfelelve korunk főképp vizuális hatásokra épülő igényeinek. Kiterjesztett valóság segítségével élvezhetőbbé, élményszerűvé válnak az órák, így a tanárok munkája is jóval eredményesebb lesz.
   presenter:
@@ -90,7 +90,7 @@
     role: Alapító és csoportvezető
 
 - title: Instant AI megoldások, avagy hogyan építkezzünk kész mesterséges intelligencia elemekből
-  startTime: '2019-04-16 15:15'
+  startTime: 2019-04-16 15:15
   venue: IB025
   abstract: Egyre több szolgáltatás, API, eszköz ígéri, hogy komplex felismerési vagy előrejelzési feladatokat néhány kattintással megold nekünk. Mennyire hatékonyak ezek a megoldások? Előadásomban bemutatom a legfontosabb nyitott AI eszközöket, tippeket adok, hogyan érdemes ezeket felhasználni, valamint rávilágítok a bennük rejlő lehetőségekre és korlátokra.
   presenter:
@@ -100,7 +100,7 @@
     role: Ügyvezető és vezető partner
 
 - title: Hálózatba kapcsolt járművek kommunikációja és analitikája
-  startTime: '2019-04-16 16:15'
+  startTime: 2019-04-16 16:15
   venue: IB025
   abstract: A modern járművek számos fizikai szenzort tartalmaznak komoly mennyiségű számítási kapacitás mellett, megalapozva a vezetéstámogató szolgáltatások fejlesztését. A járművek hálózatba kapcsolása további, saját szenzorokkal nem elérhető adatokkal gazdagítja az egyes járművek digitális perspektíváját. A hálózatban felhalmozódó adatok feldolgozása a gépi tanulás eszközeivel további értékes analízisre ad lehetőséget.
   presenter:
@@ -110,7 +110,7 @@
     role: Senior kutatómérnök
 
 - title: Épületbiztonság vs. IT
-  startTime: '2019-04-16 13:00'
+  startTime: 2019-04-16 13:00
   venue: IB025
   abstract: Napjainkban az IT világában tapasztalt támadási típusok között újabb fenyegetés jelent meg, amely már az épületek fizikai működését is veszélybe sodorhatja. Előadásomból megtudhatják, milyen veszélyekkel kell felvennie a harcot annak, aki IT-val támogatott épületüzemeltetésre adja a fejét.
   presenter:
@@ -120,7 +120,7 @@
     role: IT tanácsadó
 
 - title: Első lépések az önvezető funkciók világában
-  startTime: '2019-04-16 15:15'
+  startTime: 2019-04-16 15:15
   venue: IB028
   abstract: A médiában sokszor találkozunk az önvezető autókkal, nagy a verseny az automotive iparban. Az asszisztens funkciók már elérhetőek a piacon a felhasználók számára, a jövő technológiáit pedig folyamatosan reklámozzák a cégek. A teljesen önvezető autók elérkezéséig még sok próbálkozás és funkció kerülhet majd az emberekhez, előadásomban elsősorban ezeknek a közeljövőben elérhető újításoknak a kihívásairól, használhatóságáról lesz szó.
   presenter:
@@ -130,7 +130,7 @@
     role: Software Engineer
 
 - title: Big Data az OTP Banknál
-  startTime: '2019-04-16 13:30'
+  startTime: 2019-04-16 13:30
   venue: IB025
   abstract: Mi mindenre jó a Machine Learning egy bank életében? Milyen egy adattárház Big Data alapokon? Előadásom során két implementációt mutatok be részletesen. Az egyik egy ML felhasználási példa, a másik pedig egy adattárház implementáció Big Data alapokon.
   presenter:
@@ -140,7 +140,7 @@
     role: IT fejlesztési senior manager
 
 - title: Mesterséges intelligencia az autóiparban
-  startTime: '2019-04-16 13:00'
+  startTime: 2019-04-16 13:00
   venue: IB028
   abstract: Korunk egyik legnagyobb ipari kihívása a digitalizáció. Gyártási és vállalatirányítási szoftvereink egymással történő integrációja során a mesterséges intelligencia kulcsfontosságú szerepet tölt be. Kamerák, Machine Learning és AI algoritmusok segítségével gép ellenőrzi a félkész vagy kész termékek minőségét, majd integrálva a gyártósorral automatikusan eldönti, hogy raktározható-e egy eszköz vagy a re-work állomáson még javítani kell rajta.
   presenter:
@@ -150,7 +150,7 @@
     role: Digital Solution Architect Principal
 
 - title: Modern térhangzás
-  startTime: '2019-04-16 13:30'
+  startTime: 2019-04-16 13:30
   venue: IB028
   abstract: A hangtechnikában évtizedeken át maximum két dimenzióban gondolkoztak. Egy új irányzatban már a plafonról is hangszórók lógnak, a hangok szabadon repkednek a mozitermekben, játéktereken, vagy akár színházakban, koncerteken is. Előadásomban saját projektemen keresztül mutatom be, hogyan valósítható meg szoftveres szemszögből egy ilyen hallgatói környezet.
   presenter:

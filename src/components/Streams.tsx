@@ -19,9 +19,9 @@ export default function Streams() {
   `);
 
   return (
-    <Flex flexDirection={['column', null, 'row']}>
+    <Flex flexDirection={['column', null, 'row']} mt="2em">
       {data.allStreamsYaml.edges.map(({ node }: any) => (
-        <Box flex={1} m={3}>
+        <Box flex={1} mx={3} mb={4}>
           <EmbeddedVideo key={node.id} src={node.src} title={node.title} />
         </Box>
       ))}

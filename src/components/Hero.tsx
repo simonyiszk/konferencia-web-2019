@@ -22,7 +22,7 @@ type HeroProps = {
 const HeroChildrenWrapper = styled.div`
   position: relative;
   height: 100%;
-  padding-top: 3em;
+  padding-top: 4em;
   color: white;
   text-align: center;
 `;

@@ -20,6 +20,7 @@ export default function IndexPage() {
     {
       site {
         siteMetadata {
+          title
           description
         }
       }
@@ -29,10 +30,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <Hero>
-        <Logo height="4em" />
-        <Heading level={1} fontSize={3} mb={3}>
-          Simonyi Konferencia
-        </Heading>
+        <Logo alt={data.site.siteMetadata.title} height="4em" />
         <Streams />
       </Hero>
 

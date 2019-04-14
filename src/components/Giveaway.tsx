@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from './Link';
 import Measure from './Measure';
 import Note from './Note';
 import Paragraph from './Paragraph';
@@ -9,8 +10,8 @@ export default function Giveaway() {
   return (
     <>
       <Measure as={Paragraph} textAlign="center" mx="auto">
-        Regisztrálj a konferenciára, látogass meg legalább 3&nbsp;standot a
-        <a href={ExpoMapURL}>helyszíni&nbsp;expón</a> és{' '}
+        Regisztrálj a konferenciára, látogass meg legalább 3&nbsp;standot a{' '}
+        <Link href={ExpoMapURL}>helyszíni&nbsp;expón</Link> és{' '}
         <strong>nyerj egy ultrawide monitort!</strong>
       </Measure>
 

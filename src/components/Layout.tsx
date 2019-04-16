@@ -35,9 +35,10 @@ const GlobalStyle = createGlobalStyle`
 
 type LayoutProps = {
   children: React.ReactNode;
+  hasFooter?: boolean;
 };
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, hasFooter = true }: LayoutProps) {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -91,7 +92,7 @@ export default function Layout({ children }: LayoutProps) {
 
         <main>{children}</main>
 
-        <Footer />
+        {hasFooter && <Footer />}
       </div>
     </ThemeProvider>
   );

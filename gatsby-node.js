@@ -1,9 +1,9 @@
 const path = require('path');
 
-// Generate venue status pages
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  return graphql(`
+
+  const { data } = await graphql(`
     {
       allPresentationsYaml {
         edges {
@@ -13,15 +13,16 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
-    result.data.allPresentationsYaml.edges.forEach(({ node }) => {
-      createPage({
-        path: `/venues/${node.venue.toLowerCase()}`,
-        component: path.resolve('./src/templates/venue-status.tsx'),
-        context: {
-          venue: node.venue,
-        },
-      });
+  `);
+
+  // Generate venue status pages
+  data.allPresentationsYaml.edges.forEach(({ node }) => {
+    createPage({
+      path: `/venues/${node.venue.toLowerCase()}`,
+      component: path.resolve('./src/templates/venue-status.tsx'),
+      context: {
+        venue: node.venue,
+      },
     });
   });
 };

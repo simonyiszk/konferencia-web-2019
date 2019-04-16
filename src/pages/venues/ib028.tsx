@@ -12,6 +12,7 @@ import VenueHeader from '../../components/VenueHeader';
 import { useCurrentUnixMs } from '../../utils/hooks';
 
 const maxShownUpcomingPresentations = 2;
+const millisecsInMinute = 1000 * 60;
 
 type IB028PageContentProps = {
   presentations: (PresentationProps & { startTimeUnixMs: string })[];
@@ -23,12 +24,14 @@ function IB028PageContent({
   forwardIcon,
 }: IB028PageContentProps) {
   const currentUnixMs = useCurrentUnixMs();
+  const currentLocalTimeMs =
+    currentUnixMs - new Date().getTimezoneOffset() * millisecsInMinute;
 
   const firstUpcomingPresentationIndex = Math.max(
     0,
     presentations.findIndex(
       presentation =>
-        Number.parseInt(presentation.startTimeUnixMs, 10) > currentUnixMs,
+        Number.parseInt(presentation.startTimeUnixMs, 10) > currentLocalTimeMs,
     ),
   );
   const upcomingPresentations = presentations.slice(

@@ -67,6 +67,6 @@ module.exports = {
     'gatsby-plugin-typescript',
   ],
   mapping: {
-    'PresentationsYaml.presenter.organization': 'OrganizationsYaml',
+    'ProgramsYaml.presenter.organization': 'OrganizationsYaml',
   },
 };

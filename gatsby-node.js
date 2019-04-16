@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     {
-      allPresentationsYaml {
+      allProgramsYaml {
         edges {
           node {
             venue
@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   // Generate venue status pages
-  data.allPresentationsYaml.edges.forEach(({ node }) => {
+  data.allProgramsYaml.edges.forEach(({ node }) => {
     createPage({
       path: `/venues/${node.venue.toLowerCase()}`,
       component: path.resolve('./src/templates/venue-status.tsx'),

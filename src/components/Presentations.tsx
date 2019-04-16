@@ -5,7 +5,8 @@ import Presentation from './Presentation';
 export default function Presentations() {
   const data = useStaticQuery(graphql`
     {
-      allPresentationsYaml(
+      allProgramsYaml(
+        filter: { presenter: { fullName: { ne: null } } }
         sort: { fields: [startTime, venue], order: [ASC, DESC] }
       ) {
         edges {
@@ -38,7 +39,7 @@ export default function Presentations() {
     }
   `);
 
-  return data.allPresentationsYaml.edges.map(({ node }: any) => (
+  return data.allProgramsYaml.edges.map(({ node }: any) => (
     <Presentation
       key={node.id}
       title={node.title}

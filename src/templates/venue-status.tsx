@@ -2,47 +2,59 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
+import Paragraph from '../components/Paragraph';
 import Presentation, {
   PresentationCaption,
   PresentationLayout,
   PresentationProps,
+  ProgramProps,
 } from '../components/Presentation';
 import ScheduledPresentation from '../components/ScheduledPresentation';
 import VenueHeader from '../components/VenueHeader';
 import { useCurrentUnixMs } from '../utils/hooks';
 
-const maxShownUpcomingPresentations = 2;
+const maxShownPresentations = 3;
 const millisecsInMinute = 1000 * 60;
 
+export type ProgramProps = PresentationCaptionProps & {
+  title: string;
+  startTimeUnixMs: string;
+  endTimeUnixMs: string;
+};
+
+const isProgramRunning = (localTimeMs: number, program: ProgramProps) =>
+  localTimeMs >= Number.parseInt(program.startTimeUnixMs, 10) &&
+  localTimeMs < Number.parseInt(program.endTimeUnixMs, 10);
+
 type VenueStatusTemplateContentProps = {
-  presentations: (PresentationProps & { startTimeUnixMs: string })[];
+  presentations: (PresentationProps & ProgramProps)[];
+  specialPrograms: ProgramProps[];
   forwardIcon: any; // TODO: Use FixedObject of gatsby-image
 };
 
 function VenueStatusTemplateContent({
   presentations,
+  specialPrograms,
   forwardIcon,
 }: VenueStatusTemplateContentProps) {
   const currentUnixMs = useCurrentUnixMs();
   const currentLocalTimeMs =
     currentUnixMs - new Date().getTimezoneOffset() * millisecsInMinute;
 
-  const firstUpcomingPresentationIndex = Math.max(
-    0,
-    presentations.findIndex(
-      presentation =>
-        Number.parseInt(presentation.startTimeUnixMs, 10) > currentLocalTimeMs,
-    ),
-  );
-  const upcomingPresentations = presentations.slice(
-    firstUpcomingPresentationIndex,
-    firstUpcomingPresentationIndex + maxShownUpcomingPresentations,
+  const isProgramCurrentlyRunning = isProgramRunning.bind(
+    null,
+    currentLocalTimeMs,
   );
 
-  const currentPresentation =
-    firstUpcomingPresentationIndex > 0
-      ? presentations[firstUpcomingPresentationIndex - 1]
-      : null;
+  const currentSpecialProgram = specialPrograms.find(isProgramCurrentlyRunning);
+  const currentPresentation = presentations.find(isProgramCurrentlyRunning);
+
+  const upcomingPresentations = presentations
+    .filter(
+      presentation =>
+        Number.parseInt(presentation.startTimeUnixMs, 10) > currentLocalTimeMs,
+    )
+    .slice(0, maxShownPresentations - (currentPresentation != null ? 1 : 0));
 
   return (
     <>
@@ -52,10 +64,17 @@ function VenueStatusTemplateContent({
 
       <Container>
         {currentPresentation != null && (
-          <Presentation {...currentPresentation} venue={null} />
+          <Presentation {...currentPresentation} venue={undefined} />
         )}
 
-        {upcomingPresentations.length > 0 && (
+        {// eslint-disable-next-line no-nested-ternary
+        currentSpecialProgram != null || upcomingPresentations.length == 0 ? (
+          <Paragraph fontSize="5.619em" textAlign="center">
+            {upcomingPresentations.length > 0
+              ? currentSpecialProgram.title
+              : 'Köszönjük a részvételt!'}
+          </Paragraph>
+        ) : (
           <PresentationLayout
             picture={forwardIcon}
             caption={() => (
@@ -79,7 +98,8 @@ export default function VenueStatusTemplate({ data }: any) {
   return (
     <Layout hasFooter={false}>
       <VenueStatusTemplateContent
-        presentations={data.allPresentationsYaml.edges.map(
+        presentations={data.presentations.edges.map(({ node }: any) => node)}
+        specialPrograms={data.specialPrograms.edges.map(
           ({ node }: any) => node,
         )}
         forwardIcon={data.forwardIcon}
@@ -90,8 +110,8 @@ export default function VenueStatusTemplate({ data }: any) {
 
 export const query = graphql`
   query($venue: String!) {
-    allPresentationsYaml(
-      filter: { venue: { eq: $venue } }
+    presentations: allProgramsYaml(
+      filter: { venue: { eq: $venue }, presenter: { fullName: { ne: null } } }
       sort: { fields: startTime, order: ASC }
     ) {
       edges {
@@ -101,6 +121,7 @@ export const query = graphql`
           startTimeRaw: startTime
           startTimeUnixMs: startTime(formatString: "x")
           startTimeFormatted: startTime(formatString: "LT", locale: "hu")
+          endTimeUnixMs: endTime(formatString: "x")
           venue
           abstract
           presenter {
@@ -119,6 +140,21 @@ export const query = graphql`
             region
             role
           }
+        }
+      }
+    }
+
+    specialPrograms: allProgramsYaml(
+      filter: { venue: { eq: $venue }, presenter: { fullName: { eq: null } } }
+      sort: { fields: startTime, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          title
+          startTimeUnixMs: startTime(formatString: "x")
+          endTimeUnixMs: endTime(formatString: "x")
+          venue
         }
       }
     }

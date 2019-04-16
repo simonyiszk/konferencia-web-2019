@@ -8,7 +8,7 @@ import Paragraph from './Paragraph';
 import PresenterDetails from './PresenterDetails';
 import { ScheduledPresentationProps } from './ScheduledPresentation';
 
-type PresentationCaptionProps = {
+export type PresentationCaptionProps = {
   startTimeRaw: string;
   startTimeFormatted: string;
   venue?: string;

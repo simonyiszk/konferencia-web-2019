@@ -64,8 +64,8 @@ function VenueStatusTemplateContent({
         {presentations[0].venue}
       </VenueHeader>
 
-      <Container
-        as={Flex}
+      <Flex
+        as={Container}
         flex={1}
         flexDirection="column"
         alignItems="center"
@@ -100,14 +100,13 @@ function VenueStatusTemplateContent({
                 startTimeFormatted={upcomingPresentations[0].startTimeFormatted}
               />
             )}
-            mb={7}
           >
             {upcomingPresentations.map(presentation => (
               <ScheduledPresentation key={presentation.id} {...presentation} />
             ))}
           </PresentationLayout>
         )}
-      </Container>
+      </Flex>
     </Flex>
   );
 }

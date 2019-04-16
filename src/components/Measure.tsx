@@ -5,7 +5,7 @@ type MeasureProps = TextProps & {
   maxWidth?: string | number;
 };
 
-const Measure = styled<MeasureProps>(Text)`
+const Measure = styled(Text)<MeasureProps>`
   max-width: ${({ maxWidth = '34em' }) => maxWidth};
 `;
 

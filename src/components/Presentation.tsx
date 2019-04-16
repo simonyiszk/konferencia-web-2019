@@ -44,13 +44,14 @@ interface PresentationLayoutProps {
     (Pick<PresentationProps, 'presenter'>)['presenter'],
     'picture'
   >['picture'];
+  children: React.ReactNode;
   caption?: () => React.ReactNode;
 }
 
 export const PresentationLayout = ({
   picture,
-  caption,
   children,
+  caption,
 }: PresentationLayoutProps) => (
   <Flex flexWrap="wrap" justifyContent="center" my={4} ml={-5}>
     <Box pl={5}>

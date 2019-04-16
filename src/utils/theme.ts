@@ -11,7 +11,7 @@ const fontWeights = {
   bold: 600,
 };
 
-const letterSpacings = [0, '0.1em'];
+const letterSpacings = [0, '0.1em'] as (string | 0)[];
 
 const theme: DefaultTheme = {
   colors: {

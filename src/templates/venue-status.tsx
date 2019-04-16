@@ -52,7 +52,7 @@ function VenueStatusTemplateContent({
 
       <Container>
         {currentPresentation != null && (
-          <Presentation {...currentPresentation} />
+          <Presentation {...currentPresentation} venue={null} />
         )}
 
         {upcomingPresentations.length > 0 && (

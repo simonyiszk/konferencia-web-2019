@@ -3,11 +3,15 @@ import React from 'react';
 import Container from '../../components/Container';
 import Layout from '../../components/Layout';
 import Presentation, {
+  PresentationCaption,
   PresentationLayout,
   PresentationProps,
 } from '../../components/Presentation';
+import ScheduledPresentation from '../../components/ScheduledPresentation';
 import VenueHeader from '../../components/VenueHeader';
 import { useCurrentUnixMs } from '../../utils/hooks';
+
+const maxShownUpcomingPresentations = 2;
 
 type IB028PageContentProps = {
   presentations: (PresentationProps & { startTimeUnixMs: string })[];
@@ -29,6 +33,7 @@ function IB028PageContent({
   );
   const upcomingPresentations = presentations.slice(
     firstUpcomingPresentationIndex,
+    firstUpcomingPresentationIndex + maxShownUpcomingPresentations,
   );
 
   const currentPresentation =
@@ -48,7 +53,19 @@ function IB028PageContent({
         )}
 
         {upcomingPresentations.length > 0 && (
-          <PresentationLayout picture={forwardIcon}>TODO</PresentationLayout>
+          <PresentationLayout
+            picture={forwardIcon}
+            caption={() => (
+              <PresentationCaption
+                startTimeRaw={upcomingPresentations[0].startTimeRaw}
+                startTimeFormatted={upcomingPresentations[0].startTimeFormatted}
+              />
+            )}
+          >
+            {upcomingPresentations.map(presentation => (
+              <ScheduledPresentation key={presentation.id} {...presentation} />
+            ))}
+          </PresentationLayout>
         )}
       </Container>
     </>

@@ -1,31 +1,41 @@
 import { Box, Flex } from '@rebass/grid';
 import Img from 'gatsby-image';
 import React from 'react';
-import ExternalLink from './ExternalLink';
 import GradientBackgroundText from './GradientBackgroundText';
 import Heading from './Heading';
 import Measure from './Measure';
 import Paragraph from './Paragraph';
+import PresenterDetails from './PresenterDetails';
+import { ScheduledPresentationProps } from './ScheduledPresentation';
 
-type Organization = {
-  id: string;
-  website: string;
-};
-
-export type PresentationProps = {
-  title: string;
+type PresentationCaptionProps = {
   startTimeRaw: string;
   startTimeFormatted: string;
   venue?: string;
-  abstract: string;
-  presenter: {
-    fullName: string;
-    picture: any; // TODO: Use FixedObject of gatsby-image
-    organization?: Organization;
-    region?: string;
-    role?: string;
-  };
 };
+
+export const PresentationCaption: React.FunctionComponent<
+  PresentationCaptionProps
+> = ({ startTimeRaw, startTimeFormatted, venue }) => (
+  <Paragraph
+    textStyle="space"
+    fontWeight="bold"
+    textAlign="center"
+    color="darkGray"
+    mt={2}
+  >
+    <time dateTime={startTimeRaw}>{startTimeFormatted}</time>
+    {venue != null && ` @ ${venue}`}
+  </Paragraph>
+);
+
+export type PresentationProps = ScheduledPresentationProps &
+  PresentationCaptionProps & {
+    abstract: string;
+    presenter: {
+      picture: any; // TODO: Use FixedObject of gatsby-image
+    };
+  };
 
 type PresentationLayoutProps = {
   picture: Pick<
@@ -81,19 +91,7 @@ const Presentation: React.FunctionComponent<PresentationProps> = ({
       {title}
     </GradientBackgroundText>
 
-    <Paragraph textStyle="caps" color="blue">
-      {presenter.fullName} – {presenter.role && `${presenter.role}`}
-      {presenter.organization && (
-        <>
-          {presenter.role && ', '}
-          <ExternalLink href={presenter.organization.website}>
-            {`${presenter.organization.id}${
-              presenter.region != null ? ` ${presenter.region}` : ''
-            }`}
-          </ExternalLink>
-        </>
-      )}
-    </Paragraph>
+    <PresenterDetails {...presenter} />
 
     <Paragraph mt={0}>{abstract}</Paragraph>
   </PresentationLayout>

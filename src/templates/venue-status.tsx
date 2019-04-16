@@ -1,6 +1,8 @@
+import { Flex } from '@rebass/grid';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Container from '../components/Container';
+import FullHeight from '../components/FullHeight';
 import Heading from '../components/Heading';
 import Layout from '../components/Layout';
 import Presentation, {
@@ -57,19 +59,25 @@ function VenueStatusTemplateContent({
     .slice(0, maxShownPresentations - (currentPresentation != null ? 1 : 0));
 
   return (
-    <>
+    <Flex as={FullHeight} flexDirection="column">
       <VenueHeader level={1} fontSize="3.16em" textAlign="center">
         {presentations[0].venue}
       </VenueHeader>
 
-      <Container>
+      <Container
+        as={Flex}
+        flex={1}
+        alignItems="center"
+        justifyContent="center"
+        mb={4}
+      >
         {currentPresentation != null && (
           <Presentation {...currentPresentation} venue={undefined} />
         )}
 
         {currentSpecialProgram != null || upcomingPresentations.length === 0 ? (
           currentPresentation == null && (
-            <Heading level={3} fontSize="5.619em" textAlign="center">
+            <Heading level={3} fontSize="5.619em" textAlign="center" mt="0.5em">
               {currentSpecialProgram != null
                 ? currentSpecialProgram.title
                 : 'Köszönjük a részvételt!'}
@@ -84,6 +92,7 @@ function VenueStatusTemplateContent({
                 startTimeFormatted={upcomingPresentations[0].startTimeFormatted}
               />
             )}
+            mb={7}
           >
             {upcomingPresentations.map(presentation => (
               <ScheduledPresentation key={presentation.id} {...presentation} />
@@ -91,7 +100,7 @@ function VenueStatusTemplateContent({
           </PresentationLayout>
         )}
       </Container>
-    </>
+    </Flex>
   );
 }
 

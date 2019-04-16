@@ -1,4 +1,4 @@
-import { Box, Flex } from '@rebass/grid';
+import { Box, Flex, FlexProps } from '@rebass/grid';
 import Img from 'gatsby-image';
 import React from 'react';
 import GradientBackgroundText from './GradientBackgroundText';
@@ -39,7 +39,7 @@ export type PresentationProps = ScheduledPresentationProps &
     };
   };
 
-interface PresentationLayoutProps {
+interface PresentationLayoutProps extends FlexProps {
   picture: Pick<
     (Pick<PresentationProps, 'presenter'>)['presenter'],
     'picture'
@@ -52,8 +52,9 @@ export const PresentationLayout = ({
   picture,
   children,
   caption,
+  ...props
 }: PresentationLayoutProps) => (
-  <Flex flexWrap="wrap" justifyContent="center" my={4} ml={-5}>
+  <Flex flexWrap="wrap" justifyContent="center" my={4} ml={-5} {...props}>
     <Box pl={5}>
       <Img
         fixed={picture.childImageSharp.fixed}

@@ -104,6 +104,7 @@ function VenueStatusTemplateContent({
                 startTimeFormatted={upcomingPresentations[0].startTimeFormatted}
               />
             )}
+            width="100%"
           >
             {upcomingPresentations.map(presentation => (
               <ScheduledPresentation key={presentation.id} {...presentation} />

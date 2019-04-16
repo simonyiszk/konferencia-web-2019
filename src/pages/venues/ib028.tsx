@@ -23,7 +23,7 @@ function IB028PageContent({
     0,
     presentations.findIndex(
       presentation =>
-        Number.parseInt(presentation.startTimeUnixMs, 10) >= currentUnixMs,
+        Number.parseInt(presentation.startTimeUnixMs, 10) > currentUnixMs,
     ),
   );
   const upcomingPresentations = presentations.slice(

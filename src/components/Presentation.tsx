@@ -12,12 +12,10 @@ type Organization = {
   website: string;
 };
 
-type PresentationProps = {
+export type PresentationProps = {
   title: string;
-  startTime: {
-    raw: string;
-    formatted: string;
-  };
+  startTimeRaw: string;
+  startTimeFormatted: string;
   venue: string;
   abstract: string;
   presenter: {
@@ -27,14 +25,17 @@ type PresentationProps = {
     region?: string;
     role?: string;
   };
+  hideVenue?: boolean;
 };
 
 const Presentation: React.FunctionComponent<PresentationProps> = ({
   title,
-  startTime,
+  startTimeRaw,
+  startTimeFormatted,
   venue,
   abstract,
   presenter,
+  hideVenue = false,
 }) => {
   return (
     <Flex flexWrap="wrap" justifyContent="center" my={4} ml={-5}>
@@ -51,7 +52,8 @@ const Presentation: React.FunctionComponent<PresentationProps> = ({
           color="darkGray"
           mt={2}
         >
-          <time dateTime={startTime.raw}>{startTime.formatted}</time> @ {venue}
+          <time dateTime={startTimeRaw}>{startTimeFormatted}</time>
+          {!hideVenue && ` @ ${venue}`}
         </Paragraph>
       </Box>
 

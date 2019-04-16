@@ -42,7 +42,8 @@ export default function Presentations() {
     <Presentation
       key={node.id}
       title={node.title}
-      startTime={{ raw: node.startTimeRaw, formatted: node.startTimeFormatted }}
+      startTimeRaw={node.startTimeRaw}
+      startTimeFormatted={node.startTimeFormatted}
       venue={node.venue}
       abstract={node.abstract}
       presenter={node.presenter}

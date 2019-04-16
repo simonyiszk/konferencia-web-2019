@@ -5,6 +5,7 @@ import Heading from '../components/Heading';
 import Layout from '../components/Layout';
 import Presentation, {
   PresentationCaption,
+  PresentationCaptionProps,
   PresentationLayout,
   PresentationProps,
 } from '../components/Presentation';
@@ -66,13 +67,14 @@ function VenueStatusTemplateContent({
           <Presentation {...currentPresentation} venue={undefined} />
         )}
 
-        {// eslint-disable-next-line no-nested-ternary
-        currentSpecialProgram != null || upcomingPresentations.length == 0 ? (
-          <Heading level={3} fontSize="5.619em" textAlign="center">
-            {upcomingPresentations.length > 0
-              ? currentSpecialProgram.title
-              : 'Köszönjük a részvételt!'}
-          </Heading>
+        {currentSpecialProgram != null || upcomingPresentations.length === 0 ? (
+          currentPresentation == null && (
+            <Heading level={3} fontSize="5.619em" textAlign="center">
+              {currentSpecialProgram != null
+                ? currentSpecialProgram.title
+                : 'Köszönjük a részvételt!'}
+            </Heading>
+          )
         ) : (
           <PresentationLayout
             picture={forwardIcon}

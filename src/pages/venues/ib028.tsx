@@ -1,5 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
+import Container from '../../components/Container';
 import Layout from '../../components/Layout';
 import Presentation, {
   PresentationLayout,
@@ -36,19 +37,17 @@ function IB028PageContent({
       : null;
 
   return (
-    <>
+    <Container>
       <VenueHeader level={1} fontSize="4.214rem" textAlign="center">
         IB028
       </VenueHeader>
 
-      {currentPresentation != null && (
-        <Presentation {...currentPresentation} hideVenue />
-      )}
+      {currentPresentation != null && <Presentation {...currentPresentation} />}
 
       {upcomingPresentations.length > 0 && (
         <PresentationLayout picture={forwardIcon}>TODO</PresentationLayout>
       )}
-    </>
+    </Container>
   );
 }
 

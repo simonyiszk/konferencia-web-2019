@@ -1,28 +1,28 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Container from '../../components/Container';
-import Layout from '../../components/Layout';
+import Container from '../components/Container';
+import Layout from '../components/Layout';
 import Presentation, {
   PresentationCaption,
   PresentationLayout,
   PresentationProps,
-} from '../../components/Presentation';
-import ScheduledPresentation from '../../components/ScheduledPresentation';
-import VenueHeader from '../../components/VenueHeader';
-import { useCurrentUnixMs } from '../../utils/hooks';
+} from '../components/Presentation';
+import ScheduledPresentation from '../components/ScheduledPresentation';
+import VenueHeader from '../components/VenueHeader';
+import { useCurrentUnixMs } from '../utils/hooks';
 
 const maxShownUpcomingPresentations = 2;
 const millisecsInMinute = 1000 * 60;
 
-type IB028PageContentProps = {
+type VenueStatusTemplateContentProps = {
   presentations: (PresentationProps & { startTimeUnixMs: string })[];
   forwardIcon: any; // TODO: Use FixedObject of gatsby-image
 };
 
-function IB028PageContent({
+function VenueStatusTemplateContent({
   presentations,
   forwardIcon,
-}: IB028PageContentProps) {
+}: VenueStatusTemplateContentProps) {
   const currentUnixMs = useCurrentUnixMs();
   const currentLocalTimeMs =
     currentUnixMs - new Date().getTimezoneOffset() * millisecsInMinute;
@@ -47,7 +47,7 @@ function IB028PageContent({
   return (
     <>
       <VenueHeader level={1} fontSize="3.16em" textAlign="center">
-        IB028
+        {presentations[0].venue}
       </VenueHeader>
 
       <Container>
@@ -75,10 +75,10 @@ function IB028PageContent({
   );
 }
 
-export default function IB028Page({ data }: any) {
+export default function VenueStatusTemplate({ data }: any) {
   return (
     <Layout hasFooter={false}>
-      <IB028PageContent
+      <VenueStatusTemplateContent
         presentations={data.allPresentationsYaml.edges.map(
           ({ node }: any) => node,
         )}
@@ -89,9 +89,9 @@ export default function IB028Page({ data }: any) {
 }
 
 export const query = graphql`
-  {
+  query($venue: String!) {
     allPresentationsYaml(
-      filter: { venue: { regex: "/^ib028$/i" } }
+      filter: { venue: { eq: $venue } }
       sort: { fields: startTime, order: ASC }
     ) {
       edges {
@@ -101,6 +101,7 @@ export const query = graphql`
           startTimeRaw: startTime
           startTimeUnixMs: startTime(formatString: "x")
           startTimeFormatted: startTime(formatString: "LT", locale: "hu")
+          venue
           abstract
           presenter {
             fullName

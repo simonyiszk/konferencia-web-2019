@@ -43,7 +43,7 @@ const GradientBackgroundTextContent = styled.span`
   color: white;
 `;
 
-type GradientBackgroundTextProps = TextProps;
+type GradientBackgroundTextProps = TextProps & any;
 
 export default function GradientBackgroundText({
   px,

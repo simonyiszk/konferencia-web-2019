@@ -29,7 +29,11 @@ const isProgramRunning = (localTimeMs: number, program: ProgramProps) =>
   localTimeMs < Number.parseInt(program.endTimeUnixMs, 10);
 
 interface VenueStatusTemplateContentProps {
-  presentations: (PresentationProps & ProgramProps & { id: string })[];
+  presentations: (PresentationProps &
+    ProgramProps & {
+      id: string;
+      childImageSharp: any; // TODO: Use FixedObject of gatsby-image
+    })[];
   specialPrograms: ProgramProps[];
   forwardIcon: any; // TODO: Use FixedObject of gatsby-image
 }

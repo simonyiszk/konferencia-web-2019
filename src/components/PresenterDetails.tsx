@@ -22,7 +22,7 @@ const PresenterDetails = ({
   role,
   ...props
 }: PresenterDetailsProps) => (
-  <Paragraph textStyle="caps" color="blue" {...props}>
+  <Paragraph textStyle="caps" color="blue" {...props as any}>
     {fullName} – {role && `${role}`}
     {organization && (
       <>

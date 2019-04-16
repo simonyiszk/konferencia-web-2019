@@ -21,9 +21,7 @@ export type TextProps = BoxProps &
   FontWeightProps &
   LineHeightProps &
   TextAlignProps &
-  TextStyleProps & {
-    as?: React.ElementType; // TODO: Remove this line
-  };
+  TextStyleProps;
 
 const Text = styled(Box)<TextProps>`
   ${fontFamily}

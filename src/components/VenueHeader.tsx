@@ -8,4 +8,9 @@ const VenueHeader = styled(Heading)`
   color: white;
 `;
 
+VenueHeader.defaultProps = {
+  ...VenueHeader.defaultProps,
+  fontFamily: 'body',
+};
+
 export default VenueHeader;

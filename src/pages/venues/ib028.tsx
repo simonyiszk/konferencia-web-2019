@@ -1,15 +1,22 @@
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Layout from '../../components/Layout';
-import Presentation, { PresentationProps } from '../../components/Presentation';
+import Presentation, {
+  PresentationLayout,
+  PresentationProps,
+} from '../../components/Presentation';
 import VenueHeader from '../../components/VenueHeader';
 import { useCurrentUnixMs } from '../../utils/hooks';
 
 type IB028PageContentProps = {
   presentations: (PresentationProps & { startTimeUnixMs: string })[];
+  forwardIcon: any; // TODO: Use FixedObject of gatsby-image
 };
 
-function IB028PageContent({ presentations }: IB028PageContentProps) {
+function IB028PageContent({
+  presentations,
+  forwardIcon,
+}: IB028PageContentProps) {
   const currentUnixMs = useCurrentUnixMs();
 
   const firstUpcomingPresentationIndex = Math.max(
@@ -37,6 +44,10 @@ function IB028PageContent({ presentations }: IB028PageContentProps) {
       {currentPresentation != null && (
         <Presentation {...currentPresentation} hideVenue />
       )}
+
+      {upcomingPresentations.length > 0 && (
+        <PresentationLayout picture={forwardIcon}>TODO</PresentationLayout>
+      )}
     </>
   );
 }
@@ -45,7 +56,10 @@ export default function IB028Page({ data }: any) {
   return (
     <Layout hasFooter={false}>
       <IB028PageContent
-        presentations={data.allPresentationsYaml.edges.map(({ node }) => node)}
+        presentations={data.allPresentationsYaml.edges.map(
+          ({ node }: any) => node,
+        )}
+        forwardIcon={data.forwardIcon}
       />
     </Layout>
   );
@@ -64,7 +78,6 @@ export const query = graphql`
           startTimeRaw: startTime
           startTimeUnixMs: startTime(formatString: "x")
           startTimeFormatted: startTime(formatString: "LT", locale: "hu")
-          venue
           abstract
           presenter {
             fullName
@@ -82,6 +95,14 @@ export const query = graphql`
             region
             role
           }
+        }
+      }
+    }
+
+    forwardIcon: file(name: { eq: "forward-icon" }) {
+      childImageSharp {
+        fixed(width: 192, height: 192) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

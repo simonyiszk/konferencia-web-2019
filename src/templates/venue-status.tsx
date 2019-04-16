@@ -1,13 +1,12 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 import Layout from '../components/Layout';
-import Paragraph from '../components/Paragraph';
 import Presentation, {
   PresentationCaption,
   PresentationLayout,
   PresentationProps,
-  ProgramProps,
 } from '../components/Presentation';
 import ScheduledPresentation from '../components/ScheduledPresentation';
 import VenueHeader from '../components/VenueHeader';
@@ -69,11 +68,11 @@ function VenueStatusTemplateContent({
 
         {// eslint-disable-next-line no-nested-ternary
         currentSpecialProgram != null || upcomingPresentations.length == 0 ? (
-          <Paragraph fontSize="5.619em" textAlign="center">
+          <Heading level={3} fontSize="5.619em" textAlign="center">
             {upcomingPresentations.length > 0
               ? currentSpecialProgram.title
               : 'Köszönjük a részvételt!'}
-          </Paragraph>
+          </Heading>
         ) : (
           <PresentationLayout
             picture={forwardIcon}

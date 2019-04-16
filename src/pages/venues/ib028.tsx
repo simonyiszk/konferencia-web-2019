@@ -43,7 +43,7 @@ function IB028PageContent({
 
   return (
     <>
-      <VenueHeader level={1} fontSize="4.214rem" textAlign="center">
+      <VenueHeader level={1} fontSize="3.16em" textAlign="center">
         IB028
       </VenueHeader>
 

@@ -5,7 +5,7 @@ const fonts = {
   heading: 'Raleway, system-ui',
 };
 
-const fontSizes = ['0.875rem', '1rem', '1.333rem', '1.778rem'];
+const fontSizes = ['0.875em', '1em', '1.333em', '1.778em'];
 
 const fontWeights = {
   bold: 600,

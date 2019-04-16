@@ -37,17 +37,21 @@ function IB028PageContent({
       : null;
 
   return (
-    <Container>
+    <>
       <VenueHeader level={1} fontSize="4.214rem" textAlign="center">
         IB028
       </VenueHeader>
 
-      {currentPresentation != null && <Presentation {...currentPresentation} />}
+      <Container>
+        {currentPresentation != null && (
+          <Presentation {...currentPresentation} />
+        )}
 
-      {upcomingPresentations.length > 0 && (
-        <PresentationLayout picture={forwardIcon}>TODO</PresentationLayout>
-      )}
-    </Container>
+        {upcomingPresentations.length > 0 && (
+          <PresentationLayout picture={forwardIcon}>TODO</PresentationLayout>
+        )}
+      </Container>
+    </>
   );
 }
 

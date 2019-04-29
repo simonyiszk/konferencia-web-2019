@@ -29,7 +29,7 @@ const isProgramRunning = (localTimeMs: number, program: ProgramProps) =>
   localTimeMs < Number.parseInt(program.endTimeUnixMs, 10);
 
 interface VenueStatusTemplateContentProps {
-  presentations: (PresentationProps & ProgramProps)[];
+  presentations: (PresentationProps & ProgramProps & { id: string })[];
   specialPrograms: ProgramProps[];
   forwardIcon: any; // TODO: Use FixedObject of gatsby-image
 }
@@ -109,8 +109,10 @@ export default function VenueStatusTemplate({ data }: any) {
   return (
     <Layout hasFooter={false}>
       <VenueStatusTemplateContent
-        presentations={data.presentations.edges.map(({ node }) => node)}
-        specialPrograms={data.specialPrograms.edges.map(({ node }) => node)}
+        presentations={data.presentations.edges.map(({ node }: any) => node)}
+        specialPrograms={data.specialPrograms.edges.map(
+          ({ node }: any) => node,
+        )}
         forwardIcon={data.forwardIcon}
       />
     </Layout>

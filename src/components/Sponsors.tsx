@@ -43,7 +43,7 @@ export default function Sponsors() {
   `);
 
   const sponsorsByLevel = groupBy(
-    data.allOrganizationsYaml.edges.map(({ node }) => node),
+    data.allOrganizationsYaml.edges.map(({ node }: any) => node),
     'sponsorshipLevel',
   );
 
@@ -60,7 +60,7 @@ export default function Sponsors() {
             </Heading>
 
             <Text fontSize={i === 0 ? 3 : 2} ml={-5}>
-              {levelSponsors.map(sponsor => (
+              {levelSponsors.map((sponsor: any) => (
                 <ExternalLink key={sponsor.id} href={sponsor.website} ml={5}>
                   <Image
                     src={sponsor.logo.publicURL}

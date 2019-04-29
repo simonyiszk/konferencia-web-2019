@@ -11,7 +11,7 @@ const LinkButton = styled(ExternalLink)`
 
   :hover {
     /* TODO: Make colors customizable */
-    color: ${({ theme }) => theme.colors.navy};
+    color: ${({ theme }: any) => theme.colors.navy};
     text-decoration: none;
     background: white;
     border-color: white;

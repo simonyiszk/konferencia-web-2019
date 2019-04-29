@@ -39,7 +39,7 @@ export default function Presentations() {
     }
   `);
 
-  return data.allProgramsYaml.edges.map(({ node }) => (
+  return data.allProgramsYaml.edges.map(({ node }: any) => (
     <Presentation
       key={node.id}
       title={node.title}

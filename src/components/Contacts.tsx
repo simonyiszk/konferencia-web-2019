@@ -33,7 +33,7 @@ export default function Contacts() {
 
   return (
     <Flex justifyContent="space-evenly" flexWrap="wrap">
-      {data.allContactsYaml.edges.map(({ node }) => (
+      {data.allContactsYaml.edges.map(({ node }: any) => (
         <Text
           as="address"
           key={node.id}

@@ -12,7 +12,7 @@ export function useInterval(callback: Function, tickingRateMs: number) {
   // Set up the interval
   useEffect(() => {
     function handleTick() {
-      savedCallback.current!();
+      if (savedCallback.current) savedCallback.current();
     }
 
     const intervalID = setInterval(handleTick, tickingRateMs);

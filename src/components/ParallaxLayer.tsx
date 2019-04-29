@@ -1,7 +1,7 @@
 import * as CSS from 'csstype';
 import styled from 'styled-components';
 
-type ParallaxLayerProps = {
+interface ParallaxLayerProps {
   src: string;
   position?: CSS.BackgroundPositionProperty<number>;
   repeat?: CSS.BackgroundRepeatProperty;
@@ -9,7 +9,7 @@ type ParallaxLayerProps = {
   translateX?: number;
   translateY?: number;
   sizeOverhead?: number;
-};
+}
 
 const ParallaxLayer = styled.div.attrs<ParallaxLayerProps>(
   ({ translateX = 0, translateY = 0 }) => ({
@@ -24,8 +24,8 @@ const ParallaxLayer = styled.div.attrs<ParallaxLayerProps>(
   width: ${({ sizeOverhead }) => (1 + (sizeOverhead as number)) * 100}%;
   height: ${({ sizeOverhead }) => (1 + (sizeOverhead as number)) * 100}%;
   background-image: ${({ src }) => `url(${src})`};
-  background-position: ${({ position }) => position};
   background-repeat: ${({ repeat }) => repeat};
+  background-position: ${({ position }) => position};
   background-size: ${({ size }) => size};
   ${({ translateX, translateY }) =>
     (translateX != null || translateY != null) && 'will-change: transform'};

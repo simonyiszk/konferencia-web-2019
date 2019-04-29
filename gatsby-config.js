@@ -43,6 +43,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
+        /* eslint-disable @typescript-eslint/camelcase */
         name: title,
         short_name: 'SimonyiKonf',
         start_url: '/',
@@ -52,12 +53,13 @@ module.exports = {
         icon_options: {
           purpose: 'any maskable',
         },
+        /* eslint-enable */
       },
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-serviceworker',
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         defaultQuality: 92,
       },

@@ -14,8 +14,9 @@ const GlobalStyle = createGlobalStyle`
 
     /* Fluid typography: 100% @ 600w -> 150% @ 1920w */
     /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
-    font-family: ${({ theme }: any) => theme.fonts.body};
     font-size: calc(1em + (100vw - 37.5em) / 165);
+
+    font-family: ${({ theme }: any) => theme.fonts.body};
   }
 
   body {
@@ -33,10 +34,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode;
   hasFooter?: boolean;
-};
+}
 
 export default function Layout({ children, hasFooter = true }: LayoutProps) {
   const data = useStaticQuery(graphql`

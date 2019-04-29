@@ -8,9 +8,7 @@ import Text, { TextProps } from './Text';
 // - http://krasimirtsonev.com/blog/article/css-the-background-color-and-overlapping-rows-inline-element/
 
 const GradientBackgroundTextWrapper = styled(Text)`
-  /* Required for masking which is based on absolute positioning */
-  position: relative;
-
+  position: relative; /* Required for masking */
   overflow: hidden;
   background: white;
 `;
@@ -22,8 +20,8 @@ const GradientBackgroundTextMask = styled.span<GradientBackgroundTextMaskProps>`
   padding-bottom: inherit;
   background: black;
 
-  box-decoration-break: clone;
   box-shadow: ${({ px }) => `${px} 0 black, -${px} 0 black`};
+  box-decoration-break: clone;
 
   @supports (mix-blend-mode: lighten) {
     ::after {
@@ -33,17 +31,15 @@ const GradientBackgroundTextMask = styled.span<GradientBackgroundTextMaskProps>`
       bottom: 0;
       left: 0;
       background: linear-gradient(45deg, #e93cac, #00bce3);
-      content: '';
       mix-blend-mode: lighten;
+      content: '';
       pointer-events: none;
     }
   }
 `;
 
 const GradientBackgroundTextContent = styled.span`
-  /* Avoid background overlapping between lines */
-  position: relative;
-
+  position: relative; /* Avoid background overlapping between lines */
   color: white;
 `;
 

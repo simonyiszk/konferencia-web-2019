@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+/* eslint-enable */
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;

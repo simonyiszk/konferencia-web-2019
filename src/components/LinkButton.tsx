@@ -4,17 +4,17 @@ import ExternalLink from './ExternalLink';
 const LinkButton = styled(ExternalLink)`
   display: inline-block;
   padding: 0.75em 1.5em;
-  border: 0.125em solid;
   color: currentcolor;
+  border: 0.125em solid;
   transition: all 0.2s
     ${({ theme }) => theme.transitionTimingFunctions.decelerate};
 
   :hover {
     /* TODO: Make colors customizable */
-    border-color: white;
-    background: white;
     color: ${({ theme }) => theme.colors.navy};
     text-decoration: none;
+    background: white;
+    border-color: white;
   }
 
   @media (prefers-reduced-motion: reduce) {

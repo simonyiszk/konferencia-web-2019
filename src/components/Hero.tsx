@@ -15,9 +15,9 @@ import FlyingSaucerURL from '../assets/hero/05-flying-saucer.svg';
 import RocketURL from '../assets/hero/06-rocket.svg';
 import ThinkingMonsterURL from '../assets/hero/07-thinking-monster.svg';
 
-type HeroProps = {
+interface HeroProps {
   children: React.ReactNode;
-};
+}
 
 const HeroChildrenWrapper = styled.div`
   position: relative;

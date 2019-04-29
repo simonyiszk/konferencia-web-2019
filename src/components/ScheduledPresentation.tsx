@@ -4,14 +4,15 @@ import Heading from './Heading';
 import PresenterDetails, { PresenterDetailsProps } from './PresenterDetails';
 import Text from './Text';
 
-export type ScheduledPresentationProps = {
+export interface ScheduledPresentationProps {
   title: string;
   presenter: PresenterDetailsProps;
-};
+}
 
-const ScheduledPresentation: React.FunctionComponent<
-  ScheduledPresentationProps
-> = ({ title, presenter }) => (
+const ScheduledPresentation = ({
+  title,
+  presenter,
+}: ScheduledPresentationProps) => (
   <Text fontSize={0} mb={4}>
     <Heading as={GradientBackgroundText} level={3} my={0}>
       {title}

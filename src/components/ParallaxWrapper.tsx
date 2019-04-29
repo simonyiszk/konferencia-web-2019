@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-type ParallaxWrapperProps = {
+interface ParallaxWrapperProps {
   children: React.ReactNode;
-};
+}
 
 const ParallaxWrapper = styled.div<ParallaxWrapperProps>`
   position: relative;

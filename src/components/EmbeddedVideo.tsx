@@ -22,10 +22,10 @@ const EmbeddedVideoContent = styled.iframe.attrs({
   border: none;
 `;
 
-type EmbeddedVideoProps = {
+interface EmbeddedVideoProps {
   src: string;
   title: string;
-};
+}
 
 export default function EmbeddedVideo(props: EmbeddedVideoProps) {
   return (

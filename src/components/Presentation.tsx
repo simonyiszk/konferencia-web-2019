@@ -8,15 +8,17 @@ import Paragraph from './Paragraph';
 import PresenterDetails from './PresenterDetails';
 import { ScheduledPresentationProps } from './ScheduledPresentation';
 
-export type PresentationCaptionProps = {
+export interface PresentationCaptionProps {
   startTimeRaw: string;
   startTimeFormatted: string;
   venue?: string;
-};
+}
 
-export const PresentationCaption: React.FunctionComponent<
-  PresentationCaptionProps
-> = ({ startTimeRaw, startTimeFormatted, venue }) => (
+export const PresentationCaption = ({
+  startTimeRaw,
+  startTimeFormatted,
+  venue,
+}: PresentationCaptionProps) => (
   <Paragraph
     textStyle="space"
     fontWeight="bold"
@@ -37,17 +39,19 @@ export type PresentationProps = ScheduledPresentationProps &
     };
   };
 
-type PresentationLayoutProps = {
+interface PresentationLayoutProps {
   picture: Pick<
     (Pick<PresentationProps, 'presenter'>)['presenter'],
     'picture'
   >['picture'];
   caption?: () => React.ReactNode;
-};
+}
 
-export const PresentationLayout: React.FunctionComponent<
-  PresentationLayoutProps
-> = ({ picture, caption, children }) => (
+export const PresentationLayout = ({
+  picture,
+  caption,
+  children,
+}: PresentationLayoutProps) => (
   <Flex flexWrap="wrap" justifyContent="center" my={4} ml={-5}>
     <Box pl={5}>
       <Img
@@ -64,14 +68,14 @@ export const PresentationLayout: React.FunctionComponent<
   </Flex>
 );
 
-const Presentation: React.FunctionComponent<PresentationProps> = ({
+const Presentation = ({
   title,
   startTimeRaw,
   startTimeFormatted,
   venue,
   abstract,
   presenter,
-}) => (
+}: PresentationProps) => (
   <PresentationLayout
     picture={presenter.picture}
     caption={() => (

@@ -1,4 +1,4 @@
-import * as CSS from 'csstype';
+import * as CSS from 'csstype'; // eslint-disable-line import/no-unresolved
 import styled from 'styled-components';
 
 interface ParallaxLayerProps {

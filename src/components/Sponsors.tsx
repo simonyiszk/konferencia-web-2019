@@ -43,7 +43,7 @@ export default function Sponsors() {
   `);
 
   const sponsorsByLevel = groupBy(
-    data.allOrganizationsYaml.edges.map(({ node }: any) => node),
+    data.allOrganizationsYaml.edges.map(({ node }) => node),
     'sponsorshipLevel',
   );
 
@@ -51,7 +51,7 @@ export default function Sponsors() {
     <>
       {sponsorshipLevelNames.map((levelName, i) => {
         const levelID = sponsorshipLevelNames.length - i;
-        const levelSponsors = sponsorsByLevel[levelID] as any;
+        const levelSponsors = sponsorsByLevel[levelID];
 
         return (
           <Text key={levelID} textAlign="center" mb={4}>
@@ -60,7 +60,7 @@ export default function Sponsors() {
             </Heading>
 
             <Text fontSize={i === 0 ? 3 : 2} ml={-5}>
-              {levelSponsors.map((sponsor: any) => (
+              {levelSponsors.map(sponsor => (
                 <ExternalLink key={sponsor.id} href={sponsor.website} ml={5}>
                   <Image
                     src={sponsor.logo.publicURL}

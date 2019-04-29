@@ -16,12 +16,12 @@ const GlobalStyle = createGlobalStyle`
     /* Source: https://css-tricks.com/snippets/css/fluid-typography/ */
     font-size: calc(1em + (100vw - 37.5em) / 165);
 
-    font-family: ${({ theme }: any) => theme.fonts.body};
+    font-family: ${({ theme }) => theme.fonts.body};
   }
 
   body {
     margin: 0;
-    color: ${({ theme }: any) => theme.colors.nearBlack};
+    color: ${({ theme }) => theme.colors.nearBlack};
 
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;

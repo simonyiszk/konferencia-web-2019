@@ -3,10 +3,10 @@ import ExternalLink from './ExternalLink';
 import Paragraph from './Paragraph';
 import { TextProps } from './Text';
 
-type Organization = {
+interface Organization {
   id: string;
   website: string;
-};
+}
 
 export type PresenterDetailsProps = {
   fullName: string;
@@ -15,13 +15,13 @@ export type PresenterDetailsProps = {
   role?: string;
 } & TextProps;
 
-const PresenterDetails: React.FunctionComponent<PresenterDetailsProps> = ({
+const PresenterDetails = ({
   fullName,
   organization,
   region,
   role,
   ...props
-}) => (
+}: PresenterDetailsProps) => (
   <Paragraph textStyle="caps" color="blue" {...props}>
     {fullName} – {role && `${role}`}
     {organization && (

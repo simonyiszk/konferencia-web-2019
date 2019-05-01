@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - label: data
+    name: data
+    files:
+      - label: Organizations
+        name: organizations
+        file: src/data/organizations.yml
+        identifier_field: id
+        fields:
+          - { label: Name, name: id, widget: string }
+          - { label: Sponsorship level, name: sponsorshipLevel, widget: string }
+          - { label: Website, name: website, widget: string }
+          - { label: Logo source, name: logo, widget: string }
+          - label: Logo height multiplier
+            name: logoHeightMultiplier
+            widget: number
+            valueType: int
+            min: 0
+            max: 3

@@ -56,6 +56,7 @@ module.exports = {
         /* eslint-enable */
       },
     },
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-serviceworker',
     {

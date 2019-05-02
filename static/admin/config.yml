@@ -5,7 +5,7 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - label: data
+  - label: Data
     name: data
     files:
       - label: Organizations

@@ -11,6 +11,7 @@ collections:
       - label: Organizations
         name: organizations
         file: src/data/organizations.yml
+        widget: list
         identifier_field: id
         fields:
           - { label: Name, name: id, widget: string }

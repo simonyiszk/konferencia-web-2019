@@ -9,6 +9,7 @@ collections:
     name: programs
     folder: src/data/programs
     create: true
+    extension: yml
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Start time, name: startTime, widget: datetime }

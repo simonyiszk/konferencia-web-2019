@@ -13,3 +13,19 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Start time, name: startTime, widget: datetime }
       - { label: End time, name: endTime, widget: datetime }
+      - label: Venue
+        name: venue
+        widget: select
+        options: [IB025, IB028]
+      - { label: Abstract, name: abstract, widget: string }
+      - label: Presenter
+        name: presenter
+        widget: object
+        fields:
+          - { label: Full name, name: fullName, widget: string }
+          - { label: Picture source, name: picture, widget: string }
+          - label: Organization
+            name: organization
+            widget: string # TODO: Use 'relation' widget instead
+          - { label: Region, name: region, widget: string }
+          - { label: Role, name: role, widget: string }

@@ -51,7 +51,7 @@ export default function Sponsors() {
     <>
       {sponsorshipLevelNames.map((levelName, i) => {
         const levelID = sponsorshipLevelNames.length - i;
-        const levelSponsors = sponsorsByLevel[levelID];
+        const levelSponsors = sponsorsByLevel[levelID] as any;
 
         return (
           <Text key={levelID} textAlign="center" mb={4}>

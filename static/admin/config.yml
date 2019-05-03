@@ -17,13 +17,13 @@ collections:
         widget: datetime
         format: YYYY-MM-DD HH:mm
         dateFormat: YYYY-MM-DD
-        timeFormat: HH:mm
+        timeFormat: HH:mmZ
       - label: End time
         name: endTime
         widget: datetime
         format: YYYY-MM-DD HH:mm
         dateFormat: YYYY-MM-DD
-        timeFormat: HH:mm
+        timeFormat: HH:mmZ
       - label: Venue
         name: venue
         widget: select

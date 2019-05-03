@@ -1,0 +1,10 @@
+title: Egy évtized egy szoftverfejlesztő eszköz életében
+startTime: 2019-04-16 14:15
+endTime: 2019-04-16 14:45
+venue: IB028
+abstract: Hogyan jött létre a Bazel nevű szoftverfejlesztő eszköz? Miért volt rá szükség és hogyan fejlődött több, mint egy évtized folyamán? Előadásom során példákon keresztül fogok szemléltetni jónak tűnő döntéseket és azok későbbi megbánásának okait. Ismertetni fogom, mennyiben más a nyílt forráskódú és a zárt ajtók mögötti szoftverfejlesztés, valamint hogy hogyan lehet egy kódbázist hosszú időn át karbantartani.
+presenter:
+  fullName: Berki Lukács
+  picture: ../pictures/berki-lukacs.jpg
+  organization: Google
+  role: Szoftverfejlesztő-menedzser

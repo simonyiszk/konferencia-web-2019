@@ -1,0 +1,11 @@
+title: NB-IoT és okos parkolás a gyakorlatban
+startTime: 2019-04-16 14:45
+endTime: 2019-04-16 15:15
+venue: IB028
+abstract: Az IoT számos felhasználási területe olyan vezeték nélküli csatlakozást igényel, amely akár a föld alatt lévő készülékekkel is képes kapcsolatot létesíteni, vagy több éven keresztül tartó, hosszú üzemidőt tud nyújtani. Előadásomban gyakorlati példákon keresztül fogom bemutatni, milyen felhasználási lehetőségeket teremt az új Narrowband-IoT hálózati technológia. Szó lesz arról, hogy az okos parkolási projektek során milyen kihívásokkal találkoztunk.
+presenter:
+  fullName: dr. Pete Gábor
+  picture: ../pictures/dr-pete-gabor.jpg
+  organization: Vodafone
+  region: Hungary & Czech Republic
+  role: Head of IoT & Business Development

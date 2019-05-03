@@ -5,22 +5,27 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - label: Data
-    name: data
-    files:
-      - label: Organizations
-        name: organizations
-        file: src/data/organizations.yml
-        widget: list
-        identifier_field: id
+  - label: Programs
+    name: programs
+    folder: src/data/programs
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Start time, name: startTime, widget: datetime }
+      - { label: End time, name: endTime, widget: datetime }
+      - label: Venue
+        name: venue
+        widget: select
+        options: [IB025, IB028]
+      - { label: Abstract, name: abstract, widget: string }
+      - label: Presenter
+        name: presenter
+        widget: object
         fields:
-          - { label: Name, name: id, widget: string }
-          - { label: Sponsorship level, name: sponsorshipLevel, widget: string }
-          - { label: Website, name: website, widget: string }
-          - { label: Logo source, name: logo, widget: string }
-          - label: Logo height multiplier
-            name: logoHeightMultiplier
-            widget: number
-            valueType: int
-            min: 0
-            max: 3
+          - { label: Full name, name: fullName, widget: string }
+          - { label: Picture source, name: picture, widget: string }
+          - label: Organization
+            name: organization
+            widget: string # TODO: Use 'relation' widget instead
+          - { label: Region, name: region, widget: string }
+          - { label: Role, name: role, widget: string }

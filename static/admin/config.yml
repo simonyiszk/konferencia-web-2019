@@ -27,5 +27,6 @@ collections:
           - label: Organization
             name: organization
             widget: string # TODO: Use 'relation' widget instead
-          - { label: Region, name: region, widget: string }
-          - { label: Role, name: role, widget: string }
+            required: false
+          - { label: Region, name: region, widget: string, required: false }
+          - { label: Role, name: role, widget: string, required: false }

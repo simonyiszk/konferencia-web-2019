@@ -16,10 +16,14 @@ collections:
         name: startTime
         widget: datetime
         format: YYYY-MM-DD HH:mm
+        dateFormat: YYYY-MM-DD
+        timeFormat: HH:mm
       - label: End time
         name: endTime
         widget: datetime
         format: YYYY-MM-DD HH:mm
+        dateFormat: YYYY-MM-DD
+        timeFormat: HH:mm
       - label: Venue
         name: venue
         widget: select

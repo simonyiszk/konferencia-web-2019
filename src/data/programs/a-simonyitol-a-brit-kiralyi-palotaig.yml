@@ -12,6 +12,6 @@ abstract: >-
 presenter:
   fullName: Papp Máté és Kovács-Egri Kristóf
   organization: Cogito
-  picture: ../pictures/cogito.jpg
+  picture: /assets/cogito.jpg
   region: ''
   role: Co-Founders

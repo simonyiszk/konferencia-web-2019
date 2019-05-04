@@ -73,7 +73,14 @@ function VenueStatusTemplateContent({
         mb={4}
       >
         {currentPresentation != null && (
-          <Presentation {...currentPresentation} venue={undefined} />
+          <Presentation
+            {...currentPresentation}
+            presenter={{
+              ...currentPresentation.presenter,
+              picture: { childImageSharp: currentPresentation.childImageSharp },
+            }}
+            venue={undefined}
+          />
         )}
 
         {currentSpecialProgram != null || upcomingPresentations.length === 0 ? (
@@ -137,19 +144,17 @@ export const query = graphql`
           abstract
           presenter {
             fullName
-            picture {
-              childImageSharp {
-                fixed(width: 192, height: 192) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
             organization {
               id
               website
             }
             region
             role
+          }
+          childImageSharp {
+            fixed(width: 192, height: 192) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }

@@ -19,19 +19,17 @@ export default function Presentations() {
             abstract
             presenter {
               fullName
-              picture {
-                childImageSharp {
-                  fixed(width: 192, height: 192) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
-              }
               organization {
                 id
                 website
               }
               region
               role
+            }
+            childImageSharp {
+              fixed(width: 192, height: 192) {
+                ...GatsbyImageSharpFixed
+              }
             }
           }
         }
@@ -47,7 +45,10 @@ export default function Presentations() {
       startTimeFormatted={node.startTimeFormatted}
       venue={node.venue}
       abstract={node.abstract}
-      presenter={node.presenter}
+      presenter={{
+        ...node.presenter,
+        picture: { childImageSharp: node.childImageSharp },
+      }}
     />
   ));
 }

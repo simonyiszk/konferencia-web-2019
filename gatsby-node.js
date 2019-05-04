@@ -29,13 +29,13 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, getNodes, boundActionCreators }) => {
+exports.onCreateNode = ({ node, getNode, getNodes, actions }) => {
   // Attach each picture's ImageSharp node by public path if necessary
   if (
     node.internal.type === 'ProgramsYaml' &&
     typeof node.presenter.picture === 'string'
   ) {
-    const { createParentChildLink } = boundActionCreators;
+    const { createParentChildLink } = actions;
 
     // Find absolute path of linked path
     const pathToFile = path
@@ -48,10 +48,9 @@ exports.onCreateNode = ({ node, getNodes, boundActionCreators }) => {
 
     if (fileNode != null) {
       // Find ImageSharp node corresponding to the File node
-      const imageSharpNodeId = fileNode.children.find(n =>
-        n.endsWith('>> ImageSharp'),
-      );
-      const imageSharpNode = getNodes().find(n => n.id === imageSharpNodeId);
+      const imageSharpNode = fileNode.children
+        .map(getNode)
+        .find(n => n.internal.type === 'ImageSharp');
 
       // Add ImageSharp node as child
       createParentChildLink({ parent: node, child: imageSharpNode });

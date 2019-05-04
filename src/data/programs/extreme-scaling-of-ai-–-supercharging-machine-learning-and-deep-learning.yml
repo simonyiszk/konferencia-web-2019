@@ -11,5 +11,5 @@ abstract: >-
 presenter:
   fullName: Ralph Hinsche
   organization: NVIDIA
-  picture: ./pictures/ralph-hinsche.jpg
+  picture: ../pictures/ralph-hinsche.jpg
   role: 'Business Development Manager, Higher Education & Research'

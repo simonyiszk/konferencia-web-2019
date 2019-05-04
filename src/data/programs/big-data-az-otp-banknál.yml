@@ -1,0 +1,14 @@
+title: Big Data az OTP Banknál
+startTime: '2019-04-16 13:30'
+endTime: '2019-04-16 14:00'
+venue: IB025
+abstract: >-
+  Mi mindenre jó a Machine Learning egy bank életében? Milyen egy adattárház Big
+  Data alapokon? Előadásom során két implementációt mutatok be részletesen. Az
+  egyik egy ML felhasználási példa, a másik pedig egy adattárház implementáció
+  Big Data alapokon.
+presenter:
+  fullName: Schin Lotár Csaba
+  organization: OTP Bank
+  picture: /assets/schin-lotar-csaba.jpg
+  role: IT fejlesztési senior manager

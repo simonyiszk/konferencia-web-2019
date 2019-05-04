@@ -35,7 +35,7 @@ collections:
         required: false
         fields:
           - { label: Full name, name: fullName, widget: string }
-          - { label: Picture source, name: picture, widget: string }
+          - { label: Picture, name: picture, widget: file }
           - label: Organization
             name: organization
             widget: string # TODO: Use 'relation' widget instead

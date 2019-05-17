@@ -2,7 +2,7 @@ import Space from '@rebass/space';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { Facebook, Instagram, Youtube } from 'styled-icons/fa-brands';
+import { FacebookSquare, Instagram, Youtube } from 'styled-icons/fa-brands';
 import ExternalLink from './ExternalLink';
 import Text from './Text';
 
@@ -42,7 +42,7 @@ export default function Footer() {
     <Text as="footer" textAlign="center" bg="darkGray" py={4} ml={-5}>
       <Space ml={5}>
         <ExternalIconLink href={facebookURL}>
-          <Facebook size="2em" title="Facebook" />
+          <FacebookSquare size="2em" title="Facebook" />
         </ExternalIconLink>
 
         <ExternalIconLink href={instagramURL}>

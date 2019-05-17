@@ -65,7 +65,6 @@ module.exports = {
     },
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {

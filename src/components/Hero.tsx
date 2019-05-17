@@ -1,6 +1,6 @@
 // import useDeviceOrientation from '@rehooks/device-orientation';
 import React from 'react';
-// import { useWindowSize } from 'react-use';
+// import useWindowSize from 'react-use/lib/useWindowSize';
 import styled from 'styled-components';
 // import { useWindowMousePosition } from '../utils/hooks';
 import FullHeight from './FullHeight';

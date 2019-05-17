@@ -7,12 +7,10 @@ export default function Streams() {
   const data = useStaticQuery(graphql`
     {
       allStreamsYaml {
-        edges {
-          node {
-            id
-            src
-            title
-          }
+        nodes {
+          id
+          src
+          title
         }
       }
     }
@@ -20,7 +18,7 @@ export default function Streams() {
 
   return (
     <Flex flexDirection={['column', null, 'row']} mt="2em">
-      {data.allStreamsYaml.edges.map(({ node }: any) => (
+      {data.allStreamsYaml.nodes.map((node: any) => (
         <Box key={node.id} flex={1} mx={3} mb={4}>
           <EmbeddedVideo src={node.src} title={node.title} />
         </Box>

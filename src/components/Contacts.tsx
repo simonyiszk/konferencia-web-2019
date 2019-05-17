@@ -11,21 +11,19 @@ export default function Contacts() {
   const data = useStaticQuery(graphql`
     {
       allContactsYaml {
-        edges {
-          node {
-            id
-            fullName
-            role
-            email
-            picture {
-              childImageSharp {
-                fixed(width: 256, height: 256) {
-                  ...GatsbyImageSharpFixed
-                }
+        nodes {
+          id
+          fullName
+          role
+          email
+          picture {
+            childImageSharp {
+              fixed(width: 256, height: 256) {
+                ...GatsbyImageSharpFixed
               }
             }
-            frameColor
           }
+          frameColor
         }
       }
     }
@@ -33,7 +31,7 @@ export default function Contacts() {
 
   return (
     <Flex justifyContent="space-evenly" flexWrap="wrap">
-      {data.allContactsYaml.edges.map(({ node }: any) => (
+      {data.allContactsYaml.nodes.map((node: any) => (
         <Text
           as="address"
           key={node.id}

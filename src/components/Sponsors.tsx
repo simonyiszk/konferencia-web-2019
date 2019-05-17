@@ -27,23 +27,21 @@ export default function Sponsors() {
   const data = useStaticQuery(graphql`
     {
       allOrganizationsYaml(filter: { sponsorshipLevel: { gt: 0 } }) {
-        edges {
-          node {
-            id
-            sponsorshipLevel
-            website
-            logo {
-              publicURL
-            }
-            logoHeightMultiplier
+        nodes {
+          id
+          sponsorshipLevel
+          website
+          logo {
+            publicURL
           }
+          logoHeightMultiplier
         }
       }
     }
   `);
 
   const sponsorsByLevel = groupBy(
-    data.allOrganizationsYaml.edges.map(({ node }: any) => node),
+    data.allOrganizationsYaml.nodes,
     'sponsorshipLevel',
   );
 

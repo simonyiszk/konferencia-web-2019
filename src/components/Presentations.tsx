@@ -9,27 +9,25 @@ export default function Presentations() {
         filter: { presenter: { fullName: { ne: null } } }
         sort: { fields: [startTime, venue], order: [ASC, DESC] }
       ) {
-        edges {
-          node {
-            id
-            title
-            startTimeRaw: startTime
-            startTimeFormatted: startTime(formatString: "LT", locale: "hu")
-            venue
-            abstract
-            presenter {
-              fullName
-              organization {
-                id
-                website
-              }
-              region
-              role
+        nodes {
+          id
+          title
+          startTimeRaw: startTime
+          startTimeFormatted: startTime(formatString: "LT", locale: "hu")
+          venue
+          abstract
+          presenter {
+            fullName
+            organization {
+              id
+              website
             }
-            childImageSharp {
-              fixed(width: 192, height: 192) {
-                ...GatsbyImageSharpFixed
-              }
+            region
+            role
+          }
+          childImageSharp {
+            fixed(width: 192, height: 192) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -37,7 +35,7 @@ export default function Presentations() {
     }
   `);
 
-  return data.allProgramsYaml.edges.map(({ node }: any) => (
+  return data.allProgramsYaml.nodes.map((node: any) => (
     <Presentation
       key={node.id}
       title={node.title}

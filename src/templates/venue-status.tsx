@@ -119,10 +119,8 @@ export default function VenueStatusTemplate({ data }: any) {
   return (
     <Layout hasFooter={false}>
       <VenueStatusTemplateContent
-        presentations={data.presentations.edges.map(({ node }: any) => node)}
-        specialPrograms={data.specialPrograms.edges.map(
-          ({ node }: any) => node,
-        )}
+        presentations={data.presentations.nodes}
+        specialPrograms={data.specialPrograms.nodes}
         forwardIcon={data.forwardIcon}
       />
     </Layout>
@@ -135,29 +133,27 @@ export const query = graphql`
       filter: { venue: { eq: $venue }, presenter: { fullName: { ne: null } } }
       sort: { fields: startTime, order: ASC }
     ) {
-      edges {
-        node {
-          id
-          title
-          startTimeRaw: startTime
-          startTimeUnixMs: startTime(formatString: "x")
-          startTimeFormatted: startTime(formatString: "LT", locale: "hu")
-          endTimeUnixMs: endTime(formatString: "x")
-          venue
-          abstract
-          presenter {
-            fullName
-            organization {
-              id
-              website
-            }
-            region
-            role
+      nodes {
+        id
+        title
+        startTimeRaw: startTime
+        startTimeUnixMs: startTime(formatString: "x")
+        startTimeFormatted: startTime(formatString: "LT", locale: "hu")
+        endTimeUnixMs: endTime(formatString: "x")
+        venue
+        abstract
+        presenter {
+          fullName
+          organization {
+            id
+            website
           }
-          childImageSharp {
-            fixed(width: 192, height: 192) {
-              ...GatsbyImageSharpFixed
-            }
+          region
+          role
+        }
+        childImageSharp {
+          fixed(width: 192, height: 192) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -167,14 +163,12 @@ export const query = graphql`
       filter: { venue: { eq: $venue }, presenter: { fullName: { eq: null } } }
       sort: { fields: startTime, order: ASC }
     ) {
-      edges {
-        node {
-          id
-          title
-          startTimeUnixMs: startTime(formatString: "x")
-          endTimeUnixMs: endTime(formatString: "x")
-          venue
-        }
+      nodes {
+        id
+        title
+        startTimeUnixMs: startTime(formatString: "x")
+        endTimeUnixMs: endTime(formatString: "x")
+        venue
       }
     }
 
